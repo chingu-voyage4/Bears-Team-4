@@ -1,4 +1,6 @@
 .trending-small-image{
 	height: 40%;
 	width: 40%;
+	display:block;
+    margin:auto;
 }

@@ -14,11 +14,11 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import "./TrendingCardSmall.css";
 
 const style = {
-	borderRadius: 0
+	boxShadow: 0
 };
 const TrendingCard = props => (
-	<Col xs={3} md={2} className="trending-card">
-		<Card>
+	<Col xs={3} md={2} className="trending-small-card">
+		<Card className="small-card" style={style}>
 			<img
 				src="../../images/save.jpg"
 				alt=""
