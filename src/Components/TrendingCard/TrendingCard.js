@@ -18,8 +18,7 @@ const style = {
 };
 const TrendingCard = props => (
 	<MuiThemeProvider>
-		<Row className="show-grid">
-			<Col xs={6} md={3} className="trending-card" mdOffset={1}>
+			<Col sm={4} md={3} className="trending-card">
 				<Card>
 					<CardMedia
 						overlay={
@@ -28,7 +27,7 @@ const TrendingCard = props => (
 								subtitle={props.subtitle}
 								avatar={
 									<Avatar
-										src="https://wallpaperbrowse.com/media/images/_89716241_thinkstockphotos-523060154.jpg"
+										src={props.imagesrc}
 										size={50}
 										style={style}
 									/>
@@ -37,64 +36,13 @@ const TrendingCard = props => (
 						}
 					>
 						<img
-							src="https://wallpaperbrowse.com/media/images/_89716241_thinkstockphotos-523060154.jpg"
+							src={props.mainImageSrc}
 							alt=""
 							className="trending-image"
 						/>
 					</CardMedia>
 				</Card>
 			</Col>
-			<Col xs={6} md={3}>
-				<Card>
-					<CardMedia
-						overlay={
-							<CardHeader
-								title={<div className="title">{props.title}</div>}
-								subtitle={props.subtitle}
-								avatar={
-									<Avatar
-										src="https://wallpaperbrowse.com/media/images/_89716241_thinkstockphotos-523060154.jpg"
-										size={50}
-										style={style}
-									/>
-								}
-							/>
-						}
-					>
-						<img
-							src="https://wallpaperbrowse.com/media/images/_89716241_thinkstockphotos-523060154.jpg"
-							alt=""
-							className="trending-image"
-						/>
-					</CardMedia>
-				</Card>
-			</Col>
-			<Col xsHidden md={3}>
-				<Card>
-					<CardMedia
-						overlay={
-							<CardHeader
-								title={<div className="title">{props.title}</div>}
-								subtitle={props.subtitle}
-								avatar={
-									<Avatar
-										src="https://wallpaperbrowse.com/media/images/_89716241_thinkstockphotos-523060154.jpg"
-										size={50}
-										style={style}
-									/>
-								}
-							/>
-						}
-					>
-						<img
-							src="https://wallpaperbrowse.com/media/images/_89716241_thinkstockphotos-523060154.jpg"
-							alt=""
-							className="trending-image"
-						/>
-					</CardMedia>
-				</Card>
-			</Col>
-		</Row>
 	</MuiThemeProvider>
 );
 

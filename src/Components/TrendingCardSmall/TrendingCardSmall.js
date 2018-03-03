@@ -17,6 +17,7 @@ const style = {
 	boxShadow: 0
 };
 const TrendingCard = props => (
+	<MuiThemeProvider>
 	<Col xs={3} md={2} className="trending-small-card">
 		<Card className="small-card" style={style}>
 			<img
@@ -27,6 +28,7 @@ const TrendingCard = props => (
 			<CardText>{props.text}</CardText>
 		</Card>
 	</Col>
+	</MuiThemeProvider>
 );
 
 export default TrendingCard;

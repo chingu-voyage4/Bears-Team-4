@@ -1,3 +1,13 @@
 .title{
-	font-size: 22px;
+	font-size: 20px;
+}
+.trending-image{
+	height: 250px;
+	width: 250px;
+}
+.trending-card{
+	/*height: 300px;*/
+	/*width: 350px;*/
+	height: 25%;
+	width: 30%;
 }
