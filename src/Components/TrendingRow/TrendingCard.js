@@ -10,7 +10,7 @@ import {
 import Avatar from 'material-ui/Avatar';
 import FlatButton from "material-ui/FlatButton";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import "./MainCardWithAvatar.css";
+import "./TrendingCard.css";
 
 const style = {borderRadius: 0};
 

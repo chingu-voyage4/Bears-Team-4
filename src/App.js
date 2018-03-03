@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import MainCardWithAvatar from './MainCardWithAvatar/MainCardWithAvatar';
+import TrendingCard from './Components/TrendingCard/TrendingCard';
 
 class App extends Component {
   render() {
     return (
-      <MainCardWithAvatar title="Random Text" subtitle="More Random Text" />
+      <TrendingCard title="Random Text" subtitle="More Random Text" />
     );
   }
 }
