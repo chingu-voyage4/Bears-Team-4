@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 import "./BodyContainer.css"
 
+import TrendingDeals from "../Trending/Trending"
+
 class BodyContainer extends Component{
     render(){
         return (
             <div className="bodycontainer">
-                Body
+                <TrendingDeals/>
+                <div>adadasd</div>
             </div>
         );
     }
