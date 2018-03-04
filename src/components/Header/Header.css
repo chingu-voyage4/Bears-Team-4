@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     align-items: center;
     padding: 15px;
+    padding-bottom: 0px;
     font-size: 0.8rem;
     margin:0 20px;
     
@@ -40,14 +41,3 @@
     width:100%;
 }
 
-
-.header__menu ul{
-    display: inline-flex;
-    justify-content: center;
-    list-style-type: none;
-    width:100%;
-}
-
-.header__menu li{
-    padding : 0 20px;
-}

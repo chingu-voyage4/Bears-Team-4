@@ -3,6 +3,7 @@ import "./Header.css"
 
 import Search from "../Search/Search";
 import Login from "../Login/Login";
+import Menu from "../Menu/Menu";
 
 class Header extends Component{
     render(){
@@ -19,14 +20,7 @@ class Header extends Component{
                         <Login/>
                     </div>
                     <div className="header__menu">
-                        <ul>
-                            <li>Cash Back</li>
-                            <li>Gift Card Deals</li>
-                            <li>Near Me</li>
-                            <li>Spring Deals</li>
-                            <li>Departments &nbsp;<i className="fas fa-angle-down"></i></li>
-                            <li>Explore &nbsp;<i className="fas fa-angle-down"></i></li>
-                        </ul>
+                       <Menu/>
                     </div>
                 </div>
             </div>
