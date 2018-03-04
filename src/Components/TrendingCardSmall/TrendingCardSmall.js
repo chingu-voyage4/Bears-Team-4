@@ -25,7 +25,7 @@ const TrendingCard = props => (
 				alt=""
 				className="trending-small-image"
 			/>
-			<CardText>{props.text}</CardText>
+			<CardText><div className="text">{props.text}</div></CardText>
 		</Card>
 	</Col>
 	</MuiThemeProvider>

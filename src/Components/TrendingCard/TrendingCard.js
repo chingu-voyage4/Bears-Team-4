@@ -24,7 +24,7 @@ const TrendingCard = props => (
 						overlay={
 							<CardHeader
 								title={<div className="title">{props.title}</div>}
-								subtitle={props.subtitle}
+								subtitle={<div className="title">{props.subtitle}</div>}
 								avatar={
 									<Avatar
 										src={props.imagesrc}

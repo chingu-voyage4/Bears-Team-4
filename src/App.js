@@ -7,20 +7,20 @@ import MainContent from "./Components/MainContent/MainContent";
 const section1 = {
 	trendingCard: [
 		{
-			title:"Random Text",
-			subtitle:"More Random Text",
+			title:"Free Sample-Filled Tote",
+			subtitle:"Saks Fifth Avenue Code",
 			imageSrc:"../images/save.jpg",
 			mainImageSrc:"../images/dices.jpg"
 		},
 		{
-			title:"Random Text",
-			subtitle:"More Random Text",
+			title:"Extra 25% off",
+			subtitle:"Lord & Taylor Code",
 			imageSrc:"../images/save.jpg",
 			mainImageSrc:"../images/dices.jpg"
 		},
 		{
-			title:"Random Text",
-			subtitle:"More Random Text",
+			title:"Online Only! 15% off $75",
+			subtitle:"Food Locker Code",
 			imageSrc:"../images/save.jpg",
 			mainImageSrc:"../images/dices.jpg"
 		}
@@ -31,23 +31,23 @@ const section1 = {
 			imageSrc:"../images/save.jpg"
 		},
 		{
-			smallCardText:"Up to 30% Off With Amazon Coupon Codes And Promos",
+			smallCardText:"Extra 25% Off Sale Styles",
 			imageSrc:"../../images/save.jpg"
 		},
 		{
-			smallCardText:"Up to 30% Off With Amazon Coupon Codes And Promos",
+			smallCardText:"Up to 25% Off In-Stores and Online",
 			imageSrc:"../../images/save.jpg"
 		},
 		{
-			smallCardText:"Up to 30% Off With Amazon Coupon Codes And Promos",
+			smallCardText:"Up to 80% Off Women's Shoes",
 			imageSrc:"../../images/save.jpg"
 		},
 		{
-			smallCardText:"Up to 30% Off With Amazon Coupon Codes And Promos",
+			smallCardText:"40% Off Regular Menu Price Pizzas",
 			imageSrc:"../../images/save.jpg"
 		},
 		{
-			smallCardText:"Up to 30% Off With Amazon Coupon Codes And Promos",
+			smallCardText:"30% Off When You Use Your Kohls Charge Card",
 			imageSrc:"../../images/save.jpg"
 		}
 	]

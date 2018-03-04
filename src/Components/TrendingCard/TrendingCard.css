@@ -1,5 +1,9 @@
 .title{
-	font-size: 20px;
+	font-weight: 400;
+    line-height: 1.25;
+    color: #fff;
+    font-size: 18px;
+    font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
 }
 .trending-image{
 	height: 250px;
@@ -10,4 +14,11 @@
 	/*width: 350px;*/
 	height: 25%;
 	width: 30%;
+}
+.text{
+	margin: 10px auto 0;
+    color: #555;
+    font-size: 15px;
+    line-height: 1.2;
+    text-align: center;
 }
