@@ -1,0 +1,10 @@
+.headerOverlay{
+    background: rgb(96, 45, 108);
+}
+
+.header{
+    background: red;
+    max-width: 1200px;
+    margin:0 auto;
+    color: rgb(255, 255, 255);
+}
