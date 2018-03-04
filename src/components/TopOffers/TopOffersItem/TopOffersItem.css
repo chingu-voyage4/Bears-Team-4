@@ -14,6 +14,7 @@
 .topOffersItem_image {
   width: 15%;
   max-width: 120px;
+  flex-grow: 5;
 }
 
 .topOffersItem_image img {
@@ -21,7 +22,8 @@
 }
 
 .topOffersItem_details {
-  width: 65%;
+  width: 55%;
+  flex-grow: 1;
 }
 
 .topOffersItem_details div {
@@ -47,7 +49,7 @@
 }
 
 .topOffersItem_buttons {
-  width: 20%;
+  width: 30%;
 }
 
 .topOffersItem_buttons .showButton {
@@ -76,4 +78,10 @@
   padding-top: 10px;
   border-top: 1.1px solid #d3d3d3;
   color: #60b7e6;
+}
+
+@media screen and (max-width: 600px) {
+  .topOffersItem_buttons {
+    display: none;
+  }
 }

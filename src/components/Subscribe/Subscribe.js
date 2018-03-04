@@ -12,12 +12,14 @@ class Subscribe extends Component {
           emails.
         </div>
         <br />
-        <input
-          className="subscribe__email"
-          type="text"
-          placeholder="Email Address"
-        />
-        <div class="subscribe__showButton">Subscribe</div>
+        <div className="subscribe_form">
+          <input
+            className="subscribe__email"
+            type="text"
+            placeholder="Email Address"
+          />
+          <div class="subscribe__showButton">Subscribe</div>
+        </div>
       </div>
     );
   }

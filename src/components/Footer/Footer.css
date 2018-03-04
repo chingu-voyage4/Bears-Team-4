@@ -6,13 +6,15 @@
 
 .footer {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
   padding: 20px;
   margin: 0 auto;
 }
 
-.footer__logo {
+.footer__logo1,
+.footer__logo2 {
   width: 20%;
   align-self: center;
   fill: #602d6c;
@@ -20,7 +22,7 @@
 }
 
 .footer__logo svg {
-  width: 80%;
+  width: 100%;
 }
 
 .footer__links {
@@ -34,6 +36,7 @@
   color: #808080;
   font-weight: bold;
   font-size: 0.8rem;
+  padding-left: 20px;
 }
 
 .footer__links__column ul {
@@ -45,4 +48,28 @@
 .footer__links__column ul li {
   padding-bottom: 20px;
   color: #24c6ed;
+}
+
+@media screen and (max-width: 850px) {
+  .footer__logo1,
+  .footer__logo2 {
+    display: none;
+  }
+
+  .footer__links {
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .footer__links__column {
+    flex-basis: 150px;
+  }
+
+  .footer__logo2 {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
 }

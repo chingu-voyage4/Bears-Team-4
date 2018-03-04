@@ -14,3 +14,9 @@ body {
   font-family: "Lato", Calibri, Helvetica, Roboto, sans-serif;
   background: #f1f1f1;
 }
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+}

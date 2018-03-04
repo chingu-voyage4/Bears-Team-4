@@ -15,7 +15,7 @@
   columns: 5;
   color: gray;
   list-style-type: none;
-  padding-top: 15px;
+  padding: 15px 0 0 15px;
 }
 
 .popularSection__items li {

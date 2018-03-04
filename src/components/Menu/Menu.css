@@ -15,3 +15,9 @@
 .menu li:hover {
   border-bottom: 2px solid;
 }
+
+@media screen and (max-width: 500px) {
+  .menu ul li:nth-child(-n + 4) {
+    display: none;
+  }
+}

@@ -1,6 +1,6 @@
 .trendingItemBig {
   display: inline-block;
-  max-width: 350px;
+  /* max-width: 350px; */
   position: relative;
   background: greenyellow;
   margin: 10px;

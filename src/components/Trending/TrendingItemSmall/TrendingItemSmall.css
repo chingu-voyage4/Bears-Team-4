@@ -1,6 +1,5 @@
 .trendingItemSmall {
   display: inline-block;
-  max-width: 150px;
   position: relative;
   margin: 10px;
 }

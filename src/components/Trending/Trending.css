@@ -6,10 +6,26 @@
 
 .trending__bigGrid {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .trending__smallGrid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.trending__bigGrid > .trendingItemBig {
+  flex: 220px;
+}
+
+.trending__smallGrid > .trendingItemSmall {
+  flex: 80px;
+}
+
+@media screen and (max-width: 630px) {
+  .trending__smallGrid {
+    display: none;
+  }
 }
