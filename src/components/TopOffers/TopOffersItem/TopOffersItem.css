@@ -1,0 +1,81 @@
+.TopOffersItem{
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff;
+    /* padding:15px; */
+    border:1.5px #D3D3D3 solid;
+    margin-bottom:17px;
+}
+
+.TopOffersItem>div{
+    padding: 15px;
+}
+
+.TopOffersItem_image{
+    width:15%;
+    max-width: 120px;
+}
+
+.TopOffersItem_image img{
+    width:100%;
+}
+
+.TopOffersItem_details{
+    width:65%;
+}
+
+.TopOffersItem_details div{
+    display: inline-block;
+    padding:10px;
+}
+
+.TopOffersItem_details .type{
+    color:#602D99;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.TopOffersItem_details .category{
+    color: gray;
+    font-size: 0.8rem;
+}
+
+.TopOffersItem_details .offer{
+    display: block;
+    font-size: 1.5em;
+    color:#555555;
+}
+
+
+.TopOffersItem_buttons{
+    width:20%;
+}
+
+.TopOffersItem_buttons .showButton{
+    /* margin:10px; */
+    height:50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 3rem;
+    color:white;
+    border-radius: 3px;
+    background: #1896BC;
+}
+
+.TopOffersItem_buttons .saveButton{
+    color: gray;
+    font-size: 0.8rem;
+    text-align: right;
+    margin: 10px;
+}
+
+
+.TopOffersItem_moreDetails{
+    width:100%;
+    height: 50px;
+    margin-top: 20px;
+    padding-top:10px;
+    border-top:1.1px solid #D3D3D3;
+    color:#60B7E6; 
+}
