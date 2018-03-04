@@ -4,6 +4,7 @@ import "./BodyContainer.css"
 import TrendingDeals from "../Trending/Trending";
 import TopOffers from "../TopOffers/TopOffers";
 import Populars from "../Populars/Populars";
+import Subscribe from "../Subscribe/Subscribe";
 
 class BodyContainer extends Component{
     render(){
@@ -12,6 +13,7 @@ class BodyContainer extends Component{
                 <TrendingDeals/>
                 <TopOffers/>
                 <Populars/>
+                <Subscribe/>
             </div>
         );
     }

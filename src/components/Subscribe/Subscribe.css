@@ -1,0 +1,32 @@
+.Subscribe{
+    text-align: center;
+    position: relative;
+    padding : 20px;
+    border-top : 1.1px solid #D3D3D3;
+}
+
+
+.Subscribe__showButton{
+    display: inline-block;
+    position: relative;
+    left:-10px;
+    width:200px;
+    height:51px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+    line-height: 3rem;
+    color:white;
+    border-radius: 0 3px 3px 0;
+    background: #1896BC;
+    border: 1.1px solid #D3D3D3;
+}
+
+.Subscribe__email{
+    height:50px;
+    width:500px;
+    text-indent: 10px;
+    font-family: 'Lato', Calibri, Helvetica, Roboto, sans-serif;
+    border: 1.1px solid #D3D3D3;
+    border-radius: 3px 0 0 3px;
+}
