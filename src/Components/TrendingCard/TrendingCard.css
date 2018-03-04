@@ -5,13 +5,18 @@
     font-size: 18px;
     font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
 }
+.subtitle{
+	font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    color:#fff;
+}
 .trending-image{
 	height: 250px;
 	width: 250px;
 }
 .trending-card{
-	/*height: 300px;*/
-	/*width: 350px;*/
 	height: 25%;
 	width: 30%;
 }

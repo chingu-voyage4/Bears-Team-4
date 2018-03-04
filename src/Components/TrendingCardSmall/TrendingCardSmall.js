@@ -21,7 +21,7 @@ const TrendingCard = props => (
 	<Col xs={3} md={2} className="trending-small-card">
 		<Card className="small-card" style={style}>
 			<img
-				src="../../images/save.jpg"
+				src={props.imagesrc}
 				alt=""
 				className="trending-small-image"
 			/>
