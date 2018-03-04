@@ -1,10 +1,47 @@
 .headerOverlay{
     background: rgb(96, 45, 108);
+    display: flex;
+    justify-content: center;
 }
 
 .header{
-    background: red;
+    width:100%;
     max-width: 1200px;
-    margin:0 auto;
     color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    font-size: 0.8rem;
+    
+}
+
+.header__logo{
+    width:20%;
+    fill : rgb(255, 255, 255);
+}
+
+.header__search{
+    width:60%;
+    padding: 0 30px;
+}
+
+.header__login{
+    width:20%;
+}
+
+.header__menu{
+    width:100%;
+    /* background: khaki; */
+}
+
+
+.header__menu ul{
+    display: inline-flex;
+    justify-content: center;
+    list-style-type: none;
+    width:100%;
+}
+
+.header__menu li{
+    padding : 0 20px;
 }
