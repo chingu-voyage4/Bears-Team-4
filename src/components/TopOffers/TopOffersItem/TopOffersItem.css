@@ -1,4 +1,4 @@
-.TopOffersItem {
+.topOffersItem {
   display: flex;
   flex-wrap: wrap;
   background: #ffffff;
@@ -7,50 +7,50 @@
   margin-bottom: 17px;
 }
 
-.TopOffersItem > div {
+.topOffersItem > div {
   padding: 15px;
 }
 
-.TopOffersItem_image {
+.topOffersItem_image {
   width: 15%;
   max-width: 120px;
 }
 
-.TopOffersItem_image img {
+.topOffersItem_image img {
   width: 100%;
 }
 
-.TopOffersItem_details {
+.topOffersItem_details {
   width: 65%;
 }
 
-.TopOffersItem_details div {
+.topOffersItem_details div {
   display: inline-block;
   padding: 10px;
 }
 
-.TopOffersItem_details .type {
+.topOffersItem_details .type {
   color: #602d99;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
-.TopOffersItem_details .category {
+.topOffersItem_details .category {
   color: gray;
   font-size: 0.8rem;
 }
 
-.TopOffersItem_details .offer {
+.topOffersItem_details .offer {
   display: block;
   font-size: 1.5em;
   color: #555555;
 }
 
-.TopOffersItem_buttons {
+.topOffersItem_buttons {
   width: 20%;
 }
 
-.TopOffersItem_buttons .showButton {
+.topOffersItem_buttons .showButton {
   /* margin:10px; */
   height: 50px;
   text-align: center;
@@ -62,14 +62,14 @@
   background: #1896bc;
 }
 
-.TopOffersItem_buttons .saveButton {
+.topOffersItem_buttons .saveButton {
   color: gray;
   font-size: 0.8rem;
   text-align: right;
   margin: 10px;
 }
 
-.TopOffersItem_moreDetails {
+.topOffersItem_moreDetails {
   width: 100%;
   height: 50px;
   margin-top: 20px;

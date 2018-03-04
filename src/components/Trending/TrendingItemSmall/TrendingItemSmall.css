@@ -1,20 +1,19 @@
-.TrendingItemSmall{
-    display: inline-block;
-    max-width: 150px;
-    position: relative;
-    margin:10px;
+.trendingItemSmall {
+  display: inline-block;
+  max-width: 150px;
+  position: relative;
+  margin: 10px;
 }
 
-.TrendingItemSmall__companyImg{
-    display: inline-block;
-    width:100%;
+.trendingItemSmall__companyImg {
+  display: inline-block;
+  width: 100%;
 }
 
-.TrendingItemSmall__Descriptions{
-    text-align: center;
+.trendingItemSmall__descriptions {
+  text-align: center;
 }
 
-.TrendingItemSmall__dealDescription{
-    padding: 10px;
+.trendingItemSmall__dealDescription {
+  padding: 10px;
 }
-

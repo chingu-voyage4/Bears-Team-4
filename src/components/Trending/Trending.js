@@ -7,16 +7,16 @@ import TrendingItemSmall from "./TrendingItemSmall/TrendingItemSmall";
 class Trending extends Component {
   render() {
     return (
-      <div className="Trending">
-        <div className="Trending__title">
+      <div className="trending">
+        <div className="trending__title">
           Shop Today's Trending Deals and Save Big
         </div>
-        <div className="Trending__bigGrid">
+        <div className="trending__bigGrid">
           <TrendingItemBig />
           <TrendingItemBig />
           <TrendingItemBig />
         </div>
-        <div className="Trending__smallGrid">
+        <div className="trending__smallGrid">
           <TrendingItemSmall />
           <TrendingItemSmall />
           <TrendingItemSmall />

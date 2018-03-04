@@ -4,13 +4,14 @@ import "./TrendingItemSmall.css";
 class TrendingItemSmall extends Component {
   render() {
     return (
-      <div className="TrendingItemSmall">
+      <div className="trendingItemSmall">
         <img
-          className="TrendingItemSmall__companyImg"
+          className="trendingItemSmall__companyImg"
+          alt=""
           src="https://www.retailmenot.com/thumbs/logos/m/lordandtaylor.com-coupons.jpg?versionId=ZxTkF4sD8D3n2J_3ryiZUedTvEUhBkUC"
         />
-        <div className="TrendingItemSmall__Descriptions">
-          <div className="TrendingItemSmall__dealDescription">
+        <div className="trendingItemSmall__descriptions">
+          <div className="trendingItemSmall__dealDescription">
             Up to 30% Off With Amazon Coupon Codes And Promos
           </div>
         </div>

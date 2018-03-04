@@ -4,7 +4,7 @@ import "./Subscribe.css";
 class Subscribe extends Component {
   render() {
     return (
-      <div className="Subscribe">
+      <div className="subscribe">
         <div>Never miss another deal.</div>
         <br />
         <div>
@@ -13,11 +13,11 @@ class Subscribe extends Component {
         </div>
         <br />
         <input
-          className="Subscribe__email"
+          className="subscribe__email"
           type="text"
           placeholder="Email Address"
         />
-        <div class="Subscribe__showButton">Subscribe</div>
+        <div class="subscribe__showButton">Subscribe</div>
       </div>
     );
   }

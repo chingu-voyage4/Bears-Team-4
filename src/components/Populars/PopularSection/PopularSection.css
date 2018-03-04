@@ -1,23 +1,23 @@
-.PopularSection {
+.popularSection {
   border: 1.1px solid #d3d3d3;
   background: white;
   padding: 20px;
 }
 
-.PopularSection__headline {
+.popularSection__headline {
   color: #2ac2eb;
   font-size: 1.5rem;
   text-align: center;
   font-weight: bold;
 }
 
-.PopularSection__items ul {
+.popularSection__items ul {
   columns: 5;
   color: gray;
   list-style-type: none;
   padding-top: 15px;
 }
 
-.PopularSection__items li {
+.popularSection__items li {
   padding-bottom: 10px;
 }

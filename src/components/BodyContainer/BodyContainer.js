@@ -8,7 +8,7 @@ import Subscribe from "../Subscribe/Subscribe";
 class BodyContainer extends Component {
   render() {
     return (
-      <div className="bodycontainer">
+      <div className="BodyContainer">
         <TrendingDeals />
         <TopOffers />
         <Populars />

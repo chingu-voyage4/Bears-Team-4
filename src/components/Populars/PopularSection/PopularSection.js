@@ -27,11 +27,11 @@ class PopularSection extends Component {
       "Best Buy"
     ];
     return (
-      <div className="PopularSection">
-        <div className="PopularSection__headline">
+      <div className="popularSection">
+        <div className="popularSection__headline">
           <i className="fas fa-angle-down" /> &nbsp; Popular Stores
         </div>
-        <div className="PopularSection__items">
+        <div className="popularSection__items">
           <ul>
             {list.map((item, i) => {
               return <li key={i}>{item}</li>;

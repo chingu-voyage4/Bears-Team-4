@@ -6,8 +6,8 @@ import TopOffersItem from "./TopOffersItem/TopOffersItem";
 class TopOffers extends Component {
   render() {
     return (
-      <div className="TopOffers">
-        <div className="Trending__title">Top Offers</div>
+      <div className="topOffers">
+        <div className="topOffers__title">Top Offers</div>
         <TopOffersItem />
         <TopOffersItem />
         <TopOffersItem />

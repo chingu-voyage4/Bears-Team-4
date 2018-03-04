@@ -4,21 +4,23 @@ import "./TrendingItemBig.css";
 class TrendingItemBig extends Component {
   render() {
     return (
-      <div className="TrendingItemBig">
+      <div className="trendingItemBig">
         <img
-          className="TrendingItemBig__productImg"
+          className="trendingItemBig__productImg"
+          alt=""
           src="https://mediaservice.retailmenot.com/image/MADNUSZMMRALJJUMURSFVYISKI?width=350"
         />
-        <div className="TrendingItemBig__details">
+        <div className="trendingItemBig__details">
           <img
-            className="TrendingItemBig__companyImg"
+            className="trendingItemBig__companyImg"
+            alt=""
             src="https://www.retailmenot.com/thumbs/logos/m/lordandtaylor.com-coupons.jpg?versionId=ZxTkF4sD8D3n2J_3ryiZUedTvEUhBkUC"
           />
-          <div className="TrendingItemBig__Descriptions">
-            <div className="TrendingItemBig__dealDescription">
+          <div className="trendingItemBig__Descriptions">
+            <div className="trendingItemBig__dealDescription">
               Extre 25% Off
             </div>
-            <div className="TrendingItemBig__companyName">
+            <div className="trendingItemBig__companyName">
               Saks Fifth Avenue Code
             </div>
           </div>
