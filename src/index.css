@@ -2,13 +2,15 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Lato', Calibri, Helvetica, Roboto, sans-serif;
-  background: #F1F1F1;
+  font-family: "Lato", Calibri, Helvetica, Roboto, sans-serif;
+  background: #f1f1f1;
 }

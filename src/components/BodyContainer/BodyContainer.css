@@ -1,9 +1,9 @@
-.bodycontainer{
-    max-width: 1200px;
-    width:100%;
-    padding:20px;
+.bodycontainer {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
 }
 
-.bodycontainer > *{
-    margin-bottom: 50px;
+.bodycontainer > * {
+  margin-bottom: 50px;
 }

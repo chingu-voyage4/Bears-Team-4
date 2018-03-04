@@ -1,18 +1,18 @@
-.login{
-    display: flex;
-    align-items: center;
+.login {
+  display: flex;
+  align-items: center;
 }
 
-.login__photo{
-    font-size: 2rem;
-    padding-right: 15px;
+.login__photo {
+  font-size: 2rem;
+  padding-right: 15px;
 }
 
-.login__details_login{
-    font-weight: bold;
+.login__details_login {
+  font-weight: bold;
 }
 
-.login__details_cashback{
-    font-size: 0.7rem;
-    padding-top: 2px;
+.login__details_cashback {
+  font-size: 0.7rem;
+  padding-top: 2px;
 }

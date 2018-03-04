@@ -1,17 +1,17 @@
-.menu ul{
-    display: inline-flex;
-    justify-content: center;
-    list-style-type: none;
-    width:100%;
-    padding: 0;
-    padding-top: 10px;
+.menu ul {
+  display: inline-flex;
+  justify-content: center;
+  list-style-type: none;
+  width: 100%;
+  padding: 0;
+  padding-top: 10px;
 }
 
-.menu li{
-    padding : 0 20px;
-    padding-bottom: 10px;
+.menu li {
+  padding: 0 20px;
+  padding-bottom: 10px;
 }
 
-.menu li:hover{
-    border-bottom: 2px solid;
+.menu li:hover {
+  border-bottom: 2px solid;
 }

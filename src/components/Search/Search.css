@@ -1,13 +1,11 @@
-.search__input{
-    width:100%;
-    height:45px;
-    font-family: 'Lato', Calibri, Helvetica, Roboto, sans-serif;
-    text-indent: 50px;
-    background: url("./search.png") no-repeat white;
-    background-size: 35px 35px;
-    background-position: 10px center;
-    border: none;
-    border-radius: 3px;
+.search__input {
+  width: 100%;
+  height: 45px;
+  font-family: "Lato", Calibri, Helvetica, Roboto, sans-serif;
+  text-indent: 50px;
+  background: url("./search.png") no-repeat white;
+  background-size: 35px 35px;
+  background-position: 10px center;
+  border: none;
+  border-radius: 3px;
 }
-
-

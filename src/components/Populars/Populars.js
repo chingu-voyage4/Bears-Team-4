@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import "./Populars.css"
+import "./Populars.css";
 
 import PopularSection from "./PopularSection/PopularSection";
 
-class Populars extends Component{
-    render(){
-        return (
-            <div className="Populars">
-                <PopularSection/>
-                <PopularSection/>
-            </div>
-        );
-    }
+class Populars extends Component {
+  render() {
+    return (
+      <div className="Populars">
+        <PopularSection />
+        <PopularSection />
+      </div>
+    );
+  }
 }
 
 export default Populars;

@@ -1,43 +1,48 @@
-.TrendingItemBig{
-    display: inline-block;
-    max-width: 350px;
-    position: relative;
-    background: greenyellow;
-    margin:10px;
+.TrendingItemBig {
+  display: inline-block;
+  max-width: 350px;
+  position: relative;
+  background: greenyellow;
+  margin: 10px;
 }
 
-.TrendingItemBig__productImg{
-    width:100%;
+.TrendingItemBig__productImg {
+  width: 100%;
 }
 
-.TrendingItemBig__details{
-    position: absolute;
-    width:100%;
-    background:linear-gradient(to bottom, rgba(68,61,55,0.63) 0%,rgba(68,61,55,0.76) 56%,rgba(0,0,0,0.87) 100%); 
-    bottom: 0;
-    left:0;
-    display: flex;
-    padding: 10px;
-    color:white;
+.TrendingItemBig__details {
+  position: absolute;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(68, 61, 55, 0.63) 0%,
+    rgba(68, 61, 55, 0.76) 56%,
+    rgba(0, 0, 0, 0.87) 100%
+  );
+  bottom: 0;
+  left: 0;
+  display: flex;
+  padding: 10px;
+  color: white;
 }
 
-.TrendingItemBig__companyImg{
-    display: inline-block;
-    width:100%;
-    height: 100%;
-    max-width: 65px;
-    margin-right: 25px;
+.TrendingItemBig__companyImg {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  max-width: 65px;
+  margin-right: 25px;
 }
 
-.TrendingItemBig__Descriptions{
-    align-self: center;
+.TrendingItemBig__Descriptions {
+  align-self: center;
 }
 
-.TrendingItemBig__dealDescription{
-    font-weight: bold;
-    padding-bottom: 6px;
+.TrendingItemBig__dealDescription {
+  font-weight: bold;
+  padding-bottom: 6px;
 }
 
-.TrendingItemBig__companyName{
-    font-size: 0.8rem;
-} 
+.TrendingItemBig__companyName {
+  font-size: 0.8rem;
+}
