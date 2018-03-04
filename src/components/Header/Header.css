@@ -10,8 +10,9 @@
     color: rgb(255, 255, 255);
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     padding: 15px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     margin:0 20px;
     
 }
@@ -23,22 +24,20 @@
 .header__logo svg{
     fill : rgb(255, 255, 255);
     max-width:170px;
-    padding-top: 8px;
+    /* padding-top: 8px; */
 }
 
 .header__search{
-    width:65%;
-    padding: 0 30px;
+    width:70%;
+    padding: 0 40px;
 }
 
 .header__login{
-    width:20%;
-    background: red;
+    width:15%;
 }
 
 .header__menu{
     width:100%;
-    /* background: khaki; */
 }
 
 

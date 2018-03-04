@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Search.css"
 
-class Header extends Component{
+class Search extends Component{
     render(){
         return (
             <div className="search">
@@ -11,4 +11,4 @@ class Header extends Component{
     }
 }
 
-export default Header;
+export default Search;
