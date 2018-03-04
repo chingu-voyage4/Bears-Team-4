@@ -1,0 +1,23 @@
+.PopularSection{
+    border:1.1px solid #D3D3D3;
+    background: white;
+    padding:20px;
+}
+
+.PopularSection__headline {
+    color:#2AC2EB;
+    font-size:1.5rem;
+    text-align:center;
+    font-weight: bold;
+}
+
+.PopularSection__items ul{
+  columns: 5;
+  color:gray;
+  list-style-type: none;
+  padding-top:15px;
+}
+
+.PopularSection__items li{
+    padding-bottom: 10px;
+}

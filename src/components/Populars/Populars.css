@@ -1,0 +1,15 @@
+.Trending__title{
+    font-size: 1.5rem;
+    text-align: center;
+    margin:10px 0 20px 0;
+}
+
+.Trending__bigGrid{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Trending__smallGrid{
+    display: flex;
+    justify-content: space-between;
+}
