@@ -1,9 +1,15 @@
-.footer{
-    display: flex;
+.footerOverlay{
     width:100%;
     border-top: 6.1px solid #D3D3D3;
     border-bottom: 16.1px solid #602D6C;
+}
+
+.footer{
+    display: flex;
+    width:100%;
+    max-width:1200px;
     padding:20px;
+    margin:0 auto;
 }
 
 .footer__logo{
