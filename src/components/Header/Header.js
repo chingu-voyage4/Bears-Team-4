@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Header.css";
 
-import Search from "../Search/Search";
+import SearchContainer from "../../containers/SearchContainer";
 import Login from "../Login/Login";
 import Menu from "../Menu/Menu";
 import MobileMenu from "../MobileMenu/MobileMenu";
@@ -33,7 +33,7 @@ class Header extends Component {
             </div>
           </div>
           <div className="header__search">
-            <Search />
+            <SearchContainer />
           </div>
           <div className="header__login">
             <Login />
