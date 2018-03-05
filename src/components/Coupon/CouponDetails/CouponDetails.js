@@ -38,7 +38,9 @@ class CouponDetails extends Component {
     return (
       <div className="couponDetails">
         <div className="couponDetails__head">
-            <div onClick={this.toggleDetails.bind(this)}>More Details &nbsp; <i className="fas fa-angle-down" /></div> 
+            <div onClick={this.toggleDetails.bind(this)}>More Details &nbsp; 
+              <i className={`fas fa-angle-${this.state.detailsOpen ? "up" : "down"}`} />
+            </div> 
             <div className="couponDetails__head__like">
                 <i className="far fa-thumbs-up"></i> &nbsp; <i className="far fa-thumbs-down"></i>
             </div>

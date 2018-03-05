@@ -11,6 +11,10 @@
   font-weight: bold;
 }
 
+.popularSection__items {
+  display: none;
+}
+
 .popularSection__items ul {
   columns: 5;
   color: gray;
