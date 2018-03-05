@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Menu.css";
+import { Link } from "react-router-dom";
 
 class Menu extends Component {
   render() {
@@ -11,7 +12,9 @@ class Menu extends Component {
           <li>Near Me</li>
           <li>Spring Deals</li>
           <li>
-            Departments &nbsp;<i className="fas fa-angle-down" />
+            <Link to="/stores/" className="routerLinkReset">
+              Departments &nbsp;<i className="fas fa-angle-down" />
+            </Link>
           </li>
           <li>
             Explore &nbsp;<i className="fas fa-angle-down" />

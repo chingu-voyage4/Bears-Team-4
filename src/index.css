@@ -20,3 +20,8 @@ body {
     font-size: 12px;
   }
 }
+
+.routerLinkReset {
+  text-decoration: none;
+  color: inherit;
+}
