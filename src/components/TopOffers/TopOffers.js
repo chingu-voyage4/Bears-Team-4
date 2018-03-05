@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import "./TopOffers.css";
 
-import TopOffersItem from "./TopOffersItem/TopOffersItem";
+import Coupon from "../Coupon/Coupon";
 
 class TopOffers extends Component {
   render() {
     return (
       <div className="topOffers">
         <div className="topOffers__title">Top Offers</div>
-        <TopOffersItem />
-        <TopOffersItem />
-        <TopOffersItem />
+        <Coupon />
+        <Coupon />
+        <Coupon />
       </div>
     );
   }

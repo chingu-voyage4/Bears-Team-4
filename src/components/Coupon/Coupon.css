@@ -1,4 +1,4 @@
-.topOffersItem {
+.coupon {
   display: flex;
   flex-wrap: wrap;
   background: #ffffff;
@@ -7,52 +7,52 @@
   margin-bottom: 17px;
 }
 
-.topOffersItem > div {
+.coupon > div {
   padding: 15px;
 }
 
-.topOffersItem_image {
+.coupon_image {
   width: 15%;
   max-width: 120px;
   flex-grow: 5;
 }
 
-.topOffersItem_image img {
+.coupon_image img {
   width: 100%;
 }
 
-.topOffersItem_details {
+.coupon_details {
   width: 55%;
   flex-grow: 1;
 }
 
-.topOffersItem_details div {
+.coupon_details div {
   display: inline-block;
   padding: 10px;
 }
 
-.topOffersItem_details .type {
+.coupon_details .type {
   color: #602d99;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
-.topOffersItem_details .category {
+.coupon_details .category {
   color: gray;
   font-size: 0.8rem;
 }
 
-.topOffersItem_details .offer {
+.coupon_details .offer {
   display: block;
   font-size: 1.5em;
   color: #555555;
 }
 
-.topOffersItem_buttons {
+.coupon_buttons {
   width: 30%;
 }
 
-.topOffersItem_buttons .showButton {
+.coupon_buttons .showButton {
   /* margin:10px; */
   height: 50px;
   text-align: center;
@@ -64,14 +64,14 @@
   background: #1896bc;
 }
 
-.topOffersItem_buttons .saveButton {
+.coupon_buttons .saveButton {
   color: gray;
   font-size: 0.8rem;
   text-align: right;
   margin: 10px;
 }
 
-.topOffersItem_moreDetails {
+.coupon_moreDetails {
   width: 100%;
   height: 50px;
   margin-top: 20px;
@@ -81,7 +81,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .topOffersItem_buttons {
+  .coupon_buttons {
     display: none;
   }
 }
