@@ -27,10 +27,6 @@
   max-width: 170px;
 }
 
-.header__logo__mobile {
-  display: none;
-}
-
 .header__search {
   width: 70%;
   padding: 0 40px;
@@ -48,12 +44,6 @@
   .header__logo__svg,
   .header__login {
     display: none;
-  }
-
-  .header__logo__mobile {
-    display: initial;
-    font-size: 2.5rem;
-    /* z-index: 1000; */
   }
 
   .header__logo {

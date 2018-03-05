@@ -4,6 +4,7 @@ import "./Header.css";
 import Search from "../Search/Search";
 import Login from "../Login/Login";
 import Menu from "../Menu/Menu";
+import MobileMenu from "../MobileMenu/MobileMenu";
 
 class Header extends Component {
   render() {
@@ -25,11 +26,11 @@ class Header extends Component {
               </g>
             </svg>
             <div className="header__logo__mobile">
-              <i class="fas fa-bars" />
+              <MobileMenu/>
             </div>
           </div>
           <div className="header__search">
-            <Search />
+            <Search/>
           </div>
           <div className="header__login">
             <Login />
