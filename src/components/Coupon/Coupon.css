@@ -11,48 +11,48 @@
   padding: 15px;
 }
 
-.coupon_image {
+.coupon__image {
   width: 15%;
   max-width: 120px;
   flex-grow: 5;
 }
 
-.coupon_image img {
+.coupon__image img {
   width: 100%;
 }
 
-.coupon_details {
+.coupon__details {
   width: 55%;
   flex-grow: 1;
 }
 
-.coupon_details div {
+.coupon__details div {
   display: inline-block;
   padding: 10px;
 }
 
-.coupon_details .type {
+.coupon__details .type {
   color: #602d99;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
-.coupon_details .category {
+.coupon__details .category {
   color: gray;
   font-size: 0.8rem;
 }
 
-.coupon_details .offer {
+.coupon__details .offer {
   display: block;
   font-size: 1.5em;
   color: #555555;
 }
 
-.coupon_buttons {
+.coupon__buttons {
   width: 30%;
 }
 
-.coupon_buttons .showButton {
+.coupon__buttons .showButton {
   /* margin:10px; */
   height: 50px;
   text-align: center;
@@ -64,24 +64,20 @@
   background: #1896bc;
 }
 
-.coupon_buttons .saveButton {
+.coupon__buttons .saveButton {
   color: gray;
   font-size: 0.8rem;
   text-align: right;
   margin: 10px;
 }
 
-.coupon_moreDetails {
+.coupon__moreDetails {
   width: 100%;
-  height: 50px;
-  margin-top: 20px;
-  padding-top: 10px;
-  border-top: 1.1px solid #d3d3d3;
-  color: #60b7e6;
 }
 
 @media screen and (max-width: 600px) {
-  .coupon_buttons {
+  .coupon__buttons,
+  .coupon__moreDetails {
     display: none;
   }
 }

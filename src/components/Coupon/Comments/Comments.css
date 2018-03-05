@@ -1,0 +1,40 @@
+.comments {
+  color: black;
+}
+
+.comments__addForm {
+  display: flex;
+  flex-wrap: wrap;
+  /* background: red; */
+  width: 100%;
+  justify-content: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid gray;
+}
+
+.comments__addForm input[type="text"],
+.comments__addForm textarea {
+  font-family: "Lato", Calibri, Helvetica, Roboto, sans-serif;
+  font-size: 0.9rem;
+  width: 60%;
+  margin: 10px;
+  height: 40px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.comments__addForm textarea {
+  height: 100px;
+  resize: none;
+}
+
+.comments__addForm label {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.comments__posted {
+  max-height: 200px;
+  overflow-y: scroll;
+}

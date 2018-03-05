@@ -18,7 +18,7 @@ class Subscribe extends Component {
             type="text"
             placeholder="Email Address"
           />
-          <div class="subscribe__showButton">Subscribe</div>
+          <div className="subscribe__showButton">Subscribe</div>
         </div>
       </div>
     );
