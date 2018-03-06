@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import "./Header.css";
 
-import SearchContainer from "../../containers/SearchContainer";
-import Login from "../Login/Login";
-import Menu from "../Menu/Menu";
-import MobileMenu from "../MobileMenu/MobileMenu";
+import SearchContainer from "../Containers/SearchContainer";
+import Login from "./Login/Login";
+import Menu from "./Menu/Menu";
+import MobileMenu from "./MobileMenu/MobileMenu";
 import { Link } from "react-router-dom";
 
 class Header extends Component {

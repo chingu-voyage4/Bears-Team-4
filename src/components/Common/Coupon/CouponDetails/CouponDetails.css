@@ -1,46 +1,47 @@
 .couponDetails {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 20px;
-  padding-top: 10px;
   border-top: 1.1px solid #d3d3d3;
   color: #60b7e6;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 10px;
+  width: 100%;
 }
 
 .couponDetails__head {
-  width: 100%;
-  display: flex;
   align-items: center;
+  display: flex;
+  width: 100%;
 }
 
 .couponDetails__head__like {
   flex-grow: 10;
-  text-align: right;
   font-size: 1.5rem;
+  text-align: right;
 }
 
 .couponDetails__expand {
-  display: none;
-  /* background: rebeccapurple; */
-  width: 100%;
-  margin: 20px;
   border: 1px solid gray;
+  display: none;
+  margin: 20px;
+
+  /* background: rebeccapurple; */
+
+  width: 100%;
 }
 
 .couponDetails__expand__tabs {
-  display: flex;
   align-items: center;
-  text-align: center;
-  height: 50px;
-  border-bottom: 1px solid gray;
   background: #eee;
+  border-bottom: 1px solid gray;
   color: gray;
+  display: flex;
+  height: 50px;
+  text-align: center;
 }
 
 .couponDetails__expand__tabs a {
   display: inline-block;
-
   width: 100px;
 }
 
@@ -49,8 +50,8 @@
 }
 
 .couponDetails__expand__tabsInfo__details div {
-  margin: 20px;
   color: black;
+  margin: 20px;
 }
 
 .couponDetails__expand__tabsInfo__details div span {
@@ -59,6 +60,6 @@
 }
 
 .active {
-  font-weight: bold;
   color: purple;
+  font-weight: bold;
 }

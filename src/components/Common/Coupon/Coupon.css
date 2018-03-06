@@ -1,10 +1,12 @@
 .coupon {
   display: flex;
   flex-wrap: wrap;
-  background: #ffffff;
-  /* padding:15px; */
-  border: 1.5px #d3d3d3 solid;
   margin-bottom: 17px;
+
+  /* padding:15px; */
+
+  border: 1.5px #d3d3d3 solid;
+  background: #ffffff;
 }
 
 .coupon > div {
@@ -12,9 +14,9 @@
 }
 
 .coupon__image {
+  flex-grow: 5;
   width: 15%;
   max-width: 120px;
-  flex-grow: 5;
 }
 
 .coupon__image img {
@@ -22,8 +24,8 @@
 }
 
 .coupon__details {
-  width: 55%;
   flex-grow: 1;
+  width: 55%;
 }
 
 .coupon__details div {
@@ -32,14 +34,14 @@
 }
 
 .coupon__details .type {
-  color: #602d99;
-  font-weight: bold;
   font-size: 0.8rem;
+  font-weight: bold;
+  color: #602d99;
 }
 
 .coupon__details .category {
-  color: gray;
   font-size: 0.8rem;
+  color: gray;
 }
 
 .coupon__details .offer {
@@ -53,22 +55,23 @@
 }
 
 .coupon__buttons .showButton {
+  font-size: 0.9rem;
+  font-weight: bold;
+  line-height: 3rem;
   /* margin:10px; */
+
   height: 50px;
   text-align: center;
-  font-weight: bold;
-  font-size: 0.9rem;
-  line-height: 3rem;
   color: white;
   border-radius: 3px;
   background: #1896bc;
 }
 
 .coupon__buttons .saveButton {
-  color: gray;
   font-size: 0.8rem;
-  text-align: right;
   margin: 10px;
+  text-align: right;
+  color: gray;
 }
 
 .coupon__moreDetails {

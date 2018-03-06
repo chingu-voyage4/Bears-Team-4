@@ -47,9 +47,6 @@ class Search extends Component {
               ? "search__dropDown search__dropDown_show"
               : "search__dropDown"
           }
-          onClick={() => {
-            ToggleDropDown(false);
-          }}
         >
           <SearchDropDownItem
             title="Recent"

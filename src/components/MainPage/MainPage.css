@@ -1,9 +1,9 @@
-.BodyContainer {
+.mainPage {
   max-width: 1200px;
   width: 100%;
   padding: 20px;
 }
 
-.BodyContainer > * {
+.mainPage > * {
   margin-bottom: 50px;
 }

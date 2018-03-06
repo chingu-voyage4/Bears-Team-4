@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./TopOffers.css";
 
-import Coupon from "../Coupon/Coupon";
+import Coupon from "../../Common/Coupon/Coupon";
 
 class TopOffers extends Component {
   render() {

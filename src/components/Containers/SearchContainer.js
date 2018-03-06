@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import * as searchActions from "../actions/searchActions";
+import * as searchActions from "../../actions/searchActions";
 import { bindActionCreators } from "redux";
 
-import Search from "../components/Search/Search";
+import Search from "../Header/Search/Search";
 
 const mapStateToProps = state => {
   return {
