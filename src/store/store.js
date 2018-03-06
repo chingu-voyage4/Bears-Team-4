@@ -10,8 +10,8 @@ const rootReducer = combineReducers({
 
 const defaultState = {
   search: {
-    searchTerm: "",
-    recent: [],
+    searchTerm: "Hello",
+    recentTerms: ["cat", "dog"],
     suggestion: ["kfc", "macdonalds", "pizza hut", "dominos"]
   }
 };
