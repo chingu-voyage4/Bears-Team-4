@@ -3,18 +3,13 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 
 import searchReducer from "../reducers/searchReducer";
+import storesReducer from "../reducers/storesReducer";
+import defaultState from "./defaultState";
 
 const rootReducer = combineReducers({
-  search: searchReducer
+  search: searchReducer,
+  stores: storesReducer
 });
-
-const defaultState = {
-  search: {
-    searchTerm: "Hello",
-    recentTerms: ["cat", "dog"],
-    suggestion: ["kfc", "macdonalds", "pizza hut", "dominos"]
-  }
-};
 
 const middlewares = applyMiddleware(thunk, logger);
 

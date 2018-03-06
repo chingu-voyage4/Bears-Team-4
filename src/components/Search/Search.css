@@ -25,25 +25,23 @@
   z-index: 9999;
   color: black;
   width: 100%;
+  border: 1px solid gray;
 }
 
-.search__dropDown ul {
-  list-style-type: none;
-  margin: 10px;
-  padding: 0;
-  text-transform: capitalize;
-}
-
-.search__dropDown li {
-  padding: 10px;
-}
-
-.search__dropDown__column ul li:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.search__input:focus + .search__dropDown {
+/* .search__input:focus + .search__dropDown,
+.search__dropDown:hover {
   display: flex;
   position: absolute;
-  flex-basis: 1000px;
+} */
+
+.search__dropDown_show,
+.search__dropDown:active {
+  display: flex;
+  position: absolute;
+}
+
+@media screen and (max-width:400px){
+  .search__dropDown{
+    display: none;
+  }
 }

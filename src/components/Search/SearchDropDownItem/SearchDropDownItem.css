@@ -1,0 +1,41 @@
+.searchDropDownItem {
+  display: flex;
+  width: 100%;
+}
+
+.searchDropDownItem ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+  text-transform: capitalize;
+}
+
+.searchDropDownItem__column {
+  border-right: 1px solid gray;
+  flex-grow: 1;
+}
+
+.searchDropDownItem__column ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.searchDropDownItem__column span {
+  /* text-indent: 10px; */
+  padding: 10px;
+  font-style: italic;
+}
+
+.searchDropDownItem li {
+  padding: 10px;
+  width: 50%;
+}
+
+.searchDropDownItem__column ul li:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.searchDropDownItem:last-child ul {
+  border: none;
+}
