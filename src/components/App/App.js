@@ -1,3 +1,8 @@
+/**
+ * Root component where all other components get rendered.
+ * Main three parts are HEADER + ROUTE SPECIFIC PAGE + FOOTER
+ **/
+
 import { Route } from "react-router-dom";
 import React, { Component } from "react";
 

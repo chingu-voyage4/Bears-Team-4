@@ -33,18 +33,18 @@
   padding: 10px;
 }
 
-.coupon__details .type {
+.coupon__details__type {
   font-size: 0.8rem;
   font-weight: bold;
   color: #602d99;
 }
 
-.coupon__details .category {
+.coupon__details__category {
   font-size: 0.8rem;
   color: gray;
 }
 
-.coupon__details .offer {
+.coupon__details__.offer {
   display: block;
   font-size: 1.5em;
   color: #555555;

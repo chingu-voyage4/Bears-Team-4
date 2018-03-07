@@ -1,24 +1,32 @@
 .menu ul {
   display: inline-flex;
+  font-size: 0.9rem;
   justify-content: center;
   list-style-type: none;
-  width: 100%;
   padding: 0;
   padding-top: 10px;
-  font-size: 0.9rem;
+  width: 100%;
 }
 
 .menu li {
-  padding: 0 20px;
+  margin: 0 20px;
   padding-bottom: 10px;
+  text-align: center;
 }
 
 .menu li:hover {
-  border-bottom: 2px solid;
+  border-bottom: 2px solid white;
 }
 
-@media screen and (max-width: 500px) {
-  .menu ul li:nth-child(-n + 4) {
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
+
+/** 
+ * This select first three elements in menu list and hide them when width is low than 500px.
+ * Also Outside of this component When 600px is reached LOGIN and SVG LOGO is hided and show mobile menu. (See MOBILE_MENU and HEADER)
+**/
+
+@media screen and (max-width: 700px) {
+  .menu ul li:nth-child(-n + 3) {
     display: none;
   }
 }

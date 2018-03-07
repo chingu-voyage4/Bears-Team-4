@@ -1,6 +1,12 @@
+/**
+ * This component render CouponBox with details, comments, like,.....
+ */
+
 import React, { Component } from "react";
-import "./Coupon.css";
+
 import CouponDetails from "./CouponDetails/CouponDetails";
+
+import "./Coupon.css";
 
 class Coupon extends Component {
   render() {
@@ -13,9 +19,11 @@ class Coupon extends Component {
           />
         </div>
         <div className="coupon__details">
-          <div className="type">Sale</div> -
-          <div className="category">Internet</div>
-          <div className="offer">$400 Reward Card + TV/Internet $65/mo</div>
+          <div className="coupon__details__type">Sale</div> -
+          <div className="coupon__details__category">Internet</div>
+          <div className="coupon__details__offer">
+            $400 Reward Card + TV/Internet $65/mo
+          </div>
         </div>
         <div className="coupon__buttons">
           <div className="saveButton">
@@ -24,8 +32,7 @@ class Coupon extends Component {
           <div className="showButton">Show Code</div>
         </div>
         <div className="coupon__moreDetails">
-          
-          <CouponDetails/>
+          <CouponDetails />
         </div>
       </div>
     );

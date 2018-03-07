@@ -3,6 +3,7 @@
   width: 100%;
 }
 
+/* This styles get applied to both "ul" lists. */
 .searchDropDownItem ul {
   list-style-type: none;
   margin: 10px;
@@ -10,32 +11,35 @@
   text-transform: capitalize;
 }
 
+.searchDropDownItem li {
+  padding: 10px;
+  width: 50%;
+}
+
+/* First "ul" that contain headline and actual link list */
 .searchDropDownItem__column {
   border-right: 1px solid gray;
   flex-grow: 1;
 }
 
+/* We are adding border right to every list. But this remove last items border */
+.searchDropDownItem:last-child ul {
+  border: none;
+}
+
+/* Second "ul" -  Actual link list */
 .searchDropDownItem__column ul {
   display: flex;
-  flex-wrap: wrap;
   flex: 1;
-}
-
-.searchDropDownItem__column span {
-  /* text-indent: 10px; */
-  padding: 10px;
-  font-style: italic;
-}
-
-.searchDropDownItem li {
-  padding: 10px;
-  width: 50%;
+  flex-wrap: wrap;
 }
 
 .searchDropDownItem__column ul li:hover {
   background: rgba(0, 0, 0, 0.2);
 }
 
-.searchDropDownItem:last-child ul {
-  border: none;
+/* Span that get displayed if nothing matched */
+.searchDropDownItem__column--noMatched {
+  font-style: italic;
+  padding: 10px;
 }

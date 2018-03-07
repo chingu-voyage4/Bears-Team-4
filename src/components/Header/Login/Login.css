@@ -1,10 +1,10 @@
 .login {
+  align-items: center; /* Vertically centering child elements */
   display: flex;
-  align-items: center;
 }
 
 .login__photo {
-  font-size: 2rem;
+  font-size: 2rem; /* Enlarging user logo */
   padding-right: 15px;
 }
 

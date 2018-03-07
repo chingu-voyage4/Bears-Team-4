@@ -1,7 +1,12 @@
+/**
+ * When user is not logged this component render "LogIn/SignUp" message and redirect to "/login" page.
+ * When user is logged this component render username and drop down menu which have user specific tasks.
+ **/
+
 import React, { Component } from "react";
 import "./Login.css";
 
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   render() {
@@ -11,7 +16,7 @@ class Login extends Component {
           <i className="far fa-user-circle" />
         </div>
         <div className="login__details">
-          <Link to="/login" className="routerLinkReset">
+          <Link to="/login" className="router-link-reset">
             <div className="login__details_login">Log In / Sign Up</div>
             <div className="login__details_cashback">$0.00 Cash Back</div>
           </Link>

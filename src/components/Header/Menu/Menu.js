@@ -1,23 +1,35 @@
-import React, { Component } from "react";
-import "./Menu.css";
+/**
+ * This component render Horizontal Main Menu.
+ * Each menu item render secific page between HEADER and FOTTER. (See App.js)
+ **/
+
 import { Link } from "react-router-dom";
+import React, { Component } from "react";
+
+import "./Menu.css";
 
 class Menu extends Component {
   render() {
     return (
       <div className="menu">
         <ul>
-          <li>Cash Back</li>
-          <li>Gift Card Deals</li>
+          <li>Coupons</li>
+          <li>Deals</li>
           <li>Near Me</li>
-          <li>Spring Deals</li>
           <li>
-            <Link to="/stores/" className="routerLinkReset">
-              Departments &nbsp;<i className="fas fa-angle-down" />
+            <Link to="/couponSubmit" className="router-link-reset">
+              Submit Coupon
             </Link>
           </li>
           <li>
-            Explore &nbsp;<i className="fas fa-angle-down" />
+            <Link to="/stores" className="router-link-reset">
+              Stores &nbsp;<i className="fas fa-angle-down" />
+            </Link>
+          </li>
+          <li>
+            <Link to="/categories" className="router-link-reset">
+              Categories &nbsp;<i className="fas fa-angle-down" />
+            </Link>
           </li>
         </ul>
       </div>
