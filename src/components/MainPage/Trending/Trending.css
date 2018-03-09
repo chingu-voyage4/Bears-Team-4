@@ -1,31 +1,25 @@
 .trending__title {
   font-size: 1.5rem;
-  text-align: center;
   margin: 10px 0 20px 0;
+  text-align: center;
 }
 
-.trending__bigGrid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.trending__smallGrid {
+.trending__big-grid,
+.trending__small-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  width: 100%;
 }
 
-.trending__bigGrid > .trendingItemBig {
-  flex: 220px;
+.trending__small-grid {
+  flex-wrap: nowrap;
 }
 
-.trending__smallGrid > .trendingItemSmall {
-  flex: 80px;
-}
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
 
-@media screen and (max-width: 630px) {
-  .trending__smallGrid {
+@media screen and (max-width: 800px) {
+  .trending__small-grid {
     display: none;
   }
 }

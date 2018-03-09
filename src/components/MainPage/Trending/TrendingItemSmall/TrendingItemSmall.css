@@ -1,18 +1,14 @@
-.trendingItemSmall {
-  display: inline-block;
-  position: relative;
+.trending-item-small {
+  flex: 80px;
   margin: 10px;
+  position: relative;
 }
 
-.trendingItemSmall__companyImg {
-  display: inline-block;
+.trending-item-small__logo-img {
   width: 100%;
 }
 
-.trendingItemSmall__descriptions {
-  text-align: center;
-}
-
-.trendingItemSmall__dealDescription {
+.trending-item-small__description {
   padding: 10px;
+  text-align: center;
 }

@@ -109,6 +109,65 @@ const defaultState = {
       "Toys",
       "Travel"
     ]
+  },
+  trending: [
+    {
+      productImg: "https://source.unsplash.com/500x500/?a",
+      logoImg: "https://source.unsplash.com/200x200/?b",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+    {
+      productImg: "https://source.unsplash.com/500x500/?c",
+      logoImg: "https://source.unsplash.com/200x200/?d",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+    {
+      productImg: "https://source.unsplash.com/500x500/?e",
+      logoImg: "https://source.unsplash.com/200x200/?f",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+    {
+      productImg: "https://source.unsplash.com/500x500/?g",
+      logoImg: "https://source.unsplash.com/200x200/?h",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+    {
+      productImg: "https://source.unsplash.com/500x500/?i",
+      logoImg: "https://source.unsplash.com/200x200/?j",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+    {
+      productImg: "https://source.unsplash.com/500x500/?k",
+      logoImg: "https://source.unsplash.com/200x200/?l",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+    {
+      productImg: "https://source.unsplash.com/500x500/?m",
+      logoImg: "https://source.unsplash.com/200x200/?n",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+    {
+      productImg: "https://source.unsplash.com/500x500/?o",
+      logoImg: "https://source.unsplash.com/200x200/?p",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+    {
+      productImg: "https://source.unsplash.com/500x500/?q",
+      logoImg: "https://source.unsplash.com/200x200/?r",
+      dealDescription: "Deal Description",
+      companyName: "My Company"
+    },
+  ],
+  coupons: {
+    "1": "adasd"
   }
 };
 

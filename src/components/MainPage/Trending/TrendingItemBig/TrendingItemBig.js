@@ -1,28 +1,34 @@
+/**
+ * This compoent render Big Product Picture and at bottom Small Logo + Deal Description + Company Name
+ */
+
 import React, { Component } from "react";
+
 import "./TrendingItemBig.css";
 
 class TrendingItemBig extends Component {
   render() {
+    const {
+      productImg,
+      logoImg,
+      dealDescription,
+      companyName
+    } = this.props.item;
     return (
-      <div className="trendingItemBig">
+      <div className="trending-item-big">
         <img
-          className="trendingItemBig__productImg"
+          className="trending-item-big__product-img"
           alt=""
-          src="https://mediaservice.retailmenot.com/image/MADNUSZMMRALJJUMURSFVYISKI?width=350"
+          src={productImg}
         />
-        <div className="trendingItemBig__details">
-          <img
-            className="trendingItemBig__companyImg"
-            alt=""
-            src="https://www.retailmenot.com/thumbs/logos/m/lordandtaylor.com-coupons.jpg?versionId=ZxTkF4sD8D3n2J_3ryiZUedTvEUhBkUC"
-          />
-          <div className="trendingItemBig__Descriptions">
-            <div className="trendingItemBig__dealDescription">
-              Extre 25% Off
+        <div className="trending-item-big__details">
+          <img className="details__logo-img" alt="" src={logoImg} />
+          {/* Bottom box */}
+          <div className="details__info">
+            <div className="details__info__deal-description">
+              {dealDescription}
             </div>
-            <div className="trendingItemBig__companyName">
-              Saks Fifth Avenue Code
-            </div>
+            <div className="details__info___company-name">{companyName}</div>
           </div>
         </div>
       </div>
