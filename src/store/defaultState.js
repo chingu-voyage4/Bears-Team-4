@@ -8,6 +8,16 @@ const defaultState = {
     dropDown: false
   },
   stores: {
+    stores: [
+      {
+        storeId: "xyz1",
+        name: "KFC",
+        description: "",
+        logoImg: "https://source.unsplash.com/200x200/?h",
+        category: [""],
+        rating: 0
+      }
+    ],
     names: [
       "99",
       "Cents",
@@ -164,11 +174,45 @@ const defaultState = {
       logoImg: "https://source.unsplash.com/200x200/?r",
       dealDescription: "Deal Description",
       companyName: "My Company"
-    },
+    }
   ],
-  coupons: {
-    "1": "adasd"
-  }
+  coupons: [
+    {
+      couponId: "xyz1",
+      storeId: "jhk1",
+      type: "Coupon",
+      category: ["food"],
+      addedDate: "01/04/18",
+      expireDate: "03/04/18",
+      title: "Up to 75% off + Free shipping ",
+      description:
+        "Kate spade surprise sale! Get up to 75% off + Free shipping on all orders to U.S. and Canada when you spend $99 or more. all sales final",
+      exclutionDetails: "",
+      url: "",
+      useCount: 0,
+      likes: 0,
+      comments: [
+        {
+          commentId: "xx",
+          comment: "Awesome",
+          addedDate: "03/05/18",
+          userId: "abc2"
+        },
+        {
+          commentId: "xx2",
+          comment: "Awesome2",
+          addedDate: "03/05/18",
+          userId: "abc1"
+        },
+        {
+          commentId: "xx3",
+          comment: "Awesome3",
+          addedDate: "03/05/18",
+          userId: "abc3"
+        }
+      ]
+    }
+  ]
 };
 
 export default defaultState;

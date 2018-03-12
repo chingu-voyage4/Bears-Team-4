@@ -5,12 +5,14 @@ import logger from "redux-logger";
 import searchReducer from "../reducers/searchReducer";
 import storesReducer from "../reducers/storesReducer";
 import trendingReducer from "../reducers/storesReducer";
+import couponsReducer from "../reducers/couponsReducer";
 import defaultState from "./defaultState";
 
 const rootReducer = combineReducers({
   search: searchReducer,
   stores: storesReducer,
-  trending: trendingReducer
+  trending: trendingReducer,
+  coupons: couponsReducer
 });
 
 const middlewares = applyMiddleware(thunk, logger);

@@ -1,84 +1,82 @@
 .coupon {
+  background: #ffffff;
+  border: 1.5px #d3d3d3 solid;
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 17px;
-
-  /* padding:15px; */
-
-  border: 1.5px #d3d3d3 solid;
-  background: #ffffff;
 }
 
+/* Image, details, buttons, more details */
 .coupon > div {
   padding: 15px;
 }
 
-.coupon__image {
-  flex-grow: 5;
+.coupon__store-image {
+  align-self: center;
+  min-width: 100px;
   width: 15%;
-  max-width: 120px;
 }
 
-.coupon__image img {
+.coupon__store-image img {
   width: 100%;
 }
 
+/* Hold type, store, and description */
 .coupon__details {
   flex-grow: 1;
-  width: 55%;
-}
-
-.coupon__details div {
-  display: inline-block;
-  padding: 10px;
+  width: 60%;
 }
 
 .coupon__details__type {
+  color: #602d99;
+  display: inline-block;
   font-size: 0.8rem;
   font-weight: bold;
-  color: #602d99;
+  padding-right: 10px;
 }
 
-.coupon__details__category {
-  font-size: 0.8rem;
+.coupon__details__store {
   color: gray;
+  display: inline-block;
+  font-size: 0.8rem;
 }
 
-.coupon__details__.offer {
-  display: block;
-  font-size: 1.5em;
+.coupon__details__description {
   color: #555555;
+  font-size: 1.5em;
+  padding-top: 10px;
 }
 
+/* Hold Save and Show code buttons */
 .coupon__buttons {
-  width: 30%;
+  width: 20%;
 }
 
 .coupon__buttons .showButton {
+  background: #1896bc;
+  border-radius: 3px;
+  color: white;
   font-size: 0.9rem;
   font-weight: bold;
-  line-height: 3rem;
-  /* margin:10px; */
-
   height: 50px;
+  line-height: 3rem;
   text-align: center;
-  color: white;
-  border-radius: 3px;
-  background: #1896bc;
 }
 
 .coupon__buttons .saveButton {
+  color: gray;
   font-size: 0.8rem;
   margin: 10px;
   text-align: right;
-  color: gray;
 }
 
 .coupon__moreDetails {
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
+
+@media screen and (max-width: 700px) {
   .coupon__buttons,
   .coupon__moreDetails {
     display: none;

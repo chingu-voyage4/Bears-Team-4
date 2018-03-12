@@ -17,12 +17,12 @@ import "./MainPage.css";
 
 class MainPage extends Component {
   render() {
-    const { trendingItems } = this.props;
+    const { trendingItems, coupons, stores } = this.props;
 
     return (
       <div className="mainPage">
         <TrendingDeals trendingItems={trendingItems} />
-        <TopOffers />
+        <TopOffers coupons={coupons} stores={stores} />
         <Populars />
         <Subscribe />
       </div>
@@ -33,6 +33,8 @@ class MainPage extends Component {
 // Specifying which state from store we want as props
 const mapStateToProps = state => {
   return {
+    stores: state.stores,
+    coupons: state.coupons,
     trendingItems: state.trending
   };
 };

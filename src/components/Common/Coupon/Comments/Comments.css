@@ -2,36 +2,36 @@
   color: black;
 }
 
-.comments__addForm {
+.comments__add-form {
+  border-bottom: 1px solid gray;
   display: flex;
   flex-wrap: wrap;
-  /* background: red; */
-  width: 100%;
   justify-content: center;
   padding-bottom: 25px;
-  border-bottom: 1px solid gray;
+  width: 100%;
 }
 
-.comments__addForm input[type="text"],
-.comments__addForm textarea {
+.comments__add-form input[type="text"],
+.comments__add-form textarea {
+  border: 1px solid gray;
+  border-radius: 3px;
   font-family: "Lato", Calibri, Helvetica, Roboto, sans-serif;
   font-size: 0.9rem;
-  width: 60%;
-  margin: 10px;
   height: 40px;
-  border: 1px solid gray;
+  margin: 10px;
   padding: 10px;
-  border-radius: 3px;
+  width: 60%;
 }
 
-.comments__addForm textarea {
+.comments__add-form textarea {
   height: 100px;
   resize: none;
 }
 
-.comments__addForm label {
-  text-align: center;
+/* For checkbox */
+.comments__add-form label {
   margin-top: 12px;
+  text-align: center;
 }
 
 .comments__posted {

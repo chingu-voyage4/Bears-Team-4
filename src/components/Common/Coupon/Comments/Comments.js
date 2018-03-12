@@ -1,31 +1,33 @@
 import React, { Component } from "react";
-import "./Comments.css";
+
 import CommentItem from "../CommentItem/CommentItem";
 
-class Comments extends Component {
+import "./Comments.css";
 
+class Comments extends Component {
   render() {
+    const { comments } = this.props;
+
     return (
       <div className="comments" style={this.props.showHide}>
-        <form className="comments__addForm">
-          <input type="text" name="name" placeholder="First Name (Optional)"/>
-          <textarea type="text" name="comment" placeholder="Add A Comment .... (Press Enter To Post Comment)"></textarea>
-          <label htmlFor="location"><input type="checkbox" name="location"/>Include Colombo, Sri Lanka With My Comment To Help Other Users.</label> 
+        {/* Form to add new comments */}
+        <form className="comments__add-form">
+          <input type="text" name="name" placeholder="First Name (Optional)" />
+          <textarea
+            type="text"
+            name="comment"
+            placeholder="Add A Comment .... (Press Enter To Post Comment)"
+          />
+          <label htmlFor="location">
+            <input type="checkbox" name="location" />Include Colombo, Sri Lanka
+            With My Comment To Help Other Users.
+          </label>
         </form>
+        {/* Already posted comments */}
         <div className="comments__posted">
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
-            <CommentItem/>
+          {comments.map(comment => {
+            return <CommentItem key={comment.commentId} comment={comment} />;
+          })}
         </div>
       </div>
     );
