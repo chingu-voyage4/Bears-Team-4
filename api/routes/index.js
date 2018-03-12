@@ -25,20 +25,20 @@ module.exports = function(passport){
     
     /* GET Registration Page */
 	router.get('/signup', function(req, res){
-		res.render('Welcome to the Register page');
+		res.send('Welcome to the Register page');
     });
     
     /* Handle Registration POST */
 	router.post('/signup', passport.authenticate('signup', {
-		successRedirect: '/home',
-		failureRedirect: '/signup',
+		successRedirect: '/api/home',
+		failureRedirect: '/api/signup',
 		failureFlash : true  
 	}));
 
 	/* Handle Login POST */
 	router.post('/login', passport.authenticate('login', {
-		successRedirect: '/home',
-		failureRedirect: '/',
+		successRedirect: '/api/home',
+		failureRedirect: '/api/login',
 		failureFlash : true  
 	}));
 
@@ -46,15 +46,19 @@ module.exports = function(passport){
      * This route is protected and if it is not authenticated,
      * it will redirects to login page.
     */
-    router.get('/home', isAuthenticated, function(req, res){
-		res.send('Welcome to the Home');
+  router.get('/home', isAuthenticated, function(req, res){
+		res.send('Welcome to the Home - This is SECRET page');
 	});
+  // router.get('/home', function(req, res){
+	// 	res.send('Welcome to the Home');
+	// });
 
 	/* Handle Logout */
 	router.get('/signout', function(req, res) {
 		req.logout();
 		res.redirect('/');
 	});
+
 
 	return router;
 }

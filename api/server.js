@@ -13,17 +13,20 @@ const initPassport = require('./passport/init');
 var routes = require('./routes/index')(passport);
 
 // // Connect to DB-Local:
-// NOTE: Uncomment belgit ow line if you want to save data locally
- mongoose.connect(config.db.local);
+// NOTE: Uncomment below line if you want to save data locally
+mongoose.connect(config.db.local);
 
 // Connect to DB-Cloud
 // NOTE: Uncomment below line if you want to save data in the cloud(Mlab)
 //mongoose.connect(config.db.mlab);
 
+// Setting up view engine. If decided to use view engine add views to "view" folder.
+app.set('view engine', 'ejs');
+
 app.use(cors());
 app.use(morgan('dev'));
 app.use(cookieParser());
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, "../", 'build')));
 app.use(
   session({
@@ -54,7 +57,7 @@ app.use(function(req, res, next) {
 if (app.get('env') === 'development') {
   app.use(function(err, req, res, next) {
       res.status(err.status || 500);
-      res.render('error', {
+      res.json({
           message: err.message,
           error: err
       });
