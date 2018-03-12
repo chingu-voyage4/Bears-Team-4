@@ -13,7 +13,7 @@ const initPassport = require('./passport/init');
 var routes = require('./routes/index')(passport);
 
 // // Connect to DB-Local:
-// NOTE: Uncomment below line if you want to save data locally
+// NOTE: Uncomment belgit ow line if you want to save data locally
  mongoose.connect(config.db.local);
 
 // Connect to DB-Cloud
@@ -24,7 +24,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "../", 'build')));
 app.use(
   session({
     secret: config.sessionSecret,
