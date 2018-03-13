@@ -6,13 +6,14 @@ import { Row } from "react-bootstrap";
 import "./Main.css";
 import MainContent from "../MainContent/MainContent";
 import NotFound from "../NotFound/NotFound";
+import Signup from "../Signup/Signup";
 import { Switch, Route} from 'react-router-dom';
 
 const Main = props => (
 	<main>
 		<Switch>
 			<Route exact path="/" render={()=><MainContent json={props.json}/>} />
-			<Route exact path="/signup" render={()=><MainContent json={props.json}/>} />
+			<Route exact path="/signup" render={()=><Signup/>} />
 			<Route component={NotFound} />
 		</Switch>
 	</main>
