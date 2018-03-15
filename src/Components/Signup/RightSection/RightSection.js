@@ -27,7 +27,7 @@ import "./RightSection.css";
 
 const RightSection = props => (
 	<MuiThemeProvider>
-		<Col mdOffset={3} sm={9}>
+		<Col mdOffset={3} sm={7}>
 			<div className="right-section">
 				<div className="upper-card">
 					<Card>

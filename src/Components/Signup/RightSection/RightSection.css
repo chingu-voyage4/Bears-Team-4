@@ -22,7 +22,7 @@
     flex-grow: 1;
 }
 .upper-card{
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     margin-top:15px;
     padding: 20px 0px;
 }
@@ -38,7 +38,7 @@ svg>path{
     padding-bottom: 10%; 
 }
 .section{
-    padding-top: 5%;
+    padding-top: 7%;
 }
 .field-text{
     font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
