@@ -1,29 +1,24 @@
-.title{
-	font-weight: 400;
-    line-height: 1.25;
-    color: #fff;
-    font-size: 18px;
-    font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
+.divider__content {
+    display: inline-block;
+    padding: 0 1em;
+    color: #d3d3d3;
 }
-.subtitle{
-	font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 1.6;
-    color:#fff;
+.divider:after, .divider:before {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    background-color: #f1f1f1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
 }
-.trending-image{
-	height: 250px;
-	width: 250px;
+.upper-card{
+    margin-bottom: 50px;
+    margin-top:35px;
 }
-.trending-card{
-	height: 25%;
-	width: 30%;
+svg{
+    background-color: aliceblue;
+    border:2px solid white;
 }
-.text{
-	margin: 10px auto 0;
-    color: #555;
-    font-size: 15px;
-    line-height: 1.2;
-    text-align: center;
+svg>path{
+    fill: blue;
 }

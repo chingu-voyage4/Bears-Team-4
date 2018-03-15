@@ -14,7 +14,7 @@ import "./LeftSection.css";
 const style = {
 	boxShadow: 0
 };
-const TrendingCard = props => (
+const LeftSection = props => (
 	<MuiThemeProvider>
 		<div className="left-section">
 			<h1>Create an account</h1>
@@ -34,4 +34,4 @@ const Services=props=>(
     />
     </Card>
 );
-export default TrendingCard;
+export default LeftSection;
