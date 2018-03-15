@@ -27,6 +27,12 @@ var UserSchema = new Schema(
     },
     email: { type: String, required: true, unique: true, index: true },
     password: { type: String, required: true },
+    // Define user's capabilities
+    role: {
+      type: String,
+      required: true,
+      enum: ["superAdmin", "admin", "user"]
+    },
     profileImgUrl: { type: String },
     savedCoupons: [{ type: Schema.Types.ObjectId }], // Reference to "Coupons" collection "id"
     favouriteStores: [{ type: Schema.Types.ObjectId }] // Reference to "Stores" collection "id"

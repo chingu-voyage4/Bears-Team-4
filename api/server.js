@@ -11,8 +11,6 @@ const app = express();
 const mongoose = require("mongoose");
 const initPassport = require("./passport/init");
 const routes = require("./routes/index")(passport);
-const couponRoutes = require("./routes/coupon");
-const addMockData = require("./utils/mockData/addMockData"); // Just for development. Remove this in production.
 
 // // Connect to DB-Local:
 // NOTE: Uncomment below line if you want to save data locally
@@ -48,11 +46,6 @@ initPassport(passport);
 
 // for using routes
 app.use("/api", routes);
-app.use("/api/coupon", couponRoutes);
-
-// Just for development. Remove this in production.
-// Run this path to completly drop database(Be Careful!!!) and Fill database with relevent mock data.
-app.use("/api/addMockData", addMockData);
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {

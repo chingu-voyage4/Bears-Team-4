@@ -22,6 +22,9 @@ function addMockData(req, res) {
 
     // Inserting Users mock data
     usersData.forEach(user => {
+      // Making some changes to mock data
+      user.role = "user";
+
       User.create(user);
     });
 
