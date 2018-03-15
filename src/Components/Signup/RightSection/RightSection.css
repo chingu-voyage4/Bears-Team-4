@@ -1,3 +1,13 @@
+.divider {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    text-transform: uppercase;
+    text-align: center;
+}
 .divider__content {
     display: inline-block;
     padding: 0 1em;
@@ -12,11 +22,9 @@
     flex-grow: 1;
 }
 .upper-card{
-    margin-bottom: 20px;
-    margin-top:35px;
-}
-.upper-section,.lower-section{
-    padding: 15%;
+    margin-bottom: 15px;
+    margin-top:15px;
+    padding: 20px 0px;
 }
 svg{
     background-color: white;
@@ -25,6 +33,30 @@ svg>path{
     fill: blue;
 }
 .lower-card-content{
-    margin-left:5%;
-    margin-right:5%;
+    margin-left:10%;
+    margin-right:10%;
+    padding-bottom: 10%; 
+}
+.section{
+    padding-top: 5%;
+}
+.field-text{
+    font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    color:#fff;
+}
+.upper-card>div{
+    text-align: center;
+}
+.upper-card-text{
+    color: #555;
+    font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.input-group-addon{
+    background-color: white;
 }
