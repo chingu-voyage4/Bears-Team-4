@@ -3,13 +3,14 @@ const Schema = mongoose.Schema;
 
 // Schema options
 const schemaOptions = {
-  timestamps: true // Automatically add "created_at" and "updated_at" to schema, and sub schema
+  timestamps: true // "createdAt" and "updatedAt" automatically added here
 };
 
-// Subdoc schema for "couponSchema", Used to track usages like usedBy, likedBy
+// Subdoc schema for "couponSchema", Used to track usages like "usedBy", "likedBy"
 const usageSchema = new Schema(
   {
-    userId: { type: Schema.Types.ObjectId, required: true } // Reference to "Users" collection "id"
+    userId: { type: Schema.Types.ObjectId, required: true, index: true } // Reference to "Users" collection "id"
+    // "createdAt" and "updatedAt" automatically added here
   },
   schemaOptions
 );
@@ -17,8 +18,9 @@ const usageSchema = new Schema(
 // Subdoc schema for "couponSchema", Used to track comments
 const commentSchema = new Schema(
   {
-    userId: { type: Schema.Types.ObjectId, required: true }, // Reference to "Users" collection "id"
+    userId: { type: Schema.Types.ObjectId, required: true, index: true }, // Reference to "Users" collection "id"
     comment: { type: String, required: true }
+    // "createdAt" and "updatedAt" automatically added here
   },
   schemaOptions
 );
@@ -26,19 +28,26 @@ const commentSchema = new Schema(
 // Main schema
 const couponSchema = new Schema(
   {
-    kind: { type: String, required: true, enum: ["coupon", "deal"] },
+    kind: {
+      type: String,
+      required: true,
+      enum: ["coupon", "deal"], // Only this two values are valid
+      index: true
+    },
     category: [{ type: String, required: true, index: true }],
     tags: [{ type: String, index: true }],
     title: { type: String, required: true },
     description: { type: String, required: true },
+    code: { type: String }, // Code should only availabe for "kind == coupon"
     exclutionDetails: { type: String },
     linkUrl: { type: String, required: true },
     imgUrl: { type: String },
     storeId: { type: Schema.Types.ObjectId, index: true }, // Reference to "Stores" collection "id"
-    usedBy: [usageSchema],
-    likedBy: [usageSchema],
-    comments: [commentSchema],
-    expired_at: { type: Date, required: true, index: true } // "created_at" and "updated_at" automatically added here
+    usedBy: [usageSchema], // Track witch users have used this coupon and when
+    likedBy: [usageSchema], // Track witch users have liked this coupon and when
+    comments: [commentSchema], // Track witch users have commented, comment and date
+    expiredAt: { type: Date, required: true, index: true }
+    // "createdAt" and "updatedAt" automatically added here
   },
   schemaOptions
 );
