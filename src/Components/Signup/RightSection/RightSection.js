@@ -27,26 +27,35 @@ import "./RightSection.css";
 
 const RightSection = props => (
 	<MuiThemeProvider>
-		<div className="right-section">
-			<div className="upper-card">
-				<Card>
-					<CardText>Already have an account? Log in</CardText>
-				</Card>
+		<Col sm={9}>
+			<div className="right-section">
+				<div className="upper-card">
+					<Card>
+						<CardText>Already have an account? Log in</CardText>
+					</Card>
+				</div>
+				<div className="lower-card">
+					<Card>
+						<div className="lower-card-content">
+							<SignWithFb />
+							<Divider />
+							<FormInstance />
+						</div>
+					</Card>
+				</div>
 			</div>
-			<div className="lower-card">
-				<Card>
-					<SignWithFb />
-					<Divider />
-					<FormInstance />
-				</Card>
-			</div>
-		</div>
+		</Col>
 	</MuiThemeProvider>
 );
 
 const SignWithFb = props => (
-	<Button type="submit" bsStyle="primary" bsSize="large" block>
-		<FacebookIcon className="footer-icons" />Sign with Facebook
+	<Button type="submit" bsStyle="primary" block>
+		<InputGroup>
+			<InputGroup.Button>
+				<FacebookIcon className="footer-icons" />
+			</InputGroup.Button>
+			Sign with Facebook
+		</InputGroup>
 	</Button>
 );
 
@@ -58,8 +67,8 @@ const Divider = props => (
 
 const FormInstance = props => (
 	<Form horizontal>
-		<FormGroup controlId="formHorizontalEmail">
-			<Col sm={10}>
+		<FormGroup className="group-content" controlId="formHorizontalEmail">
+			<Col>
 				<InputGroup>
 					<InputGroup.Addon>
 						<Glyphicon glyph="envelope" />
@@ -69,26 +78,27 @@ const FormInstance = props => (
 			</Col>
 		</FormGroup>
 
-		<FormGroup controlId="formHorizontalPassword">
-			<Col sm={10}>
+		<FormGroup className="group-content" controlId="formHorizontalPassword">
+			<Col>
 				<InputGroup>
 					<InputGroup.Addon>
 						<Glyphicon glyph="lock" />
 					</InputGroup.Addon>
 					<FormControl type="password" placeholder="Password" />
-					<InputGroup.Addon>
-						<p className="pass-show">Show</p>
-					</InputGroup.Addon>
+
+					<InputGroup.Button>
+						<Button>Show</Button>
+					</InputGroup.Button>
 				</InputGroup>
 			</Col>
 		</FormGroup>
-		<FormGroup>
-			<Col smOffset={2} sm={10}>
+		<FormGroup className="group-content">
+			<Col>
 				<Checkbox>Email me the best deals on RetailMeNot</Checkbox>
 			</Col>
 		</FormGroup>
-		<FormGroup>
-			<Col smOffset={2} sm={10}>
+		<FormGroup className="group-content">
+			<Col>
 				<Button type="submit" bsStyle="primary" bsSize="large" block>
 					Sign in
 				</Button>

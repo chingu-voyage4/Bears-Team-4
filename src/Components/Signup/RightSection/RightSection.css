@@ -12,13 +12,19 @@
     flex-grow: 1;
 }
 .upper-card{
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     margin-top:35px;
 }
+.upper-section,.lower-section{
+    padding: 15%;
+}
 svg{
-    background-color: aliceblue;
-    border:2px solid white;
+    background-color: white;
 }
 svg>path{
     fill: blue;
+}
+.lower-card-content{
+    margin-left:5%;
+    margin-right:5%;
 }
