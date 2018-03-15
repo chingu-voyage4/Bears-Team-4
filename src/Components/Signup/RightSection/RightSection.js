@@ -80,11 +80,13 @@ class FormInstance extends Component {
 			type: "password",
 			email: "",
 			pass:"",
-			formInvalid: true,
+			formValid: false,
 			errors: {}
 		};
 		this.showHide = this.showHide.bind(this);
 		this.handleValidation = this.handleValidation.bind(this);
+		this.setPassword = this.setPassword.bind(this);
+		this.setEmail = this.setEmail.bind(this);
 	}
 	showHide(e) {
 		e.preventDefault();
@@ -94,8 +96,7 @@ class FormInstance extends Component {
 		});
 	}
 
-	handleValidation(event) {
-		this.setState({ email: event.target.value }, () => {
+	handleValidation() {
 			let fields = this.state.email;
 			let passField=this.state.pass;
 			let errors = {};
@@ -106,8 +107,8 @@ class FormInstance extends Component {
 				formIsValid = false;
 				errors["email"] = "Cannot be empty";
 			}
-			if(!passField){
-				formInvalid=false;
+			if (!passField) {
+				formIsValid = false;
 			}
 			if (typeof fields !== "undefined") {
 				let lastAtPos = fields.lastIndexOf("@");
@@ -128,11 +129,19 @@ class FormInstance extends Component {
 			}
 
 			this.setState({ errors: errors });
-			this.setState({ formInvalid: formIsValid });
+			this.setState({ formValid: formIsValid });
 			// console.log("Form valid:"+formIsValid);
-			return formIsValid;
+			return formIsValid;	
+	}
+	setPassword(event){
+		this.setState({ pass: event.target.value }, () => {
+			this.handleValidation();
 		});
-		// console.log(event.target.value);
+	}
+	setEmail(event){
+		this.setState({ email: event.target.value }, () => {
+			this.handleValidation();
+		});
 	}
 
 	render() {
@@ -151,7 +160,7 @@ class FormInstance extends Component {
 								<FormControl
 									type="email"
 									placeholder="Email"
-									onChange={this.handleValidation}
+									onChange={this.setEmail}
 								/>
 							</InputGroup>
 						</Col>
@@ -169,6 +178,7 @@ class FormInstance extends Component {
 								<FormControl
 									type={this.state.type}
 									placeholder="Password"
+									onChange={this.setPassword}
 								/>
 								<InputGroup.Button>
 									<Button onClick={this.showHide}>
@@ -194,7 +204,7 @@ class FormInstance extends Component {
 								bsStyle="primary"
 								bsSize="large"
 								block
-								disabled={!this.state.formInvalid}
+								disabled={!this.state.formValid}
 							>
 								Sign in
 							</Button>
