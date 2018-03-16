@@ -6,7 +6,6 @@ import ReactDOM from "react-dom";
 import App from "./components/App/App";
 import registerServiceWorker from "./registerServiceWorker";
 import store from "./store/store"; // Redux Store.
-
 import "./index.css";
 
 /**
