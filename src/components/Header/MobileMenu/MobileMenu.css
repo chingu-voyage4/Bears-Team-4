@@ -1,0 +1,33 @@
+.mobile-menu {
+  font-size: 2.5rem; /* Making menu's Open/Close buttons larger */
+}
+
+.mobile-menu ul {
+  background: var(--site-white);
+  color: var(--site-black);
+  font-size: 0.9rem;
+  height: 200%; /* Used 200% to give additional space to cover when scrolling down */
+  justify-content: center;
+  left: 0;
+  list-style-type: none;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+
+.mobile-menu li {
+  align-items: center;
+  display: flex;
+  min-height: 50px;
+  padding: 10px 20px;
+}
+
+.mobile-menu li:hover {
+  background: var(--link-hover-color);
+}
+
+.mobile-menu__list__login {
+  border-bottom: var(--border-color) solid 2px;
+  height: 70px;
+}

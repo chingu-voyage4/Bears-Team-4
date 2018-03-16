@@ -1,0 +1,24 @@
+.commentItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.commentItem__logo {
+  width: 50px;
+  font-size: 2em;
+  align-self: center;
+}
+
+.commentItem__details {
+  margin: 15px 7px;
+}
+.commentItem__details__comment {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.commentItem__details__poster {
+  color: gray;
+  font-size: 0.8rem;
+}
