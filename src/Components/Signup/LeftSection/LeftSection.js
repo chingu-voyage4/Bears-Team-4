@@ -15,6 +15,9 @@ const style = {
 	boxShadow: 0,
 	backgroundColor:'#f1f1f1'
 };
+
+/*This is the main component that is exported*/
+
 const LeftSection = props => (
 	<MuiThemeProvider>
 		<div className="left-section">
@@ -31,6 +34,7 @@ const LeftSection = props => (
 	</MuiThemeProvider>
 );
 
+/*Returns the service list with given title: for now assumed default image*/
 const Services = props => (
 	<Card style={style}>
 		<CardHeader

@@ -1,3 +1,4 @@
+/*This component renders the Login Page for the site*/
 import React, { Component } from "react";
 import {
 	Card,
@@ -23,37 +24,40 @@ import {
 	Glyphicon,
 	Checkbox
 } from "react-bootstrap";
-import "./Login.css";
+import "./LoginPage.css";
 
+/*This is the main component that is exported*/
 const Login = props => (
 	<MuiThemeProvider>
-			<div className="right-section">
+		<div className="right-section">
 			<Row>
-			<Col mdOffset={4} md={4} className="right-section-container">
-				<div className="upper-card">
-					<Card>
-						<CardText>
-							<span className="upper-card-text">
-								Already have an account? <a href="/signup">Sign in</a>
-							</span>
-						</CardText>
-					</Card>
-				</div>
-				<div className="lower-card">
-					<Card>
-						<div className="lower-card-content">
-							<SignWithFb />
-							<Divider />
-							<FormInstance />
-						</div>
-					</Card>
-				</div>
+				<Col mdOffset={4} md={4} className="right-section-container">
+					<div className="upper-card">
+						<Card>
+							<CardText>
+								<span className="upper-card-text">
+									Already have an account?{" "}
+									<a href="/signup">Sign in</a>
+								</span>
+							</CardText>
+						</Card>
+					</div>
+					<div className="lower-card">
+						<Card>
+							<div className="lower-card-content">
+								<SignWithFb />
+								<Divider />
+								<FormInstance />
+							</div>
+						</Card>
+					</div>
 				</Col>
-				</Row>
-			</div>
+			</Row>
+		</div>
 	</MuiThemeProvider>
 );
 
+/*This returns the sign with facebook button */
 const SignWithFb = props => (
 	<div className="section">
 		<Button type="submit" bsStyle="primary" bsSize="large" block>
@@ -67,6 +71,7 @@ const SignWithFb = props => (
 	</div>
 );
 
+/*This returns the divider ----OR---- */
 const Divider = props => (
 	<div className="section">
 		<div className="divider">
@@ -75,13 +80,16 @@ const Divider = props => (
 	</div>
 );
 
+/*This returns the form which contains textfield for email, password and submit button */
 class FormInstance extends Component {
+
+	/*Initialise the values using constructor */
 	constructor(props) {
 		super(props);
 		this.state = {
 			type: "password",
 			email: "",
-			pass:"",
+			pass: "",
 			formValid: false,
 			errors: {}
 		};
@@ -90,6 +98,8 @@ class FormInstance extends Component {
 		this.setPassword = this.setPassword.bind(this);
 		this.setEmail = this.setEmail.bind(this);
 	}
+
+	/*This provides the functionality behind show/hide feature of password field */
 	showHide(e) {
 		e.preventDefault();
 		e.stopPropagation();
@@ -98,49 +108,53 @@ class FormInstance extends Component {
 		});
 	}
 
+	/*This handles the validation for field email and password */
 	handleValidation() {
-			let fields = this.state.email;
-			let passField=this.state.pass;
-			let errors = {};
-			let formIsValid = true;
-			// console.log("Ehy" + fields);
-			//Email
-			if (!fields) {
-				formIsValid = false;
-				errors["email"] = "Cannot be empty";
-			}
-			if (!passField) {
-				formIsValid = false;
-			}
-			if (typeof fields !== "undefined") {
-				let lastAtPos = fields.lastIndexOf("@");
-				let lastDotPos = fields.lastIndexOf(".");
+		let fields = this.state.email;
+		let passField = this.state.pass;
+		let errors = {};
+		let formIsValid = true;
+		// console.log("Ehy" + fields);
+		//Email
+		if (!fields) {
+			formIsValid = false;
+			errors["email"] = "Cannot be empty";
+		}
+		if (!passField) {
+			formIsValid = false;
+		}
+		if (typeof fields !== "undefined") {
+			let lastAtPos = fields.lastIndexOf("@");
+			let lastDotPos = fields.lastIndexOf(".");
 
-				if (
-					!(
-						lastAtPos < lastDotPos &&
-						lastAtPos > 0 &&
-						fields.indexOf("@@") == -1 &&
-						lastDotPos > 2 &&
-						fields.length - lastDotPos > 2
-					)
-				) {
-					formIsValid = false;
-					errors["email"] = "Email is not valid";
-				}
+			if (
+				!(
+					lastAtPos < lastDotPos &&
+					lastAtPos > 0 &&
+					fields.indexOf("@@") == -1 &&
+					lastDotPos > 2 &&
+					fields.length - lastDotPos > 2
+				)
+			) {
+				formIsValid = false;
+				errors["email"] = "Email is not valid";
 			}
+		}
 
-			this.setState({ errors: errors });
-			this.setState({ formValid: formIsValid });
-			// console.log("Form valid:"+formIsValid);
-			return formIsValid;	
+		this.setState({ errors: errors });
+		this.setState({ formValid: formIsValid });
+		// console.log("Form valid:"+formIsValid);
+		return formIsValid;
 	}
-	setPassword(event){
+
+	/*Triggers when there is change in password field and calls handleValidation to check if current data is valid or not and if valid enable the submit button */
+	setPassword(event) {
 		this.setState({ pass: event.target.value }, () => {
 			this.handleValidation();
 		});
 	}
-	setEmail(event){
+	/*Same as setPassword, for email field */
+	setEmail(event) {
 		this.setState({ email: event.target.value }, () => {
 			this.handleValidation();
 		});
@@ -199,7 +213,7 @@ class FormInstance extends Component {
 								bsStyle="primary"
 								bsSize="large"
 								block
-								disabled={!this.state.formValid}
+								disabled={!this.state.formValid}/*Disabled at first */
 							>
 								Login
 							</Button>

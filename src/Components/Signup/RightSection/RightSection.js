@@ -1,3 +1,5 @@
+/*This is the component with the form for signup and link to login page too*/
+
 import React, { Component } from "react";
 import {
 	Card,
@@ -25,6 +27,7 @@ import {
 } from "react-bootstrap";
 import "./RightSection.css";
 
+/*This is the main component that is returned*/
 const RightSection = props => (
 	<MuiThemeProvider>
 		<Col mdOffset={3} sm={7}>
@@ -33,7 +36,7 @@ const RightSection = props => (
 					<Card>
 						<CardText>
 							<span className="upper-card-text">
-								Already have an account? <a href="#">Log in</a>
+								Already have an account? <a href="/login">Log in</a>
 							</span>
 						</CardText>
 					</Card>
@@ -52,6 +55,7 @@ const RightSection = props => (
 	</MuiThemeProvider>
 );
 
+/*Sign with Facebook*/
 const SignWithFb = props => (
 	<div className="section">
 		<Button type="submit" bsStyle="primary" bsSize="large" block>
@@ -65,6 +69,7 @@ const SignWithFb = props => (
 	</div>
 );
 
+/*Renders the divider*/
 const Divider = props => (
 	<div className="section">
 		<div className="divider">
@@ -73,6 +78,7 @@ const Divider = props => (
 	</div>
 );
 
+/*Renders the signup form*/
 class FormInstance extends Component {
 	constructor(props) {
 		super(props);
