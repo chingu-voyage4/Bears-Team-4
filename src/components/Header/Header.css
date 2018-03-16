@@ -1,0 +1,66 @@
+.header-overlay {
+  background: var(--site-purple);
+  display: flex;
+  justify-content: center; /* Horizontally center whole header component */
+  width: 100%;
+}
+
+.header {
+  align-items: center; /* Vertically center all child items */
+  color: var(--site-white);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  margin: 0 20px;
+  max-width: 1200px;
+  padding: 15px;
+  padding-bottom: 0px;
+  width: 100%;
+}
+
+.header__logo {
+  flex: 0 0 180px;
+}
+
+.header__logo__svg {
+  padding-top: 10px;
+}
+
+.header__logo__mobile {
+  display: none;
+}
+
+.header__search {
+  flex: 1;
+  padding: 0 2%;
+}
+
+.header__login {
+  flex: 0 0 150px;
+}
+
+.header__menu {
+  width: 100%;
+}
+
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
+
+/** 
+ * Hide "header__logo__svg" and Instead Show <MobileMenu> Component.
+ * Hide <Login> Component From Right and Show It Inside <MobileMenu> Component.
+**/
+@media (max-width: 800px) {
+  .header__logo {
+    flex: 0 1 50px;
+    width: 15%;
+  }
+
+  .header__logo__mobile {
+    display: initial;
+  }
+
+  .header__logo__svg,
+  .header__login {
+    display: none;
+  }
+}

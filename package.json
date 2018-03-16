@@ -4,27 +4,55 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
+    "ejs": "^2.5.7",
+    "eslint": "^4.18.2",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "husky": "^0.14.3",
     "lint-staged": "^6.1.1",
     "moment": "^2.20.1",
     "mongodb": "^3.0.2",
     "mongoose": "^5.0.6",
+    "morgan": "^1.9.0",
     "node-sass-chokidar": "0.0.3",
     "npm-run-all": "^4.1.2",
     "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.1"
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon api/app.js",
+    "database": "mongod --dbpath=database --storageEngine=mmapv1 --journal",
+    "development": "concurrently \"npm run database\" \"npm run server\" \"npm start\" ",
+    "production": "set NODE_ENV=production && concurrently \"npm run build\" \"npm run database\" \"npm run server\" "
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.7.0",
+    "nodemon": "^1.17.1",
+    "stylelint-config-recommended": "^2.1.0"
   }
 }

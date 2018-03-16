@@ -1,0 +1,78 @@
+.footer-overlay {
+  background: var(--site-white);
+  border-bottom: 16.1px solid var(--site-purple);
+  border-top: 6.1px solid var(--border-color);
+  width: 100%;
+}
+
+/* Actual footer container. Contain ".footer__logo1" --> ".footer__links" -->".footer__logo2" */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto; /* Horizontally centering footer */
+  max-width: 1200px;
+  padding: 20px;
+  width: 100%;
+}
+
+.footer__logo1,
+.footer__logo2 {
+  align-self: center; /* Vertically centering */
+  flex-basis: 200px; /* Making logo always should be 200px */
+}
+
+/* All 4 links column container */
+.footer__links {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.footer__links__column {
+  /* Column headline styles */
+  color: #808080;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.footer__links__column ul {
+  font-weight: normal;
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer__links__column ul li {
+  color: #24c6ed;
+  padding-bottom: 20px;
+}
+
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
+
+/**
+ * Hide ".footer__logo1"
+ * Set full width to ".footer__links" and this makes ".footer__logo1" wrap to next line
+**/
+
+@media screen and (max-width: 950px) {
+  .footer__logo1 {
+    display: none;
+  }
+
+  .footer__links {
+    flex: 1;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .footer__links__column {
+    flex: 0 1 150px;
+  }
+
+  .footer__logo2 {
+    display: initial;
+    margin: 0 auto;
+  }
+}
