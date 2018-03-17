@@ -12,7 +12,7 @@ const schemaOptions = {
 // Main schema
 const storeSchema = new Schema(
   {
-    name: { type: String, required: true, unique:true },
+    name: { type: String, required: true, unique: true },
     description: { type: String, required: true },
     logoUrl: { type: String, required: true },
     categories: [{ type: String }],

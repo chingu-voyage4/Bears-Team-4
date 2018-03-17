@@ -6,7 +6,7 @@ const schemaOptions = {
   timestamps: true // "createdAt" and "updatedAt" automatically added here
 };
 
-// Subdoc schema for "couponSchema", Used to track usages like "usedBy", "likedBy"
+// Subdoc schema for "couponSchema", Used to track usages like "usedBy", "likedBy", "createdby", "approvedby"
 const usageSchema = new Schema(
   {
     userId: { type: Schema.Types.ObjectId, required: true, index: true } // Reference to "Users" collection "id"
@@ -39,12 +39,15 @@ const couponSchema = new Schema(
     title: { type: String, required: true },
     description: { type: String, required: true },
     code: { type: String }, // Code should only availabe for "kind == coupon"
-    exclutionDetails: { type: String },
+    exclutionDetails: { type: String }, // Description about which products are not valid for this coupon.
     linkUrl: { type: String, required: true },
     imgUrl: { type: String },
-    storeId: { type: Schema.Types.ObjectId, index: true }, // Reference to "Stores" collection "id"
+    storeId: { type: Schema.Types.ObjectId, index: true, ref: "Store" }, // Reference to "Stores" collection "id",
+    addedBy: { type: usageSchema, required: true }, // Track witch user has added this coupon
+    approvedBy: { type: usageSchema }, // Track witch user approved this coupon (Only superAdmin and admin should be able to approve a coupon )
     usedBy: [usageSchema], // Track witch users have used this coupon and when
     likedBy: [usageSchema], // Track witch users have liked this coupon and when
+    unlikedBy: [usageSchema], // Track witch users have unliked this coupon and when
     comments: [commentSchema], // Track witch users have commented, comment and date
     expiredAt: { type: Date, required: true, index: true }
     // "createdAt" and "updatedAt" automatically added here

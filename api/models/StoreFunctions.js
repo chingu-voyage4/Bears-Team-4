@@ -1,6 +1,7 @@
 // This document contain functions that operate on "Store" Collection
 
 // Get All Stores and Categories as Array List from Stores Collection
+// Useful for Search Comopnent, Populars Component, etc...
 function findAllStoresAndCategories() {
   // Store.aggregate([
   //   {$group:{ _id :null, categories:{$addToSet: "$categories"}, name:{$addToSet: "$name"}}},
@@ -8,17 +9,17 @@ function findAllStoresAndCategories() {
   // ])
   return new Promise((resolve, reject) => {
     this.aggregate()
-      // Define how to group all document in to one document. In here we use "$addToSet" combine all values to array.
+      // Define how to group all document in to one document. In here we use "$addToSet" combine all values to single array.
       .group({
         _id: null,
         categories: { $addToSet: "$categories" },
         name: { $addToSet: "$name" }
       })
-      // Define witch filed to show
+      // Define witch field to output
       .project({ _id: 0, categories: 1, name: 1 })
       .then(r => {
         /**
-         * "r" output is like below
+         * "r" output would be something like below
          *
          * [{"categories":[["Clothing"],["Home","Kids"],["Kids"]], - Category of each store
          * "name":["Fanoodle","Abata","Voonte","Tazzy","Linktype"]}] - Store Names

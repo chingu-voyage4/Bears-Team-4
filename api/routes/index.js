@@ -4,7 +4,7 @@ var router = express.Router();
 // Importing sub routes
 const storeRoutes = require("./store");
 const couponRoutes = require("./coupon");
-const addMockData = require("../utils/mockData/addMockData"); // Just for development. Remove this in production.
+const addMockData = require("../utils/addMockData"); // Just for development. Remove this in production.
 
 // Assigning sub routes to pathes
 router.use("/store", storeRoutes);
