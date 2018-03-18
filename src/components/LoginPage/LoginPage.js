@@ -33,7 +33,7 @@ const Login = props => (
 		<div className="right-section">
 			<Row>
 				<Col mdOffset={4} md={4} className="right-section-container">
-					<SimpleFormInstance />
+					<SimpleFormInstance type="login"/>
 				</Col>
 			</Row>
 		</div>

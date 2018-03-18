@@ -27,28 +27,45 @@ import {
 import "./SimpleFormInstance.css";
 
 /*This is the main component that is exported*/
-const SimpleFormInstance = props => (
-	<div className="form">
-		<div className="upper-card">
-			<Card>
-				<CardText>
-					<span className="upper-card-text">
-						Already have an account? <a href="/signup">Sign up</a>
-					</span>
-				</CardText>
-			</Card>
-		</div>
-		<div className="lower-card">
-			<Card>
-				<div className="lower-card-content">
-					<SignWithFb />
-					<Divider />
-					<FormInstance />
+
+class SimpleFormInstance extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			type: this.props.type//stores whether login page is being rendered or signup page is
+		};
+
+		//The following values would be used to display the form
+		this.title = this.state.type == "login" ? "Login" : "Sign Up";//Tells title of page that is being rendered
+		this.secondTitle = this.state.type == "login" ? "Sign Up" : "Log in";//Stores which page is not being rendered(like in login page there should be option to go to signup page and vice-versa)
+		this.link=this.state.type=="login"?"/signup":"/login";//Link to other page
+	}
+	render() {
+		return (
+			<div className="form">
+				<div className="upper-card">
+					<Card>
+						<CardText>
+							<span className="upper-card-text">
+								Already have an account?{" "}
+								<a href={this.link}>{this.secondTitle}</a>
+							</span>
+						</CardText>
+					</Card>
 				</div>
-			</Card>
-		</div>
-	</div>
-);
+				<div className="lower-card">
+					<Card>
+						<div className="lower-card-content">
+							<SignWithFb title={this.title} />
+							<Divider />
+							<FormInstance title={this.title} />
+						</div>
+					</Card>
+				</div>
+			</div>
+		);
+	}
+}
 
 /*This returns the sign with facebook button */
 const SignWithFb = props => (
@@ -58,7 +75,7 @@ const SignWithFb = props => (
 				<InputGroup.Button>
 					<FacebookIcon className="footer-icons" />
 				</InputGroup.Button>
-				<span className="field-text">Login with Facebook</span>
+				<span className="field-text">{props.title} with Facebook</span>
 			</InputGroup>
 		</Button>
 	</div>
@@ -79,6 +96,8 @@ class FormInstance extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			title: this.props.title,
+			isLogging: this.props.title == "Login" ? true : false,
 			type: "password",
 			email: "",
 			pass: "",
@@ -209,16 +228,34 @@ class FormInstance extends Component {
 									!this.state.formValid
 								} /*Disabled at first */
 							>
-								Login
+								{this.state.title}
 							</Button>
 						</Col>
 					</FormGroup>
-					<FormGroup className="group-content text-center">
-						<Col>
-							<a href="#">Forgot Password?</a>
-						</Col>
-					</FormGroup>
+					<LastElement isLoggedIn={this.state.isLogging} />
 				</Form>
+			</div>
+		);
+	}
+}
+
+function LastElement(props) {
+	const isLoggedIn = props.isLoggedIn;
+	if (isLoggedIn) {
+		return (
+			<FormGroup className="group-content text-center">
+				<Col>
+					<a href="#">Forgot Password?</a>
+				</Col>
+			</FormGroup>
+		);
+	} else {
+		return (
+			<div className="text-center">
+				<p>
+					By joining, I agree to RetailMeNot’s <a href="#">Privacy Policy</a> and
+					<a href="#"> Terms of Use</a>.
+				</p>
 			</div>
 		);
 	}
