@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const CouponFunctions = require("./CouponFunctions");
+
 // Schema options
 const schemaOptions = {
   timestamps: true // "createdAt" and "updatedAt" automatically added here
@@ -9,7 +11,12 @@ const schemaOptions = {
 // Subdoc schema for "couponSchema", Used to track usages like "usedBy", "likedBy", "createdby", "approvedby"
 const usageSchema = new Schema(
   {
-    userId: { type: Schema.Types.ObjectId, required: true, index: true } // Reference to "Users" collection "id"
+    userId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      index: true,
+      ref: "User"
+    } // Reference to "Users" collection "id"
     // "createdAt" and "updatedAt" automatically added here
   },
   schemaOptions
@@ -18,7 +25,12 @@ const usageSchema = new Schema(
 // Subdoc schema for "couponSchema", Used to track comments
 const commentSchema = new Schema(
   {
-    userId: { type: Schema.Types.ObjectId, required: true, index: true }, // Reference to "Users" collection "id"
+    userId: {
+      type: Schema.Types.ObjectId,
+      required: true,
+      index: true,
+      ref: "User"
+    }, // Reference to "Users" collection "id"
     comment: { type: String, required: true }
     // "createdAt" and "updatedAt" automatically added here
   },
@@ -54,6 +66,9 @@ const couponSchema = new Schema(
   },
   schemaOptions
 );
+
+// Static functions that run on "Coupon" Model
+couponSchema.statics.trending = CouponFunctions.trending;
 
 const Coupon = mongoose.model("Coupon", couponSchema);
 
