@@ -36,6 +36,8 @@ class SimpleFormInstance extends Component {
 		};
 
 		//The following values would be used to display the form
+		
+		//I have declared maybe more variables to avoid complexity in code. Whatever decisions are made are done in constructor itself. The rendering code is only rendering the values, and no decision or conditional thing is done there.
 		this.title = this.state.type == "login" ? "Login" : "Sign Up";//Tells title of page that is being rendered
 		this.secondTitle = this.state.type == "login" ? "Sign Up" : "Log in";//Stores which page is not being rendered(like in login page there should be option to go to signup page and vice-versa)
 		this.link=this.state.type=="login"?"/signup":"/login";//Link to other page
