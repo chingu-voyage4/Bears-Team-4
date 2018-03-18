@@ -15,7 +15,6 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import FontIcon from "material-ui/FontIcon";
 import TextField from "material-ui/TextField";
 import FacebookIcon from "mdi-react/FacebookIcon";
-import SimpleFormInstance from "../SimpleFormInstance/SimpleFormInstance";
 import {
 	Form,
 	FormGroup,
@@ -25,19 +24,30 @@ import {
 	Glyphicon,
 	Checkbox
 } from "react-bootstrap";
-import "./LoginPage.css";
+import "./SimpleFormInstance.css";
 
 /*This is the main component that is exported*/
-const Login = props => (
-	<MuiThemeProvider>
-		<div className="right-section">
-			<Row>
-				<Col mdOffset={4} md={4} className="right-section-container">
-					<SimpleFormInstance />
-				</Col>
-			</Row>
+const SimpleFormInstance = props => (
+	<div className="form">
+		<div className="upper-card">
+			<Card>
+				<CardText>
+					<span className="upper-card-text">
+						Already have an account? <a href="/signup">Sign up</a>
+					</span>
+				</CardText>
+			</Card>
 		</div>
-	</MuiThemeProvider>
+		<div className="lower-card">
+			<Card>
+				<div className="lower-card-content">
+					<SignWithFb />
+					<Divider />
+					<FormInstance />
+				</div>
+			</Card>
+		</div>
+	</div>
 );
 
 /*This returns the sign with facebook button */
@@ -65,7 +75,6 @@ const Divider = props => (
 
 /*This returns the form which contains textfield for email, password and submit button */
 class FormInstance extends Component {
-
 	/*Initialise the values using constructor */
 	constructor(props) {
 		super(props);
@@ -196,7 +205,9 @@ class FormInstance extends Component {
 								bsStyle="primary"
 								bsSize="large"
 								block
-								disabled={!this.state.formValid}/*Disabled at first */
+								disabled={
+									!this.state.formValid
+								} /*Disabled at first */
 							>
 								Login
 							</Button>
@@ -213,4 +224,4 @@ class FormInstance extends Component {
 	}
 }
 
-export default Login;
+export default SimpleFormInstance;
