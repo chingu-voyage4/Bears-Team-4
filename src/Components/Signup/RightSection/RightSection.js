@@ -16,6 +16,7 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import FontIcon from "material-ui/FontIcon";
 import TextField from "material-ui/TextField";
 import FacebookIcon from "mdi-react/FacebookIcon";
+import SimpleFormInstance from "../../SimpleFormInstance/SimpleFormInstance";
 import {
 	Form,
 	FormGroup,
@@ -31,26 +32,7 @@ import "./RightSection.css";
 const RightSection = props => (
 	<MuiThemeProvider>
 		<Col mdOffset={3} sm={7}>
-			<div className="right-section">
-				<div className="upper-card">
-					<Card>
-						<CardText>
-							<span className="upper-card-text">
-								Already have an account? <a href="/login">Log in</a>
-							</span>
-						</CardText>
-					</Card>
-				</div>
-				<div className="lower-card">
-					<Card>
-						<div className="lower-card-content">
-							<SignWithFb />
-							<Divider />
-							<FormInstance />
-						</div>
-					</Card>
-				</div>
-			</div>
+			<SimpleFormInstance />
 		</Col>
 	</MuiThemeProvider>
 );
