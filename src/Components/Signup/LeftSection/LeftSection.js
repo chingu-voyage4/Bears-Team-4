@@ -11,7 +11,6 @@ import { Row, Col } from "react-bootstrap";
 import Avatar from "material-ui/Avatar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import "./LeftSection.css";
-import logo from "../../../images/dices.jpg"
 const style = {
 	boxShadow: 0,
 	backgroundColor:'#f1f1f1'
@@ -40,7 +39,7 @@ const Services = props => (
 	<Card style={style}>
 		<CardHeader
 			title={<div className="left-section-title">{props.title}</div>}
-			avatar={logo}
+			avatar="../../images/android.jpg"
 		/>
 	</Card>
 );
