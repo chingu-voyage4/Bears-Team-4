@@ -12,7 +12,6 @@ import Populars from "./Populars/Populars";
 import Subscribe from "./Subscribe/Subscribe";
 import TopOffers from "./TopOffers/TopOffers";
 import TrendingDeals from "./Trending/Trending";
-
 import "./MainPage.css";
 
 class MainPage extends Component {
