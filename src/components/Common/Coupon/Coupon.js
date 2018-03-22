@@ -13,7 +13,6 @@ import "./Coupon.css";
 class Coupon extends Component {
   render() {
     const { coupon, store } = this.props;
-
     return (
       <div className="coupon">
         <div className="coupon__store-image">

@@ -7,46 +7,61 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import {Button} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import Coupon from "../Common/Coupon/Coupon";
 import "./SearchPage.css";
 
 class SearchPage extends Component {
-  render() {
-    const { trendingItems, coupons, stores } = this.props;
-    return (
-      <div className="mainPage">
-       <div className="View-Page">
-        <div className="view-title">
-            <p>Udemy Coupon Codes</p>
-        </div>
-        <div className="sortBy">
-            <SortButton title="Popularity" />
-            <SortButton title="Newest" />
-            <SortButton title="Ending Soon" />
-        </div>
-        <div className="coupon">
-            <Coupon coupon={coupons[0]} store={stores} />
-        </div>
-     </div>
-      </div>
-    );
-  }
+    render() {
+        const { trendingItems, coupons, stores } = this.props;
+        return (
+            <div className="mainPage">
+                <div className="View-Page">
+                    <Row>
+                        <div className="view-title">
+                            <h1 className="text-center">Udemy Coupon Codes</h1>
+                        </div>
+                    </Row>
+                    <Row>
+                        <div className="sortBy">
+                            <Col mdOffset={1} md={3}>
+                                <SortButton title="Popularity" />
+                            </Col>
+                            <Col mdOffset={1} md={3}>
+                                <SortButton title="Newest" />
+                            </Col>
+                            <Col mdOffset={1} md={3}>
+                                <SortButton title="Ending Soon" />
+                            </Col>
+                        </div>
+                    </Row>
+                    <Row>
+                        <div className="coupon">
+                            <Col smOffset={2}>
+                                <Coupon coupon={coupons[0]} store={stores} />
+                            </Col>
+                        </div>
+                    </Row>
+                </div>
+            </div>
+        );
+    }
 }
 
-const SortButton=props=>(
+const SortButton = props => (
     <Button bsStyle="primary" bsSize="large" block>
-      {props.title}
+        {props.title}
     </Button>
 );
 
 // Specifying which state from store we want as props
 const mapStateToProps = state => {
-  return {
-    stores: state.stores,
-    coupons: state.coupons,
-    trendingItems: state.trending
-  };
+    return {
+        stores: state.stores,
+        coupons: state.coupons,
+        trendingItems: state.trending
+    };
 };
 
 // Binding stores states and actions to our compoent's props
