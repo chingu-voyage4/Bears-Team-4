@@ -4,11 +4,14 @@
 
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
 
 import Login from "./Login/Login";
 import Menu from "./Menu/Menu";
 import MobileMenu from "./MobileMenu/MobileMenu";
-import SearchContainer from "../Containers/SearchContainer";
+import Search from "./Search/Search";
+import * as searchActions from "../../actions/searchActions";
 
 import "./Header.css";
 import logo from "../../images/logoHeader.svg";
@@ -19,6 +22,8 @@ import logo from "../../images/logoHeader.svg";
  **/
 class Header extends Component {
   render() {
+    const { searchState, storesState, searchActions } = this.props;
+
     return (
       <div className="header-overlay">
         <div className="header">
@@ -31,7 +36,11 @@ class Header extends Component {
             </div>
           </div>
           <div className="header__search">
-            <SearchContainer />
+            <Search
+              search={searchState}
+              stores={storesState}
+              actions={searchActions}
+            />
           </div>
           <div className="header__login">
             <Login />
@@ -45,4 +54,22 @@ class Header extends Component {
   }
 }
 
-export default Header;
+// Specifying which parts of states we want from redux storage
+const mapStateToProps = state => {
+  return {
+    searchState: state.search,
+    storesState: state.stores
+  };
+};
+
+// Specifying which actions. In here we simply say add all actions using bindActionCreators()
+const mapDispatchToProps = dispatch => {
+  return {
+    searchActions: bindActionCreators(searchActions, dispatch)
+  };
+};
+
+// connect - Injecting Redux State, Actions.
+// withRouter - Inject histrory object from Router.
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

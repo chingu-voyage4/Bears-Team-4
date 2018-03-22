@@ -3,8 +3,10 @@ const defaultState = {
     searchTerm: "",
     recentTerms: ["cat", "dog"],
     suggestion: ["kfc", "macdonalds", "pizza hut", "dominos"],
-    filteredStores: ["Bargain", "Hunt", "Ben", "Franklin", "Bi-Mart", "Big"],
-    filteredCategories: ["Beauty", "Books", "Clothing", "Electronics"],
+    allStores:[],
+    allCategories:[],
+    filteredStores: [],
+    filteredCategories: [],
     dropDown: false
   },
   stores: {

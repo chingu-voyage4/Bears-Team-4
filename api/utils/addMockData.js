@@ -96,9 +96,9 @@ async function addMockData(req, res) {
 
     // Inserting mockdata into Store Collection
     await Promise.all(
-      repeat(10).map(async () => {
+      repeat(30).map(async () => {
         let store = new Store();
-        store.name = faker.company.companyName();
+        store.name = faker.address.city();
         store.description = faker.lorem.sentences();
         store.logoUrl = faker.image.business();
         // Later some other categories also gonna added here based on available coupons
@@ -116,7 +116,7 @@ async function addMockData(req, res) {
 
     // Inserting mockdata into Coupon Collection
     await Promise.all(
-      repeat(10).map(async () => {
+      repeat(30).map(async () => {
         let coupon = new Coupon();
         coupon.kind = chance.pickone(["coupon", "deal"]);
         coupon.category = fromFakerList(fakeCategories, 0, 2);

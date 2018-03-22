@@ -1,5 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+import promise from 'redux-promise-middleware';
 import logger from "redux-logger";
 
 import searchReducer from "../reducers/searchReducer";
@@ -15,7 +16,7 @@ const rootReducer = combineReducers({
   coupons: couponsReducer
 });
 
-const middlewares = applyMiddleware(thunk, logger);
+const middlewares = applyMiddleware(thunk, promise(), logger);
 
 // Just For Redux Dev Tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
