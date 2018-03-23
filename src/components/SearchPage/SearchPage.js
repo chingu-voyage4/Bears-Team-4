@@ -18,43 +18,47 @@ class SearchPage extends Component {
         const { trendingItems, coupons, stores } = this.props;
         return (
             <div className="mainPage">
-                <div className="LeftSection">
-                    <LeftSection />
-                </div>
-                <div className="RightSection">
-                    <div className="View-Page">
-                        <Row>
-                            <div className="view-title">
-                                <h1 className="text-center">
-                                    Udemy Coupon Codes
-                                </h1>
+                <Row>
+                    <Col md={3}>
+                        <div className="LeftSection">
+                            <LeftSection />
+                        </div>
+                    </Col>
+                    <Col mdOffset={1} md={8}>
+                        <div className="RightSection">
+                            <div className="View-Page">
+                                <Row>
+                                    <div className="view-title">
+                                        <h1 className="text-center">
+                                            Udemy Coupon Codes
+                                        </h1>
+                                    </div>
+                                </Row>
+                                <Row>
+                                    <div className="sortBy">
+                                        <Col mdOffset={1} md={3}>
+                                            <SortButton title="Popularity" />
+                                        </Col>
+                                        <Col mdOffset={1} md={3}>
+                                            <SortButton title="Newest" />
+                                        </Col>
+                                        <Col mdOffset={1} md={3}>
+                                            <SortButton title="Ending Soon" />
+                                        </Col>
+                                    </div>
+                                </Row>
+                                <Row>
+                                    <div className="coupon">
+                                            <Coupon
+                                                coupon={coupons[0]}
+                                                store={stores}
+                                            />
+                                    </div>
+                                </Row>
                             </div>
-                        </Row>
-                        <Row>
-                            <div className="sortBy">
-                                <Col mdOffset={1} md={3}>
-                                    <SortButton title="Popularity" />
-                                </Col>
-                                <Col mdOffset={1} md={3}>
-                                    <SortButton title="Newest" />
-                                </Col>
-                                <Col mdOffset={1} md={3}>
-                                    <SortButton title="Ending Soon" />
-                                </Col>
-                            </div>
-                        </Row>
-                        <Row>
-                            <div className="coupon">
-                                <Col smOffset={2}>
-                                    <Coupon
-                                        coupon={coupons[0]}
-                                        store={stores}
-                                    />
-                                </Col>
-                            </div>
-                        </Row>
-                    </div>
-                </div>
+                        </div>
+                    </Col>
+                </Row>
             </div>
         );
     }

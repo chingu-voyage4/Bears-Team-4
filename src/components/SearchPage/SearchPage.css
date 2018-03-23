@@ -1,4 +1,7 @@
 .coupon>div{
 	width: 100%;
-	padding: 1%;
+	margin-bottom: 0px;
+}
+.coupon{
+	border:1px solid #e7e7e7;
 }
