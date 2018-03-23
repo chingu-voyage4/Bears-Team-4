@@ -26,7 +26,7 @@ class SearchPage extends Component {
                     </Col>
                     <Col mdOffset={1} md={8}>
                         <div className="RightSection">
-                            <div className="View-Page">
+                            <div className="View-Page View-Group">
                                 <Row>
                                     <div className="view-title">
                                         <h1 className="text-center">
@@ -35,20 +35,23 @@ class SearchPage extends Component {
                                     </div>
                                 </Row>
                                 <Row>
-                                    <div className="sortBy">
-                                        <Col mdOffset={1} md={3}>
+                                    <div className="sortBy View-Group">
+                                    	<Col md={2} className="sortBy-title">
+                                    		Sort by:
+                                    	</Col>		
+                                        <Col md={3}>
                                             <SortButton title="Popularity" />
                                         </Col>
-                                        <Col mdOffset={1} md={3}>
+                                        <Col md={3}>
                                             <SortButton title="Newest" />
                                         </Col>
-                                        <Col mdOffset={1} md={3}>
+                                        <Col md={3}>
                                             <SortButton title="Ending Soon" />
                                         </Col>
                                     </div>
                                 </Row>
                                 <Row>
-                                    <div className="coupon">
+                                    <div className="coupon View-Group">
                                             <Coupon
                                                 coupon={coupons[0]}
                                                 store={stores}
@@ -64,8 +67,20 @@ class SearchPage extends Component {
     }
 }
 
+class CouponList extends Component{
+	constructor(props) {
+	  super(props);
+	  this.state = {};
+	}
+	render() {
+		return (
+			<div></div>
+		);
+	}
+}
+
 const SortButton = props => (
-    <Button bsStyle="primary" bsSize="large" block>
+    <Button bsSize="small" block className="sort-button">
         {props.title}
     </Button>
 );
