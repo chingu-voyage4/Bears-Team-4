@@ -30,13 +30,13 @@ class RightSection extends Component {
                                         <Col md={2} className="sortBy-title">
                                             Sort by:
                                         </Col>      
-                                        <Col md={3}>
+                                        <Col md={2}>
                                             <SortButton title="Popularity" />
                                         </Col>
-                                        <Col md={3}>
+                                        <Col md={2}>
                                             <SortButton title="Newest" />
                                         </Col>
-                                        <Col md={3}>
+                                        <Col md={2}>
                                             <SortButton title="Ending Soon" />
                                         </Col>
                                     </div>
@@ -68,7 +68,7 @@ class CouponList extends Component{
 }
 
 const SortButton = props => (
-    <Button bsSize="small" block className="sort-button">
+    <Button bsSize="xsmall" block className="sort-button">
         {props.title}
     </Button>
 );

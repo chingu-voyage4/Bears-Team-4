@@ -28,6 +28,10 @@ body {
   font-family: "Lato", Calibri, Helvetica, Roboto, sans-serif;
   margin: 0;
   padding: 0;
+      color: #555;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
 }
 
 /** 

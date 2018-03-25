@@ -1,10 +1,8 @@
 .coupon>div{
 	width: 100%;
-	margin-bottom: 0px;
 }
 .coupon{
 	border:1px solid #e7e7e7;
-	margin-top: 0px;
 }
 .sortBy-title{
 	width:auto;
@@ -18,4 +16,7 @@
 }
 .sortBy-title{
 	margin-top: 0.7%;
+}
+.sortBy>div>button{
+	margin-top: 5%;
 }

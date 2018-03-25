@@ -17,11 +17,11 @@ class LeftSection extends Component {
         const { trendingItems, coupons, stores } = this.props;
         return (
             <div className="left-section">
-            <ImageLogo />
-            <p>50 offers available</p>
-            <CouponType />
-            <About />
-            <Stats />
+                <ImageLogo />
+                <p>50 offers available</p>
+                <CouponType />
+                <About />
+                <Stats />
             </div>
         );
     }
@@ -29,51 +29,64 @@ class LeftSection extends Component {
 
 const ImageLogo = props => (
     <div className="image-logo">
-      <Image src={logo} rounded />
+        <Image src={logo} rounded />
     </div>
 );
 
 const CouponType = props => (
-   <div className="coupon-type">
-        <h2>Coupon Type</h2>
-        <CheckBoxCoupon title="Coupon Code"/>
-        <CheckBoxCoupon title="Online Sales"/>
-   </div>
+    <div className="coupon-type">
+        <h4>Coupon Type</h4>
+        <CheckBoxCoupon title="Coupon Code" />
+        <CheckBoxCoupon title="Online Sales" />
+    </div>
 );
 
-const CheckBoxCoupon=props=>(
-    <Checkbox checked readOnly>
-      Checkbox
+const CheckBoxCoupon = props => (
+    <Checkbox className="input-checkbox-label">
+        <label className="checkbox-title">{props.title}</label>
     </Checkbox>
 );
 
 const About = props => (
-   <div className="about">
-        <h2>About Udemy</h2>
-        <p className="about-content">Udemy offers a platform to take and build online courses on any subject. The course categories include academic courses, business courses, professional courses, creative and performing arts, health and fitness, language courses, lifestyle, music, technology among many others.</p>
+    <div className="about">
+        <h4>About Udemy</h4>
+        <p className="about-content">
+            Udemy offers a platform to take and build online courses on any
+            subject. The course categories include academic courses, business
+            courses, professional courses, creative and performing arts, health
+            and fitness, language courses, lifestyle, music, technology among
+            many others.
+        </p>
         <TopOffers />
-   </div>
-);
-
-const TopOffers=props=>(
-    <div className="top-offers">
-    <h2>Today's Udemy Top Offers</h2>
-    <ul>
-    <li>3 Courses Or More for $9.99</li>
-    <li>95% Off Ethical Hacking With Android Fast-Track Course</li>
-    </ul>
     </div>
 );
 
-const Stats=props=>(
-    <div className="stats">
+const TopOffers = props => (
+    <div className="top-offers">
+        <h2>Today's Udemy Top Offers</h2>
         <ul>
-            <li>Total Offers:</li>
-            <li>Coupon Codes:</li>
-            <li>Best Discount:</li>
-            <li>Average Savings:</li>
+            <li>3 Courses Or More for $9.99</li>
+            <li>95% Off Ethical Hacking With Android Fast-Track Course</li>
         </ul>
     </div>
+);
+
+const Stats = props => (
+    <div className="stats">
+        <table>
+            <StatsRow title="Total Offers:" data="" />
+            <StatsRow title="Coupon Codes:" data="" />
+            <StatsRow title="Best Discount:" data="" />
+            <StatsRow title="Average Savings:" data="" />
+        </table>
+    </div>
+);
+
+const StatsRow = props => (
+    <tr>
+        <td>{props.title}</td>
+        <td>{props.data}</td>
+    </tr>
 );
 
 export default LeftSection;
