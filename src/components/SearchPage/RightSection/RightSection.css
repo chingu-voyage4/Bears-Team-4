@@ -1,0 +1,21 @@
+.coupon>div{
+	width: 100%;
+	margin-bottom: 0px;
+}
+.coupon{
+	border:1px solid #e7e7e7;
+	margin-top: 0px;
+}
+.sortBy-title{
+	width:auto;
+}
+.View-Group{
+	margin:2% 0;
+}
+.sort-button{
+	border-radius: 25px;
+	font-size: 14px;
+}
+.sortBy-title{
+	margin-top: 0.7%;
+}
