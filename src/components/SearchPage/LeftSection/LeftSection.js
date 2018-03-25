@@ -9,6 +9,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Row, Col, Image, Checkbox } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import logo from "./thumbnail.jpg";
 import "./LeftSection.css";
 
 class LeftSection extends Component {
@@ -16,7 +17,7 @@ class LeftSection extends Component {
         const { trendingItems, coupons, stores } = this.props;
         return (
             <div className="left-section">
-            <ImageLogo src=""/>
+            <ImageLogo />
             <p>50 offers available</p>
             <CouponType />
             <About />
@@ -28,7 +29,7 @@ class LeftSection extends Component {
 
 const ImageLogo = props => (
     <div className="image-logo">
-      <Image src="/thumbnail.png" rounded />
+      <Image src={logo} rounded />
     </div>
 );
 
