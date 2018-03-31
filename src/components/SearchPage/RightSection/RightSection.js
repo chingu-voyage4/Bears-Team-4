@@ -26,11 +26,7 @@ class RightSection extends Component {
 			id = id + 1;
 			return id;
 		}
-		const ListItem = buttonTitle.map(title => (
-			<Col md={2}>
-				<SortButton id={getId()} title={title} />
-			</Col>
-		));
+		
 		const { coupons, stores } = this.props;
 		return (
 			<div className="RightSection">
@@ -45,7 +41,7 @@ class RightSection extends Component {
 							<Col md={2} className="sortBy-title">
 								Sort by:
 							</Col>
-							{ListItem}
+							<SortButton />
 						</div>
 					</Row>
 					<Row>
@@ -59,24 +55,64 @@ class RightSection extends Component {
 	}
 }
 
-class CouponList extends Component {
+class SortButton extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+
+		this.state = {
+			activeId: 0
+		};
+		this.changeActiveId = this.changeActiveId.bind(this);
+	}
+	changeActiveId(event) {
+		const {id}=event.target
+		this.setState({
+			activeId: id
+		});
 	}
 	render() {
-		return <div />;
+		return (
+			<div className="sort-button-list">
+				<Col md={2}>
+				<Button
+					bsStyle={this.state.activeId == 0 ? "primary" : "default"}
+					bsSize="xsmall"
+					block
+					className="sort-button"
+					id='0'
+					onClick={this.changeActiveId}
+				>
+					Popular
+				</Button>
+				</Col>
+				<Col md={2}>
+				<Button
+					bsStyle={this.state.activeId == 1 ? "primary" : "default"}
+					bsSize="xsmall"
+					block
+					className="sort-button"
+					id='1'
+					onClick={this.changeActiveId}
+				>
+					Newest
+				</Button>
+				</Col>
+				<Col md={2}>
+				<Button
+					bsStyle={this.state.activeId == 2 ? "primary" : "default"}
+					bsSize="xsmall"
+					block
+					className="sort-button"
+					active={this.state.id == 2}
+					id='2'
+					onClick={this.changeActiveId}
+				>
+					NewComing
+				</Button>
+				</Col>
+			</div>
+		);
 	}
 }
-
-const SortButton = props => {
-	const isActive = props.id == 0 ? true : false;
-	const bsStyle=props.id==0?"primary":"default";
-	return (
-		<Button bsStyle={bsStyle} bsSize="xsmall" block className="sort-button">
-			{props.title}
-		</Button>
-	);
-};
 
 export default RightSection;
