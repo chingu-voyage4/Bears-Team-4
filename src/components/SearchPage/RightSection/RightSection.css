@@ -6,6 +6,7 @@
 }
 .sortBy-title{
 	width:auto;
+	margin-top: 0.7%;
 }
 .View-Group{
 	margin:2% 0;
@@ -14,9 +15,10 @@
 	border-radius: 25px;
 	font-size: 14px;
 }
-.sortBy-title{
-	margin-top: 0.7%;
-}
 .sortBy>div>button{
 	margin-top: 5%;
+}
+.sort-button-list{
+	position: relative;
+	top:5px;
 }
