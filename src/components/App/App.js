@@ -14,6 +14,7 @@ import Signup from "../Signup/Signup";
 import MainPage from "../MainPage/MainPage";
 import SearchPage from "../SearchPage/SearchPage";
 import StoresPage from "../StoresPage/StoresPage";
+import Views from "../Views/Views";
 
 import "./App.css";
 
@@ -28,6 +29,7 @@ class App extends Component {
         <Route path="/stores/:storeName" component={StoresPage} />
         <Route path="/search/:term" component={SearchPage} />
         <Route path="/category/:categoryName" component={CategoryPage} />
+        <Route path="/views" component={Views} />
         <Footer />
       </div>
     );
