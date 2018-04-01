@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import "./CouponDetails.css";
+
 import Comments from "../Comments/Comments";
+
+import "./CouponDetails.css";
 
 class CouponDetails extends Component {
   constructor(props) {
@@ -36,7 +38,7 @@ class CouponDetails extends Component {
   }
 
   render() {
-    const { coupon, comments } = this.props;
+    const { coupon } = this.props;
 
     return (
       <div className="coupon-details">
@@ -100,7 +102,9 @@ class CouponDetails extends Component {
             >
               <div>
                 <span className="details__key">Ends</span> :{" "}
-                <span className="details__value">{coupon.expireDate}</span>
+                <span className="details__value">
+                  {new Date(coupon.expiredAt).toDateString()}
+                </span>
               </div>
               <div>
                 <span className="details__key">Details</span> :{" "}
@@ -122,7 +126,8 @@ class CouponDetails extends Component {
               className="dropdown__tabs__comments"
               // Passing show/hide styles as props
               showHide={this.showHideTab("comments")}
-              comments={comments}
+              comments={coupon.comments}
+              couponId={coupon._id}
             />
           </div>
         </div>

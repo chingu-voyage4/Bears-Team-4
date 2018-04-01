@@ -30,6 +30,7 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../", "build"))); // Serving build version of react app
 app.use(
   session({

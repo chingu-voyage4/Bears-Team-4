@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+import * as helpers from "../../../../helpers/helperFunctions";
 import "./CommentItem.css";
 
 class CommentItem extends Component {
@@ -18,7 +19,9 @@ class CommentItem extends Component {
           </div>
           <div className="commentItem__details__poster">
             {" "}
-            {comment.addedDate} ago by {comment.userId}
+            {/* Calculate how many days, mins ago comment was posted */}
+            {/* Also if comment is posted by registered user then get name by users table or if ananymous user then get name from username */}
+            {helpers.dateDiff(comment.updatedAt)} ago by {!comment.userId ? comment.username : comment.userId.firstName}
           </div>
         </div>
       </div>

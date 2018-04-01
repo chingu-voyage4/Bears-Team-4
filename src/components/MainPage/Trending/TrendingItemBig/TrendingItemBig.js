@@ -8,27 +8,16 @@ import "./TrendingItemBig.css";
 
 class TrendingItemBig extends Component {
   render() {
-    const {
-      productImg,
-      logoImg,
-      dealDescription,
-      companyName
-    } = this.props.item;
+    const { imgUrl, storeId, description } = this.props.item;
     return (
       <div className="trending-item-big">
-        <img
-          className="trending-item-big__product-img"
-          alt=""
-          src={productImg}
-        />
+        <img className="trending-item-big__product-img" alt="" src={imgUrl} />
         <div className="trending-item-big__details">
-          <img className="details__logo-img" alt="" src={logoImg} />
-          {/* Bottom box */}
+          <img className="details__logo-img" alt="" src={storeId.logoUrl} />
+          {/* Bottom box - Store Details */}
           <div className="details__info">
-            <div className="details__info__deal-description">
-              {dealDescription}
-            </div>
-            <div className="details__info___company-name">{companyName}</div>
+            <div className="details__info__deal-description">{description.substr(0,75) + " ..."}</div>
+            <div className="details__info___company-name">{storeId.name}</div>
           </div>
         </div>
       </div>

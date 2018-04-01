@@ -36,5 +36,7 @@
 
 .comments__posted {
   max-height: 200px;
+  width: 80%; 
   overflow-y: scroll;
+  margin: 0 auto;
 }

@@ -27,11 +27,21 @@ router.get("/trending/:noOfTrending?/:noOfTopOffers?", async (req, res) => {
     noOfItems: Number(noOfTrending), // How many items want
     showFields: {
       // Specifying witch field wants us on output
+      kind: 1,
+      category: 1,
       title: 1,
       description: 1,
+      code: 1,
+      exclutionDetails: 1,
       linkUrl: 1,
       imgUrl: 1,
-      storeId: 1
+      storeId: 1,
+      "comments.userId": 1,
+      "comments.comment": 1,
+      "comments.updatedAt": 1,
+      expiredAt: 1,
+      likedBy: 1,
+      unlikedBy: 1
     }
   });
 
@@ -44,19 +54,41 @@ router.get("/trending/:noOfTrending?/:noOfTopOffers?", async (req, res) => {
     showFields: {
       // Specifying witch field wants us on output
       kind: 1,
+      category: 1,
       title: 1,
       description: 1,
       code: 1,
       exclutionDetails: 1,
       linkUrl: 1,
+      imgUrl: 1,
       storeId: 1,
       "comments.userId": 1,
       "comments.comment": 1,
-      expiredAt: 1
+      "comments.updatedAt": 1,
+      "comments.username": 1,
+      expiredAt: 1,
+      likedBy: 1,
+      unlikedBy: 1
     }
   });
 
   res.json({ trendingDeals, topOffers });
+});
+
+router.post("/addComment", (req, res) => {
+  // In req.body we recive couponId, comment, username, userId
+
+  Coupon.findById(req.body.couponId) // Getting Relevent Coupon for adding comment.
+    .then(r => {
+      // Saving Comment
+      r.comments.push(req.body);
+      r.save().then(result => {
+        res.json(result);
+      });
+    })
+    .catch(err => {
+      res.send(err);
+    });
 });
 
 module.exports = router;

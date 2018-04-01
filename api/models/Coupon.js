@@ -26,11 +26,13 @@ const usageSchema = new Schema(
 const commentSchema = new Schema(
   {
     userId: {
+      // type: Schema.Types.ObjectId,
+      // required: true,
       type: Schema.Types.ObjectId,
-      required: true,
       index: true,
       ref: "User"
-    }, // Reference to "Users" collection "id"
+    }, // Reference to "Users" collection "id" (This is only used when registered user post a comment)
+    username: { type: String }, // Used to track anonymus comments
     comment: { type: String, required: true }
     // "createdAt" and "updatedAt" automatically added here
   },

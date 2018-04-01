@@ -7,22 +7,30 @@
 
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import Populars from "./Populars/Populars";
 import Subscribe from "./Subscribe/Subscribe";
 import TopOffers from "./TopOffers/TopOffers";
 import TrendingDeals from "./Trending/Trending";
+import * as couponActions from "../../actions/couponActions";
+import * as userActions from "../../actions/userActions";
 
 import "./MainPage.css";
 
 class MainPage extends Component {
+  componentDidMount() {
+    this.props.couponActions.FetchTrendingAndTopOffers();
+    this.props.userActions.GetUserLocation();
+  }
+
   render() {
-    const { trendingItems, coupons, stores } = this.props;
+    const { coupons } = this.props;
 
     return (
       <div className="mainPage">
-        <TrendingDeals trendingItems={trendingItems} />
-        <TopOffers coupons={coupons} stores={stores} />
+        <TrendingDeals coupons={coupons} />
+        <TopOffers coupons={coupons} />
         <Populars />
         <Subscribe />
       </div>
@@ -34,10 +42,17 @@ class MainPage extends Component {
 const mapStateToProps = state => {
   return {
     stores: state.stores,
-    coupons: state.coupons,
-    trendingItems: state.trending
+    coupons: state.coupons
+  };
+};
+
+// Specifying which actions from store we want as props
+const mapActionsToProps = dispatch => {
+  return {
+    couponActions: bindActionCreators(couponActions, dispatch),
+    userActions: bindActionCreators(userActions, dispatch)
   };
 };
 
 // Binding stores states and actions to our compoent's props
-export default connect(mapStateToProps)(MainPage);
+export default connect(mapStateToProps, mapActionsToProps)(MainPage);

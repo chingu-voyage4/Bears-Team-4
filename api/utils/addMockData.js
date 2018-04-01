@@ -100,7 +100,7 @@ async function addMockData(req, res) {
         let store = new Store();
         store.name = faker.address.city();
         store.description = faker.lorem.sentences();
-        store.logoUrl = faker.image.business();
+        store.logoUrl = `https://source.unsplash.com/500x500/?${chance.character({pool: 'abcdefghijklmnopqrstuvwxyz'})}`;
         // Later some other categories also gonna added here based on available coupons
         store.categories = fromFakerList(fakeCategories, 0, 4);
         store.rating = chance.integer({ min: 0, max: 5 });
@@ -134,14 +134,14 @@ async function addMockData(req, res) {
           faker.lorem.sentences()
         ]);
         coupon.linkUrl = faker.internet.url();
-        coupon.imgUrl = chance.pickone([
-          null,
-          null,
-          null,
-          null,
-          faker.image.business()
-        ]);
-
+        // coupon.imgUrl = chance.pickone([
+        //   null,
+        //   null,
+        //   null,
+        //   null,
+        //   `https://source.unsplash.com/500x500/?${chance.character()}`
+        // ]);
+        coupon.imgUrl = `https://source.unsplash.com/500x500/?${chance.character({pool: 'abcdefghijklmnopqrstuvwxyz'})}`;
         coupon.createdAt = faker.date.past();
         coupon.expiredAt = faker.date.future();
 

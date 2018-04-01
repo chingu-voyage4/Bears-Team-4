@@ -1,11 +1,11 @@
 .commentItem {
   width: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .commentItem__logo {
-  width: 50px;
+  min-width: 50px;
   font-size: 2em;
   align-self: center;
 }
