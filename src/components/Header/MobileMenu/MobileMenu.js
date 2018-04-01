@@ -35,7 +35,7 @@ class MobileMenu extends Component {
 
     return (
       <div className="mobile-menu">
-        <a onClick={this.toggleMenu}>
+        <a onClick={this.toggleMenu} className="router-link-reset">
           {/* Show suitable button according to "menuOpen" state */}
           {this.state.menuOpen ? (
             <i className="fas fa-times" />

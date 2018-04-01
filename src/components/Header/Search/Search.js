@@ -27,7 +27,6 @@ class Search extends Component {
         ToggleDropDown
       }, // Update dropDown status in search state.
       search, // search state
-      stores, // stores state
       history // history from "react-router-dom > withRouter" for Redirections
     } = this.props;
 

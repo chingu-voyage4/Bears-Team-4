@@ -16,7 +16,7 @@ class Login extends Component {
           <i className="far fa-user-circle" />
         </div>
         <div className="login__details">
-          <Link to="/signup" className="router-link-reset">
+          <Link to="/auth" className="router-link-reset">
             <div className="login__details_login">Log In / Sign Up</div>
             <div className="login__details_cashback">$0.00 Cash Back</div>
           </Link>
