@@ -22,3 +22,8 @@
 	position: relative;
 	top:5px;
 }
+.submit-a-coupon{
+	position: relative;
+	right:-5%;
+	width:auto;
+}

@@ -13,15 +13,20 @@ import logo from "./thumbnail.jpg";
 import "./LeftSection.css";
 
 class LeftSection extends Component {
+    constructor(props) {
+      super(props);
+    
+      this.state = {};
+    }
     render() {
         const { trendingItems, coupons, stores } = this.props;
         return (
             <div className="left-section">
                 <ImageLogo />
                 <p>50 offers available</p>
-                <CouponType />
-                <About />
-                <Stats />
+                <CouponType titles={this.props.json.checkBoxTitle}/>
+                <About description={this.props.json.aboutUs}/>
+                <Stats stats={this.props.json.stats}/>
             </div>
         );
     }
@@ -33,29 +38,37 @@ const ImageLogo = props => (
     </div>
 );
 
+function CheckBoxCoupon(props){
+    return(
+        <Checkbox className="input-checkbox-label">
+            <label className="checkbox-title">{props.title}</label>
+        </Checkbox>
+    );
+}
+
+function CheckBoxCouponList(props){
+    const ListItems=props.titles.map((title)=>
+        <CheckBoxCoupon title={title.toString()} />
+    );
+    return(
+        <div>
+        {ListItems}
+        </div>
+    );
+}
+
 const CouponType = props => (
     <div className="coupon-type">
         <h4>Coupon Type</h4>
-        <CheckBoxCoupon title="Coupon Code" />
-        <CheckBoxCoupon title="Online Sales" />
+        <CheckBoxCouponList titles={props.titles}/>
     </div>
-);
-
-const CheckBoxCoupon = props => (
-    <Checkbox className="input-checkbox-label">
-        <label className="checkbox-title">{props.title}</label>
-    </Checkbox>
 );
 
 const About = props => (
     <div className="about">
         <h4>About Udemy</h4>
         <p className="about-content">
-            Udemy offers a platform to take and build online courses on any
-            subject. The course categories include academic courses, business
-            courses, professional courses, creative and performing arts, health
-            and fitness, language courses, lifestyle, music, technology among
-            many others.
+            {props.description}
         </p>
         <TopOffers />
     </div>

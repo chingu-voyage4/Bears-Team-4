@@ -19,21 +19,13 @@ import "./RightSection.css";
 
 class RightSection extends Component {
 	render() {
-		const buttonTitle = ["Popularity", "Newest", "Ending Soon"];
-		let id = -1;
-
-		function getId() {
-			id = id + 1;
-			return id;
-		}
-		
 		const { coupons, stores } = this.props;
 		return (
 			<div className="RightSection">
 				<div className="View-Page View-Group">
 					<Row>
 						<div className="view-title">
-							<h1 className="text-center">Udemy Coupon Codes</h1>
+							<h1 className="text-center">{this.props.title} Coupon Codes</h1>
 						</div>
 					</Row>
 					<Row>
@@ -42,6 +34,9 @@ class RightSection extends Component {
 								Sort by:
 							</Col>
 							<SortButton />
+							<Col mdOffset={2} md={2} className="submit-a-coupon">
+								<a href="#">Submit a coupon</a>
+							</Col>
 						</div>
 					</Row>
 					<Row>
