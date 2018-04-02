@@ -35,12 +35,24 @@ const section1 = {
 		}
 	],
 	stats: [
-		{
-			totalOffers: "50",
-			couponCodes: "46",
-			bestDiscounts: "90% off",
-			averageSavings: "$43.43"
-		}
+		
+			{
+				title:"Total Offers",
+				data:"50"
+			},
+			{
+				title:"Coupon Codes",
+				data:"46"
+			},
+			{
+				title:"Best Discounts",
+				data:"90% off"
+			},
+			{
+				title:"Average Savings",
+				data:"$43.43"
+			}
+		
 	]
 };
 

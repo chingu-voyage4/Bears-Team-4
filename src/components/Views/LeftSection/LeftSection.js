@@ -88,22 +88,35 @@ function TopOffers(props){
     );
 }
 
-const Stats = props => (
-    <div className="stats">
-        <table>
-            <StatsRow title="Total Offers:" data="" />
-            <StatsRow title="Coupon Codes:" data="" />
-            <StatsRow title="Best Discount:" data="" />
-            <StatsRow title="Average Savings:" data="" />
-        </table>
-    </div>
-);
+function StatsList(props){
+    const Stats=props.stats.map((stat)=>(
+        <StatsRow title={stat.title} data={stat.data} />
+    ));
+    return(
+        <div>
+        {Stats}
+        </div>
+    );
+}
 
-const StatsRow = props => (
-    <tr>
-        <td>{props.title}</td>
-        <td>{props.data}</td>
-    </tr>
+function Stats(props) {
+    return(
+    <div className="stats">
+            <StatsList stats={props.stats} />
+        
+    </div>
+    );
+};
+
+const StatsRow=props=>(
+    <Row>
+    <Col md={6}>
+        {props.title}
+    </Col>
+    <Col mdOffset={2} md={4}>
+        {props.data}
+    </Col>
+    </Row>
 );
 
 export default LeftSection;
