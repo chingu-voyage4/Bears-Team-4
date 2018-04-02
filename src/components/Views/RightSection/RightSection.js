@@ -1,5 +1,5 @@
 /**
- * This comopent render TrendingDeals + TopOffer + Populars + Sucribe.
+ * This component render TrendingDeals + TopOffer + Populars + Sucribe.
  *
  * In here we connect with redux storage and get inject needed states and action as props.
  * Then we pass relevent props to child components.
@@ -17,6 +17,8 @@ import {
 import Coupon from "../../Common/Coupon/Coupon";
 import "./RightSection.css";
 
+
+//Main section that renders everything in RightSection
 class RightSection extends Component {
 	render() {
 		const { coupons, stores } = this.props;
@@ -50,6 +52,7 @@ class RightSection extends Component {
 	}
 }
 
+//Lists all three sort buttons-Popular, Newest and Ending Soon
 class SortButton extends Component {
 	constructor(props) {
 		super(props);
@@ -102,7 +105,7 @@ class SortButton extends Component {
 					id='2'
 					onClick={this.changeActiveId}
 				>
-					NewComing
+					Ending Soon
 				</Button>
 				</Col>
 			</div>

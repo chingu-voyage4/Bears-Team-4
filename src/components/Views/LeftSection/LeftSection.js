@@ -1,8 +1,5 @@
 /**
- * This comopent render TrendingDeals + TopOffer + Populars + Sucribe.
- *
- * In here we connect with redux storage and get inject needed states and action as props.
- * Then we pass relevent props to child components.
+    This component renders the left section of the view page, containing the logo, checkboxes, top offers and stats.
  **/
 
 import React, { Component } from "react";
@@ -23,7 +20,7 @@ class LeftSection extends Component {
         return (
             <div className="left-section">
                 <ImageLogo />
-                <p>50 offers available</p>
+                <p>{this.props.json.stats[0].data} offers available</p>
                 <CouponType titles={this.props.json.checkBoxTitle} />
                 <About
                     titles={this.props.json.title}
@@ -39,12 +36,15 @@ class LeftSection extends Component {
     }
 }
 
+//Renders the image logo
 const ImageLogo = props => (
     <div className="image-logo">
         <Image src={logo} rounded />
     </div>
 );
 
+
+//Renders the Checkbox Coupon
 function CheckBoxCoupon(props) {
     return (
         <Checkbox className="input-checkbox-label">
@@ -53,6 +53,7 @@ function CheckBoxCoupon(props) {
     );
 }
 
+//Renders all checkbox coupon
 function CheckBoxCouponList(props) {
     const ListItems = props.titles.map(checkTitle => (
         <CheckBoxCoupon title={checkTitle.title} />
@@ -60,6 +61,7 @@ function CheckBoxCouponList(props) {
     return <div>{ListItems}</div>;
 }
 
+//Component that contains the coupons
 const CouponType = props => (
     <div className="coupon-type">
         <h4>Coupon Type</h4>
@@ -67,6 +69,7 @@ const CouponType = props => (
     </div>
 );
 
+//Renders the about section
 const About = props => (
     <div className="about">
         <h4>About {props.titles}</h4>
@@ -74,48 +77,43 @@ const About = props => (
     </div>
 );
 
-function TopOffers(props){
+//Lists the top offers
+function TopOffers(props) {
     const TopDealsList = props.deals.map(dealTitle => (
         <li>{dealTitle.deal}</li>
     ));
     return (
         <div className="top-offers">
             <h2>Today's {props.titles} Top Offers</h2>
-            <ul>
-                {TopDealsList}
-            </ul>
+            <ul>{TopDealsList}</ul>
         </div>
     );
 }
 
-function StatsList(props){
-    const Stats=props.stats.map((stat)=>(
+//Returns all the stats to Stats
+function StatsList(props) {
+    const Stats = props.stats.map(stat => (
         <StatsRow title={stat.title} data={stat.data} />
     ));
-    return(
-        <div>
-        {Stats}
+    return <div>{Stats}</div>;
+}
+
+//Main Component that renders stats
+function Stats(props) {
+    return (
+        <div className="stats">
+            <StatsList stats={props.stats} />
         </div>
     );
 }
 
-function Stats(props) {
-    return(
-    <div className="stats">
-            <StatsList stats={props.stats} />
-        
-    </div>
-    );
-};
-
-const StatsRow=props=>(
+//Renders each row of stats
+const StatsRow = props => (
     <Row>
-    <Col md={6}>
-        {props.title}
-    </Col>
-    <Col mdOffset={2} md={4}>
-        {props.data}
-    </Col>
+        <Col md={6}>{props.title}</Col>
+        <Col mdOffset={2} md={4} className="right-align">
+            {props.data}
+        </Col>
     </Row>
 );
 
