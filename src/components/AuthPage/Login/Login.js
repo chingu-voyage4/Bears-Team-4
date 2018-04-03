@@ -13,7 +13,7 @@ const Login = props => (
 	<Grid fluid={true}>
       <Row>
         <Col smOffset={4} sm={5} className="right-section-container">
-          <SimpleFormInstance type="login" />
+          <SimpleFormInstance type="login" {...props} />
         </Col>
       </Row>
 	</Grid>

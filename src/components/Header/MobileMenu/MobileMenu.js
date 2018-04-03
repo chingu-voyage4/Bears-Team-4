@@ -46,7 +46,7 @@ class MobileMenu extends Component {
         <ul className="mobile-menu__list" style={menuStyle}>
           {/* Rendering hidden <Login> Componone inside mobile menu */}
           <li className="mobile-menu__list__login">
-            <Login />
+            <Login user={this.props.user}/>
           </li>
           <li>Cash Back</li>
           <li>Gift Card Deals</li>

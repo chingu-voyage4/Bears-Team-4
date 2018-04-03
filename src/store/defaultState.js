@@ -9,10 +9,6 @@ const defaultState = {
     filteredCategories: [],
     dropDown: false
   },
-  user:{
-    country: null,
-    city: null
-  },
   stores: {
     stores: [
       {

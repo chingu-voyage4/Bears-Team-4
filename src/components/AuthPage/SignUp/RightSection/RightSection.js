@@ -9,7 +9,7 @@ import SimpleFormInstance from "../../SimpleFormInstance/SimpleFormInstance";
 const RightSection = props => (
   <MuiThemeProvider>
     <Col>
-      <SimpleFormInstance type="signup" />
+      <SimpleFormInstance type="signup" {...props} />
     </Col>
   </MuiThemeProvider>
 );

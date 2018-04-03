@@ -14,8 +14,8 @@ class TopOffers extends Component {
     return (
       <div className="topOffers">
         <div className="topOffers__title">Top Offers</div>
-        {coupons.topOffers.map(i => {
-          return <Coupon key={i._id} coupon={coupons.coupons[i._id]} />;
+        {coupons.topOffers.map((i, index) => {
+          return <Coupon key={index} coupon={coupons.coupons[i._id]} />;
         })}
       </div>
     );

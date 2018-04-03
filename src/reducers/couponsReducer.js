@@ -25,8 +25,8 @@ const couponsReducer = (state = {}, action) => {
       return {
         ...state,
         coupons: { ...state.coupons, ...trendingDealsObj, ...topOffersObj },
-        trendingDeals: [...state.trendingDeals, ...trendingDealsId],
-        topOffers: [...state.topOffers, ...topOffers]
+        trendingDeals: [...trendingDealsId],
+        topOffers: [ ...topOffers]
       };
 
     // Adding Commment

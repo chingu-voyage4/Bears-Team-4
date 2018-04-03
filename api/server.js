@@ -10,7 +10,8 @@ const config = require("./utils/config");
 const app = express();
 const mongoose = require("mongoose");
 const initPassport = require("./passport/init");
-const routes = require("./routes/index")(passport);
+// const routes = require("./routes/index")(passport);
+const routes = require("./routes/index");
 
 // // Connect to DB-Local:
 // NOTE: Uncomment below line if you want to save data locally
@@ -26,7 +27,13 @@ mongoose
 // Setting up view engine. If decided to use view engine add views to "view" folder.
 app.set("view engine", "ejs");
 
-app.use(cors());
+// Setting up CORS
+const corsOptions = {
+  origin: ["*", "http://localhost:3000"], // List of host authorized make cors request. For cross origin cookies specific host should be given. (ex:"http://localhost:3000")
+  credentials: true // Must enable for cross origin cookies.
+};
+app.use(cors(corsOptions));
+
 app.use(morgan("dev"));
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));

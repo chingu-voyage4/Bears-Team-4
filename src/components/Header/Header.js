@@ -22,7 +22,7 @@ import logo from "../../images/logoHeader.svg";
  **/
 class Header extends Component {
   render() {
-    const { searchState, storesState, searchActions } = this.props;
+    const { searchState, storesState, userState, searchActions } = this.props;
 
     return (
       <div className="header-overlay">
@@ -32,7 +32,7 @@ class Header extends Component {
               <img src={logo} alt="RetailMeNot" className="header__logo__svg" />
             </Link>
             <div className="header__logo__mobile">
-              <MobileMenu />
+              <MobileMenu user={userState}/>
             </div>
           </div>
           <div className="header__search">
@@ -43,7 +43,7 @@ class Header extends Component {
             />
           </div>
           <div className="header__login">
-            <Login />
+            <Login user={userState}/>
           </div>
           <div className="header__menu">
             <Menu />
@@ -58,7 +58,8 @@ class Header extends Component {
 const mapStateToProps = state => {
   return {
     searchState: state.search,
-    storesState: state.stores
+    storesState: state.stores,
+    userState: state.user
   };
 };
 

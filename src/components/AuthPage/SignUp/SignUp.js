@@ -12,19 +12,21 @@ import "./SignUp.css";
 /*LeftSection lists the services avaliable
   RightSection lists the form for signup*/
 
-const SignUp = props => (
-  <MuiThemeProvider>
-    <Grid fluid={true}>
-    <Row className="show-grid signup">
-      <Col sm={4} md={6} xsHidden={true}>
-        <LeftSection />
-      </Col>
-      <Col sm={8} md={6}>
-        <RightSection />
-      </Col>
-    </Row>
-    </Grid>
-  </MuiThemeProvider>
-);
+const SignUp = props => {
+  return (
+    <MuiThemeProvider>
+      <Grid fluid={true}>
+        <Row className="show-grid signup">
+          <Col sm={4} md={6} xsHidden={true}>
+            <LeftSection />
+          </Col>
+          <Col sm={8} md={6}>
+            <RightSection {...props} />
+          </Col>
+        </Row>
+      </Grid>
+    </MuiThemeProvider>
+  );
+};
 
 export default SignUp;

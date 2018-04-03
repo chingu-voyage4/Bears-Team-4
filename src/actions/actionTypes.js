@@ -10,3 +10,5 @@ export const ADD_COMMENT = "ADD_COMMENT";
 
 // user action types
 export const GET_USER_LOCATION = "GET_USER_LOCATION";
+export const AUTH_SIGNUP = "AUTH_SIGNUP";
+export const AUTH_LOGIN = "AUTH_LOGIN";

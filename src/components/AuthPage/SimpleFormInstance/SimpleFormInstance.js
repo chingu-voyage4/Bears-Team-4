@@ -53,7 +53,7 @@ class SimpleFormInstance extends Component {
             <div className="lower-card-content">
               <SignWithFb title={this.title} />
               <Divider />
-              <FormInstance title={this.title} />
+              <FormInstance title={this.title} {...this.props} />
             </div>
           </Card>
         </div>
@@ -166,10 +166,24 @@ class FormInstance extends Component {
     });
   }
 
+  // Handle Submittion of form data
+  onSubmitHandler(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const credentials = {
+      email: this.state.email,
+      password: this.state.pass
+    }
+
+    this.state.title === "Login"
+      ? this.props.handleLogIn(credentials)
+      : this.props.handleSignUp(credentials);
+  }
+
   render() {
     return (
       <div className="section">
-        <Form horizontal>
+        <Form horizontal onSubmit={this.onSubmitHandler.bind(this)}>
           <FormGroup className="group-content" controlId="formHorizontalEmail">
             <Col>
               <InputGroup>
