@@ -6,7 +6,10 @@ import redirectAnim from "../../../../images/redirectAnim.gif";
 
 class CouponModel extends Component {
   state = {
-    modalOpen: false
+    modalOpen: false,
+    redirect: this.props.redirect,
+    timer : 4000,
+    countDown : 4
   };
 
   showModel() {
@@ -18,15 +21,31 @@ class CouponModel extends Component {
     clearTimeout(this.state.timerId);
   }
 
+  setRedirect(option) {
+    this.setState({ redirect: option });
+  }
+
   // 4 seconds after model is loaded we open external coupon site link and close the model.
   redirectTimer() {
-    let timerId = setTimeout(() => {
-      window.open(this.props.coupon.linkUrl, "_newtab");
-      this.hideModel();
-    }, 4000);
+    // Countdown Timer - Just Count Down for Asthetic Purposes
+    let countDown = setInterval(()=>{
+      if (this.state.countDown >= 0){
+        this.setState({countDown : this.state.countDown - 1});
+      } else {
+        clearInterval(countDown);
+      }
+    }, 1000);
 
-    // Saving timer id so we can disable timer when button is clicked.
-    this.setState({ timerId });
+    // Redirect Timer - Witch redierct user to extenal store site.
+    if (this.state.redirect) {
+      let timerId = setTimeout(() => {
+        window.open(this.props.coupon.linkUrl, "_newtab");
+        this.hideModel();
+      }, this.state.timer);
+
+      // Saving timer id so we can disable timer when button is clicked.
+      this.setState({ timerId });
+    }
   }
 
   redirectClick() {
@@ -35,26 +54,42 @@ class CouponModel extends Component {
     this.hideModel();
   }
 
+  componentDidMount() {
+    this.props.getModalOpenFn &&
+      this.props.getModalOpenFn({
+        showModel: this.showModel.bind(this),
+        hideModel: this.hideModel.bind(this),
+        setRedirect: this.setRedirect.bind(this),
+        redirectTimer: this.redirectTimer.bind(this)
+      });
+  }
+
   render() {
     const { coupon } = this.props;
-
     return (
       <Modal
+        closeIcon
         open={this.state.modalOpen}
         onOpen={() => {
           console.log("opened");
-          this.redirectTimer();
+          this.redirectTimer.bind(this)();
         }}
         onClose={this.hideModel.bind(this)}
-        closeIcon={"X"}
         size="small"
+        // Intial render output of model. When user click on this model open.
         trigger={
-          <div onClick={this.showModel.bind(this)} className="showButton">
-            {coupon.kind === "deal" ? "Get Deal" : "Show Code"}
+          <div
+            className="coupon-modal"
+            onClick={() => {
+              this.setState({ redirect: this.props.redirect, countDown: 4 });
+              this.showModel.bind(this)();
+            }}
+          >
+            {this.props.trigger}
           </div>
         }
       >
-        <Modal.Header>{coupon.storeId.name + " Coupon/Deal" }</Modal.Header>
+        <Modal.Header>{coupon.storeId.name + " Coupon/Deal"}</Modal.Header>
         <Modal.Content>
           <Image size="small" circular centered src={coupon.storeId.logoUrl} />
           <Modal.Description>
@@ -77,32 +112,37 @@ class CouponModel extends Component {
 
             <div className="modal-button">
               <div>
-              {/* This box only shown when coupon type is not deal */}
-              {coupon.kind !== "deal" ? (
-                <Button size="massive" basic color="olive">
-                  {coupon.code}
+                {/* This box only shown when coupon type is not deal */}
+                {coupon.kind !== "deal" ? (
+                  <Button size="massive" basic color="olive">
+                    {coupon.code}
+                  </Button>
+                ) : (
+                  ""
+                )}
+              </div>
+
+              <div>
+                <Button
+                  size="small"
+                  color="blue"
+                  icon
+                  labelPosition="left"
+                  onClick={this.redirectClick.bind(this)}
+                >
+                  <Icon name="world" />
+                  {"Go To " + coupon.storeId.name + " Store Web Site"}
                 </Button>
-              ) : (
-                ""
+              </div>
+
+              {this.state.redirect && (
+                <div>
+                  <h4>
+                    Automatically Redirected In {this.state.countDown} Seconds{" "}
+                    <img width="25" height="25" alt="" src={redirectAnim} />
+                  </h4>
+                </div>
               )}
-              </div>
-
-              <div>
-              <Button
-                size="small"
-                color="blue"
-                icon
-                labelPosition="left"
-                onClick={this.redirectClick.bind(this)}
-              >
-                <Icon name="world" />
-                {"Go To " + coupon.storeId.name + " Store Web Site"}
-              </Button>
-              </div>
-
-              <div>
-              <h4>Automatically Redirected In 4 Seconds <img width="25" height="25" alt="" src={redirectAnim}/></h4>
-              </div>
             </div>
           </Modal.Description>
         </Modal.Content>
