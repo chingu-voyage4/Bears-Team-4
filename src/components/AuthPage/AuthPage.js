@@ -17,7 +17,6 @@ class AuthPage extends Component {
   }
 
   render() {
-    // this.props.userActions.SignUp({ email: "asd@gmaisdfsdfsdffl.com", password: "asdad" });
     return (
       <div>
         {/* Show Signup page Initially */}

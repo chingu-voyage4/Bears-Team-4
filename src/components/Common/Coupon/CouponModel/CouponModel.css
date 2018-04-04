@@ -1,0 +1,31 @@
+/* Semantic UI Modal shown in full height, this reset it */
+.modal{
+  bottom:auto !important;
+}
+
+.modal-button{
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction:column;
+  flex-basis: 800px;
+  align-items: center;
+}
+
+.modal-button h4{
+  margin-top:10px;
+}
+
+.modal-title{
+  font-weight:bold;
+}
+
+.coupon__buttons .showButton {
+  background: #1896bc;
+  border-radius: 3px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  height: 50px;
+  line-height: 3rem;
+  text-align: center;
+}

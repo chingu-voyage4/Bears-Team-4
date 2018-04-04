@@ -7,6 +7,7 @@
 import React, { Component } from "react";
 
 import CouponDetails from "./CouponDetails/CouponDetails";
+import CouponModel from "./CouponModel/CouponModel";
 import * as helpers from "../../../helpers/helperFunctions";
 
 import "./Coupon.css";
@@ -33,9 +34,10 @@ class Coupon extends Component {
           <div className="saveButton">
             <i className="far fa-star" /> Save
           </div>
-          <div className="showButton">
+          {/* <div className="showButton">
             {coupon.kind === "deal" ? "Get Deal" : "Show Code"}
-          </div>
+          </div> */}
+          <CouponModel coupon={coupon}/>
         </div>
         <div className="coupon__moreDetails">
           <CouponDetails coupon={coupon} />

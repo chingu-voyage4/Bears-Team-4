@@ -52,17 +52,6 @@
   width: 20%;
 }
 
-.coupon__buttons .showButton {
-  background: #1896bc;
-  border-radius: 3px;
-  color: white;
-  font-size: 0.9rem;
-  font-weight: bold;
-  height: 50px;
-  line-height: 3rem;
-  text-align: center;
-}
-
 .coupon__buttons .saveButton {
   color: gray;
   font-size: 0.8rem;
