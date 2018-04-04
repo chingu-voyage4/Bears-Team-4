@@ -70,6 +70,10 @@
   text-align: right;
 }
 
+.coupon__buttons .saveButton:hover{
+  font-weight: bold;
+}
+
 .coupon__moreDetails {
   width: 100%;
 }

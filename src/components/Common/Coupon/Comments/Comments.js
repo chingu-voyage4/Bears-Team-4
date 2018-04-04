@@ -10,8 +10,10 @@ import "./Comments.css";
 class Comments extends Component {
   constructor(props) {
     super(props);
+    const { user } = this.props;
+
     this.state = {
-      username: "",
+      username: user.authenticated ? user.firstName : "",
       comment: "",
       location: true
     };
@@ -52,13 +54,18 @@ class Comments extends Component {
         // Combining comment with location
         comment = comment + userLocation;
 
+        // Getting User Id if user logged in
+        const userId = user.authenticated ? user._id : null;
+
         // Adding Comment
-        this.props.couponActions.AddComment({ couponId, comment, username });
+        user.authenticated 
+          ? this.props.couponActions.AddComment({ couponId, comment, userId })
+          : this.props.couponActions.AddComment({ couponId, comment, username })
       }
 
       //Cleaning Input Fields
       this.setState({
-        username: "",
+        username: this.props.user.authenticated ? user.firstName : "",
         comment: ""
       });
     }
@@ -85,6 +92,7 @@ class Comments extends Component {
             type="text"
             name="username"
             value={this.state.username}
+            disabled={user.authenticated}
             onChange={this.onChangeHandler.bind(this)}
             onKeyUp={this.onKeyUpHandler.bind(this)}
             placeholder="First Name (Optional)"

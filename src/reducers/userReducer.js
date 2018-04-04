@@ -46,8 +46,7 @@ const userReducer = (state = defaultUserState, action) => {
 
     case ACTIONS.AUTH_LOGOUT + "_FULFILLED": {
       return {
-        country: null,
-        city: null,
+        ...state,
         authenticated: false
       };
     }

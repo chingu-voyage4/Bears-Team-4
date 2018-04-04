@@ -11,12 +11,12 @@ export const FetchTrendingAndTopOffers = (big, small) => {
 
 export const AddComment = commentData => {
   // If user is not registered and also not provided name then username will be saved as Anonymus.
-  if (!commentData.username) {
+  if (!commentData.userId && !commentData.username) {
     commentData.username = "Anonymus";
   }
 
   return {
     type: ACTIONS.ADD_COMMENT,
-    payload: axios.post("coupon/addComment", commentData),
+    payload: axios.post("coupon/addComment", commentData)
   };
 };

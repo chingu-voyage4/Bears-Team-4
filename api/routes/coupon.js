@@ -83,7 +83,16 @@ router.post("/addComment", (req, res) => {
       // Saving Comment
       r.comments.push(req.body);
       r.save().then(result => {
-        res.json(result);
+        r.populate(
+          {
+            path: "comments.userId", // Populating both "comments.userId"
+            select: "firstName", // Specify which fields to show in sub docs after populating
+            options: { limit: 10 } // Limiting max comments output is 10
+          },
+          (err, doc) => {
+            res.json(doc);
+          }
+        );
       });
     })
     .catch(err => {
