@@ -31,7 +31,7 @@ const userReducer = (state = defaultUserState, action) => {
       return state;
     }
 
-    // Hnalde LogIn
+    // Handle LogIn
     case ACTIONS.AUTH_LOGIN + "_FULFILLED": {
       const { success, message } = action.payload;
       return {
@@ -42,6 +42,14 @@ const userReducer = (state = defaultUserState, action) => {
     }
     case ACTIONS.AUTH_LOGIN + "_REJECTED": {
       return state;
+    }
+
+    case ACTIONS.AUTH_LOGOUT + "_FULFILLED": {
+      return {
+        country: null,
+        city: null,
+        authenticated: false
+      };
     }
     default: {
       return state;

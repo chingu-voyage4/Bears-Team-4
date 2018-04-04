@@ -68,3 +68,17 @@ export function LogIn(logInDetails) {
       });
   };
 }
+
+export function LogOut() {
+  return dispatch => {
+    axios
+      .get("auth/logout", { withCredentials: true }) // For cross domain cookies must use "withCredentials: true"
+      .then(r => {
+        localStorage.removeItem("user");
+        dispatch({
+          type: ACTIONS.AUTH_LOGOUT+ "_FULFILLED",
+          payload: r.data
+        });
+      });
+  };
+}

@@ -109,9 +109,21 @@ module.exports = function(passport) {
   // });
 
   /* Handle Logout */
-  router.get("/signout", function(req, res) {
+  router.get("/logout", function(req, res) {
     req.logout();
-    res.redirect("/");
+
+    // req.logout only seems to remove req.user reference. So for improved security also run below code.
+    // This remove that session from both server and client.
+    req.session.destroy(function(err) {
+      if (!err) {
+        res
+          .status(200)
+          .clearCookie("connect.sid", { path: "/" })
+          .json({ status: "Successfully Logout" });
+      } else {
+        console.log(err);
+      }
+    });
   });
 
   return router;

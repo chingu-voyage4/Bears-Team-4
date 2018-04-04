@@ -12,6 +12,7 @@ import Menu from "./Menu/Menu";
 import MobileMenu from "./MobileMenu/MobileMenu";
 import Search from "./Search/Search";
 import * as searchActions from "../../actions/searchActions";
+import * as userActions from "../../actions/userActions";
 
 import "./Header.css";
 import logo from "../../images/logoHeader.svg";
@@ -32,7 +33,7 @@ class Header extends Component {
               <img src={logo} alt="RetailMeNot" className="header__logo__svg" />
             </Link>
             <div className="header__logo__mobile">
-              <MobileMenu user={userState}/>
+              <MobileMenu user={userState} actions={this.props.userActions}/>
             </div>
           </div>
           <div className="header__search">
@@ -43,7 +44,7 @@ class Header extends Component {
             />
           </div>
           <div className="header__login">
-            <Login user={userState}/>
+            <Login user={userState} actions={this.props.userActions}/>
           </div>
           <div className="header__menu">
             <Menu />
@@ -66,7 +67,8 @@ const mapStateToProps = state => {
 // Specifying which actions. In here we simply say add all actions using bindActionCreators()
 const mapDispatchToProps = dispatch => {
   return {
-    searchActions: bindActionCreators(searchActions, dispatch)
+    searchActions: bindActionCreators(searchActions, dispatch),
+    userActions: bindActionCreators(userActions, dispatch)
   };
 };
 

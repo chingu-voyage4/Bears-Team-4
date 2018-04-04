@@ -1,0 +1,46 @@
+.login-menu{
+  position: relative;
+}
+
+.login-menu > ul {
+  background: var(--site-white);
+  color: var(--site-black);
+  font-size: 0.9rem;
+  /* height: 200%; Used 200% to give additional space to cover when scrolling down */
+  justify-content: center;
+  right: 0;
+  list-style-type: none;
+  margin-top:10px;
+  padding: 0;
+  position: absolute;
+  width: 250px;
+  z-index: 9999;
+  border-radius: 6px;
+}
+
+.login-menu li {
+  align-items: center;
+  display: flex;
+  min-height: 50px;
+  padding: 10px 20px;
+}
+
+.login-menu li:hover {
+  background: var(--link-hover-color);
+}
+
+.login-menu__list__login {
+  border-bottom: var(--border-color) solid 2px;
+  height: 70px;
+}
+
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
+
+/** 
+ * Hide drop down menu when in mobile menu
+**/
+@media (max-width: 800px) {
+  .login-menu__list{
+    display:none !important;
+  }
+}

@@ -5,6 +5,7 @@
  **/
 
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import Login from "../Login/Login";
 
@@ -18,12 +19,19 @@ class MobileMenu extends Component {
     };
 
     this.toggleMenu = this.toggleMenu.bind(this);
+    this.hideMenu = this.hideMenu.bind(this);
   }
 
   // Toggle mobile menu's show/hide state when button clicked.
   toggleMenu() {
     this.setState({
       menuOpen: !this.state.menuOpen
+    });
+  }
+
+  hideMenu() {
+    this.setState({
+      menuOpen: false
     });
   }
 
@@ -43,21 +51,25 @@ class MobileMenu extends Component {
             <i className="fas fa-bars" />
           )}
         </a>
-        <ul className="mobile-menu__list" style={menuStyle}>
+        <ul
+          className="mobile-menu__list"
+          style={menuStyle}
+          onClick={this.hideMenu}
+        >
           {/* Rendering hidden <Login> Componone inside mobile menu */}
           <li className="mobile-menu__list__login">
-            <Login user={this.props.user}/>
-          </li>
-          <li>Cash Back</li>
-          <li>Gift Card Deals</li>
-          <li>Near Me</li>
-          <li>Spring Deals</li>
-          <li>
-            Departments &nbsp;<i className="fas fa-angle-down" />
+            <Login user={this.props.user} />
           </li>
           <li>
-            Explore &nbsp;<i className="fas fa-angle-down" />
+            <Link to="/" className="router-link-reset">
+              Homepage
+            </Link>
           </li>
+          <li>My Saved Offers</li>
+          <li>My Saved Stores</li>
+          <li>Submitted Coupons</li>
+          <li>My Profile & Settings</li>
+          <li onClick={() => this.props.actions.LogOut()}>Log Out</li>
         </ul>
       </div>
     );
