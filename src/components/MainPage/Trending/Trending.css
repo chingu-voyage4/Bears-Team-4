@@ -12,6 +12,11 @@
   width: 100%;
 }
 
+/* Fix div added by CouponModel */
+.trending__big-grid div{
+  flex: 220px;
+}
+
 .trending__small-grid {
   flex-wrap: nowrap;
 }

@@ -5,5 +5,5 @@ module.exports = {
     db:{
         'local' : 'mongodb://localhost/coupon',
        // 'mlab'  : 'MLAB ID REQUIRED'
-    }
+    },
 };

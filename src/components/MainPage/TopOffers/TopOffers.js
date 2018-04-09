@@ -10,14 +10,13 @@ import "./TopOffers.css";
 
 class TopOffers extends Component {
   render() {
-    const {coupons, stores } = this.props;
-
+    const { coupons } = this.props;
     return (
       <div className="topOffers">
         <div className="topOffers__title">Top Offers</div>
-        <Coupon coupon={coupons[0]} store={stores.stores[0]} />
-        {/* <Coupon />
-        <Coupon /> */}
+        {coupons.topOffers.map((i, index) => {
+          return <Coupon key={index} coupon={coupons.coupons[i._id]} />;
+        })}
       </div>
     );
   }

@@ -18,9 +18,11 @@ import "./Trending.css";
 
 class Trending extends Component {
   render() {
+    const { coupons, trendingDeals } = this.props.coupons;
+
     // Specifying which items are shown big and small.
-    const trendingItemsBig = this.props.trendingItems.slice(0, 3);
-    const trendingItemsSmall = this.props.trendingItems.slice(3);
+    const trendingItemsBig = trendingDeals.slice(0, 3);
+    const trendingItemsSmall = trendingDeals.slice(3);
 
     return (
       <div className="trending">
@@ -30,13 +32,13 @@ class Trending extends Component {
         {/* Renderning Big Grid */}
         <div className="trending__big-grid">
           {trendingItemsBig.map((item, i) => {
-            return <TrendingItemBig key={i} item={item} />;
+            return <TrendingItemBig key={i} item={coupons[item]} />;
           })}
         </div>
         {/* Renderning Small Grid */}
         <div className="trending__small-grid">
           {trendingItemsSmall.map((item, i) => {
-            return <TrendingItemSmall key={i} item={item} />;
+            return <TrendingItemSmall key={i} item={coupons[item]} />;
           })}
         </div>
       </div>

@@ -25,6 +25,18 @@
 .coupon__details {
   flex-grow: 1;
   width: 60%;
+  position:relative;
+}
+
+/* Using this wrapper to make sure CouponModel can open when mobile viewports */
+/* Model wrapper only shown in <800px */
+.coupon__details__wrapper{
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .coupon__details__type {
@@ -52,22 +64,15 @@
   width: 20%;
 }
 
-.coupon__buttons .showButton {
-  background: #1896bc;
-  border-radius: 3px;
-  color: white;
-  font-size: 0.9rem;
-  font-weight: bold;
-  height: 50px;
-  line-height: 3rem;
-  text-align: center;
-}
-
 .coupon__buttons .saveButton {
   color: gray;
   font-size: 0.8rem;
   margin: 10px;
   text-align: right;
+}
+
+.coupon__buttons .saveButton:hover{
+  font-weight: bold;
 }
 
 .coupon__moreDetails {
@@ -80,5 +85,9 @@
   .coupon__buttons,
   .coupon__moreDetails {
     display: none;
+  }
+
+  .coupon__details__wrapper{
+    display: initial;
   }
 }

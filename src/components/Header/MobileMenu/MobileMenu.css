@@ -1,3 +1,4 @@
+
 .mobile-menu {
   font-size: 2.5rem; /* Making menu's Open/Close buttons larger */
 }
@@ -27,7 +28,14 @@
   background: var(--link-hover-color);
 }
 
+/* To make full area clickable */
+.mobile-menu li a{
+  display: inline-block;
+  width:100%;
+}
+
 .mobile-menu__list__login {
   border-bottom: var(--border-color) solid 2px;
   height: 70px;
 }
+
