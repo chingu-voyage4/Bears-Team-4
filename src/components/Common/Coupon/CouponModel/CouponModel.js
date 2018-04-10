@@ -71,7 +71,6 @@ class CouponModel extends Component {
         closeIcon
         open={this.state.modalOpen}
         onOpen={() => {
-          console.log("opened");
           this.redirectTimer.bind(this)();
         }}
         onClose={this.hideModel.bind(this)}

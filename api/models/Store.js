@@ -14,6 +14,7 @@ const storeSchema = new Schema(
   {
     name: { type: String, required: true, unique: true },
     description: { type: String, required: true },
+    storeUrl: { type: String, required: true },
     logoUrl: { type: String, required: true },
     categories: [{ type: String }],
     rating: { type: Number, default: 0, min: 0, max: 5 }

@@ -1,0 +1,58 @@
+.couponSubmitPage{
+    max-width:650px;
+    width:100%;
+    margin:50px;
+}
+
+/* By default react date picker element only take small width witch it need.(inline-block).
+    So this make sure date picker take full width available.    
+*/
+.react-datepicker-wrapper{
+    display: block !important;
+}
+.react-datepicker__input-container{
+    display: block !important;
+}
+
+/* When datepicker added to Semantic UI Label theres some anomalys. This fix it */
+.datepickerWrapper{
+width:100% !important;
+padding:0 8px;
+}
+
+@media screen and (max-width: 800px) {
+    .datepickerWrapper_error{
+        margin-bottom: 10px;
+    }
+  }
+
+/*  Fix margin error in labels of STextAreaComponent */
+.textAreaLabel{
+    margin-top:0 !important;
+}
+
+.couponImages{
+    display:flex;
+    justify-content: center;
+    overflow: scroll;
+    overflow-y: hidden;
+    margin-bottom:10px;
+}
+
+.couponImages div{
+    margin: 10px;
+}
+
+.couponImages img{
+    max-width:150px;
+}
+
+.unauthorized{
+    margin: 50px;
+    text-align: center;
+}
+
+.addCouponButton{
+    display:flex;
+    justify-content:center;
+}

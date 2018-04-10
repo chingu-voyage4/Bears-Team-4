@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-var isAuthenticated = function(req, res, next) {
+const isAuthenticated = function(req, res, next) {
   // if user is authenticated in the session, call the next() to call the next request handler
   // Passport adds this method to request object. A middleware is allowed to add properties to
   // request and response objects
@@ -12,7 +12,7 @@ var isAuthenticated = function(req, res, next) {
 
   // if the user is not authenticated then redirect him to the login page
   console.log("You are not authourized");
-  res.redirect("/");
+  res.status(403).json({ success: false, message: "You are not Authenticated for this request" })
 };
 
 module.exports = function(passport) {
@@ -25,6 +25,15 @@ module.exports = function(passport) {
   /* GET Registration Page */
   router.get("/signup", function(req, res) {
     res.send("Welcome to the Register page");
+  });
+
+   /* Check recived cookie is valid or not */
+   router.get("/validCookie", function(req, res) {
+    if (req.isAuthenticated()) {
+      res.json({valid : true, user: req.user});
+    } else {
+      res.status(403).json({valid : false});
+    }
   });
 
   /* Handle Registration POST */

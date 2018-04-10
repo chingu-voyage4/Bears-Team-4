@@ -1,8 +1,28 @@
 const express = require("express");
 const router = express.Router();
+const metafetch = require("metafetch");
+const urlParser = require("url-parse");
 
 // Importing Models
 const Coupon = require("../models/Coupon");
+const Store = require("../models/Store");
+
+const isAuthenticated = function(req, res, next) {
+  // if user is authenticated in the session, call the next() to call the next request handler
+  // Passport adds this method to request object. A middleware is allowed to add properties to
+  // request and response objects
+  if (req.isAuthenticated()) {
+    console.log("You are authrized to go to home page");
+    return next();
+  }
+
+  // if the user is not authenticated then redirect him to the login page
+  console.log("You are not authourized");
+  res.status(403).json({
+    success: false,
+    message: "You are not Authenticated for this request"
+  });
+};
 
 // Just Testing
 router.get("/all", (req, res) => {
@@ -98,6 +118,57 @@ router.post("/addComment", (req, res) => {
     .catch(err => {
       res.send(err);
     });
+});
+
+router.put("/addCoupon", isAuthenticated, (req, res) => {
+  const coupon = req.body;
+  const couponData = {
+    kind: coupon.kind,
+    category: coupon.categories,
+    tags: coupon.tags,
+    title: coupon.title,
+    description: coupon.description,
+    code: coupon.code,
+    exclutionDetails: "One",
+    linkUrl: coupon.linkUrl,
+    imgUrl: coupon.imgUrl,
+    storeId: coupon.storeId,
+    addedBy: { userId: req.user._id },
+    expiredAt: new Date(coupon.expiredAt)
+  };
+
+  Store.findOne({ storeUrl: coupon.linkUrl })
+    .then(r => {
+      if (r) {
+        couponData.storeId = r._id;
+        const newCoupon = new Coupon(couponData);
+        newCoupon.save().then((r) => res.json({ sucess: true, coupon : r }));
+      } else {
+        // Extracting Main Site Url From Full Url
+        const url = new urlParser(coupon.linkUrl).origin;
+
+        metafetch.fetch(url, function(err, meta) {
+          const newStore = new Store({
+            name: coupon.store,
+            description: meta.description || "  ",
+            storeUrl: url,
+            logoUrl: meta.image || "  ",
+            categories: []
+          });
+
+          newStore.save().then(r => {
+            couponData.storeId = r._id;
+            const newCoupon = new Coupon(couponData);
+            newCoupon.save().then((r) => res.json({ sucess: true, coupon : r }));
+          });
+        });
+      }
+    })
+    .catch((err) => res.status(404).json({ success: false, err: err }));
+
+  // const newCoupon = new Coupon(couponData);
+  // newCoupon.save().then((r)=>res.json(r));
+
 });
 
 module.exports = router;

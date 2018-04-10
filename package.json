@@ -13,10 +13,12 @@
     "eslint": "^4.18.2",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "formik": "^0.11.11",
     "husky": "^0.14.3",
     "lint-staged": "^6.1.1",
     "material-ui": "^0.20.0",
     "mdi-react": "^2.1.19",
+    "metafetch": "^1.7.3",
     "moment": "^2.20.1",
     "mongodb": "^3.0.2",
     "mongoose": "^5.0.6",
@@ -30,6 +32,7 @@
     "prettier": "^1.10.2",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
+    "react-datepicker": "^1.4.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
@@ -39,7 +42,9 @@
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^5.0.0",
     "redux-thunk": "^2.2.0",
-    "semantic-ui-react": "^0.79.0"
+    "semantic-ui-react": "^0.79.0",
+    "url-parse": "^1.3.0",
+    "yup": "^0.24.1"
   },
   "scripts": {
     "start": "react-scripts start",

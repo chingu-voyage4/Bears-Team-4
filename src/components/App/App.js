@@ -13,6 +13,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import MainPage from "../MainPage/MainPage";
 import SearchPage from "../SearchPage/SearchPage";
 import StoresPage from "../StoresPage/StoresPage";
+import CouponSubmitPage from "../CouponSubmitPage/CouponSubmitPage";
 
 import "./App.css";
 
@@ -26,6 +27,7 @@ class App extends Component {
         <Route path="/stores/:storeName" component={StoresPage} />
         <Route path="/search/:term" component={SearchPage} />
         <Route path="/category/:categoryName" component={CategoryPage} />
+        <Route path="/couponSubmit" component={CouponSubmitPage} />
         <Footer />
       </div>
     );
