@@ -23,7 +23,7 @@ class Admin extends Component {
 				</Row>
 				<Row>
 					<Col smOffset={2} sm={8}>
-						<ApproveTable/>
+						<ApproveTable />
 					</Col>
 				</Row>
 			</div>
@@ -31,49 +31,55 @@ class Admin extends Component {
 	}
 }
 
+class TableHeader extends Component {
+	render() {
+		return (
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+					<th>Table heading</th>
+				</tr>
+			</thead>
+		);
+	}
+}
+
+class TableRow extends Component {
+	render() {
+		return (
+			<tr>
+				<td>1</td>
+				<td>Table cell</td>
+				<td>Table cell</td>
+				<td>Table cell</td>
+				<td>Table cell</td>
+				<td>Table cell</td>
+				<td>Table cell</td>
+			</tr>
+		);
+	}
+}
 class ApproveTable extends Component {
 	render() {
 		return (
-			<Table striped bordered condensed hover responsive className="table-approve text-center">
-				<thead>
-					<tr>
-						<th>#</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-						<th>Table heading</th>
-					</tr>
-				</thead>
+			<Table
+				striped
+				bordered
+				condensed
+				hover
+				responsive
+				className="table-approve text-center"
+			>
+				<TableHeader />
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-						<td>Table cell</td>
-					</tr>
+					<TableRow />
+					<TableRow />
+					<TableRow />
 				</tbody>
 			</Table>
 		);
