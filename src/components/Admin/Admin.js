@@ -2,7 +2,7 @@ import { Route } from "react-router-dom";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Row, Col, Table } from "react-bootstrap";
+import { Row, Col, Table, Button } from "react-bootstrap";
 import TopOffers from "../MainPage/TopOffers/TopOffers";
 import * as couponActions from "../../actions/couponActions";
 import * as userActions from "../../actions/userActions";
@@ -37,29 +37,38 @@ class TableHeader extends Component {
 			<thead>
 				<tr>
 					<th>#</th>
-					<th>Table heading</th>
-					<th>Table heading</th>
-					<th>Table heading</th>
-					<th>Table heading</th>
-					<th>Table heading</th>
-					<th>Table heading</th>
+					<th>Store Website</th>
+					<th>Offer Type</th>
+					<th>Code</th>
+					<th>Discount Description</th>
+					<th>Expiration Date</th>
+					<th>Approve</th>
+					<th>Reject</th>
 				</tr>
 			</thead>
 		);
 	}
 }
-
+const ActionButton = props => {
+	const buttonStyle = props.text === "Approve" ? "success" : "danger";
+	return <Button bsStyle={buttonStyle}>{props.text}</Button>;
+};
 class TableRow extends Component {
 	render() {
 		return (
 			<tr>
 				<td>1</td>
-				<td>Table cell</td>
-				<td>Table cell</td>
-				<td>Table cell</td>
-				<td>Table cell</td>
-				<td>Table cell</td>
-				<td>Table cell</td>
+				<td>Udemy</td>
+				<td>Online Code</td>
+				<td>Code</td>
+				<td>Discount Description</td>
+				<td>Expiration Date</td>
+				<td>
+					<ActionButton text="Approve" />
+				</td>
+				<td>
+					<ActionButton text="Reject" />
+				</td>
 			</tr>
 		);
 	}
