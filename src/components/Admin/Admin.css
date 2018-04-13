@@ -1,4 +1,8 @@
 .Admin{
 	min-height: 80vh;
 	margin-top: 2%;
+	width:100%;
+}
+.table-approve{
+	margin-top: 2%;
 }

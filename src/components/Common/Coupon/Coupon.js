@@ -25,6 +25,7 @@ class Coupon extends Component {
     });
   }
 
+  
   // Execute CopuponModels inside functions here so we can open model here.
   handleModalOpen() {
     this.state.modalFns.setRedirect(false); // Hide Redirect Option on Bottom
