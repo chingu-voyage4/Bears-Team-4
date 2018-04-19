@@ -129,7 +129,69 @@ router.put("/addCoupon", isAuthenticated, (req, res) => {
     title: coupon.title,
     description: coupon.description,
     code: coupon.code,
-    exclutionDetails: "One",
+    exclutionDetails: coupon.exclutionDetails,
+    linkUrl: coupon.linkUrl,
+    imgUrl: coupon.imgUrl,
+    storeId: coupon.storeId,
+    addedBy: { userId: req.user._id },
+    expiredAt: new Date(coupon.expiredAt)
+  };
+
+  Store.findOne({ storeUrl: coupon.linkUrl })
+    .then(r => {
+      if (r) {
+        couponData.storeId = r._id;
+        const newCoupon = new Coupon(couponData);
+        newCoupon.save().then((r) => res.json({ sucess: true, coupon : r }));
+      } else {
+        // Extracting Main Site Url From Full Url
+        const url = new urlParser(coupon.linkUrl).origin;
+
+        metafetch.fetch(url, function(err, meta) {
+          const newStore = new Store({
+            name: coupon.store,
+            description: meta.description || "  ",
+            storeUrl: url,
+            logoUrl: meta.image || "  ",
+            categories: []
+          });
+
+          newStore.save().then(r => {
+            couponData.storeId = r._id;
+            const newCoupon = new Coupon(couponData);
+            newCoupon.save().then((r) => res.json({ sucess: true, coupon : r }));
+          });
+        });
+      }
+    })
+    .catch((err) => res.status(404).json({ success: false, err: err }));
+
+  // const newCoupon = new Coupon(couponData);
+  // newCoupon.save().then((r)=>res.json(r));
+
+});
+
+router.get("/unapprovedCoupons", (req, res) => {
+  Coupon.find({approvedBy : {$exists:false}})
+    .select("-usedBy -likedBy -unlikedBy -comments -createdAt, -__v")
+    .populate({
+      path:"storeId",
+      select:"name _id"
+    })
+    .then((r)=>res.json(r))
+    .catch((err)=>res.json(err));
+});
+
+router.put("/updateCoupon", isAuthenticated, (req, res) => {
+  const coupon = req.body;
+  const couponData = {
+    kind: coupon.kind,
+    category: coupon.categories,
+    tags: coupon.tags,
+    title: coupon.title,
+    description: coupon.description,
+    code: coupon.code,
+    exclutionDetails: coupon.exclutionDetails,
     linkUrl: coupon.linkUrl,
     imgUrl: coupon.imgUrl,
     storeId: coupon.storeId,

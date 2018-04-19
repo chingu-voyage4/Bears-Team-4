@@ -16,7 +16,7 @@ const routes = require("./routes/index");
 // // Connect to DB-Local:
 // NOTE: Uncomment below line if you want to save data locally
 mongoose
-  .connect(config.db.local)
+  .connect(config.db.atlas)
   .then(db => console.log("Database Successfully Connected"))
   .catch(err => console.log("Database Connection Failed\n", err));
 
@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 
 // Setting up CORS
 const corsOptions = {
-  origin: ["*", "http://localhost:3000"], // List of host authorized make cors request. For cross origin cookies specific host should be given. (ex:"http://localhost:3000")
+  origin: ["*", "http://localhost:3000", "https://chingu-coupons.herokuapp.com"], // List of host authorized make cors request. For cross origin cookies specific host should be given. (ex:"http://localhost:3000")
   credentials: true // Must enable for cross origin cookies.
 };
 app.use(cors(corsOptions));

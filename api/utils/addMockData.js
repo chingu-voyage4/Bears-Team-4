@@ -101,6 +101,7 @@ async function addMockData(req, res) {
         store.name = faker.address.city();
         store.description = faker.lorem.sentences();
         store.logoUrl = `https://source.unsplash.com/500x500/?${chance.character({pool: 'abcdefghijklmnopqrstuvwxyz'})}`;
+        store.storeUrl = "https://abc.com/";
         // Later some other categories also gonna added here based on available coupons
         store.categories = fromFakerList(fakeCategories, 0, 4);
         store.rating = chance.integer({ min: 0, max: 5 });
@@ -213,7 +214,7 @@ async function addMockData(req, res) {
     );
     res.send("<h1>Successfully Added All Mock Data</h1>");
   } catch (err) {
-    res.send("<h1>Error Occured</h1>");
+    res.send(JSON.stringify(err));
   }
 }
 

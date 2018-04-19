@@ -14,6 +14,7 @@ import MainPage from "../MainPage/MainPage";
 import SearchPage from "../SearchPage/SearchPage";
 import StoresPage from "../StoresPage/StoresPage";
 import CouponSubmitPage from "../CouponSubmitPage/CouponSubmitPage";
+import AdminPage from "../AdminPage/AdminPage";
 
 import "./App.css";
 
@@ -24,6 +25,7 @@ class App extends Component {
         <Header />
         <Route exact path="/" component={MainPage} />
         <Route path="/auth" component={AuthPage} />
+        <Route path="/admin" component={AdminPage} />
         <Route path="/stores/:storeName" component={StoresPage} />
         <Route path="/search/:term" component={SearchPage} />
         <Route path="/category/:categoryName" component={CategoryPage} />
