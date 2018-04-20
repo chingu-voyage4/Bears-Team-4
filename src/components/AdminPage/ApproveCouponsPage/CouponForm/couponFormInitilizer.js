@@ -3,15 +3,9 @@
 
 import React from "react";
 import { Form, Divider, Button, Message, Icon } from "semantic-ui-react";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-import {
-  SInput,
-  STextArea,
-  SDropDown,
-  SDatePicker
-} from "./semanticUIWrappers";
+import { SInput, STextArea, SDropDown } from "./semanticUIWrappers";
 import { linkUrlHandler } from "./couponFormHelpers";
 
 // Main function witch define how form get rendered.
@@ -158,7 +152,7 @@ export default formikFunctions => {
           type="submit"
           loading={formikFunctions.values.uploading}
         >
-          Add Coupon
+          Update Coupon
         </Button>
       </div>
 
@@ -167,15 +161,15 @@ export default formikFunctions => {
           <Message positive icon>
             <Icon name="inbox" />
             <Message.Content>
-              <Message.Header>Coupon Successfully Added</Message.Header>
-              <p>Thank you for your contribution. Care to add another one?</p>
+              <Message.Header>Coupon Successfully Updated</Message.Header>
+              <p>Approve/Delete Coupon On Main List</p>
             </Message.Content>
           </Message>
         ) : (
           <Message warning icon>
             <Icon name="inbox" />
             <Message.Content>
-              <Message.Header>Coupon Adding Failed</Message.Header>
+              <Message.Header>Coupon Update Failed</Message.Header>
               <p>Please Check Details and Try Again</p>
             </Message.Content>
           </Message>

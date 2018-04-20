@@ -142,7 +142,7 @@ router.put("/addCoupon", isAuthenticated, (req, res) => {
       if (r) {
         couponData.storeId = r._id;
         const newCoupon = new Coupon(couponData);
-        newCoupon.save().then((r) => res.json({ sucess: true, coupon : r }));
+        newCoupon.save().then(r => res.json({ sucess: true, coupon: r }));
       } else {
         // Extracting Main Site Url From Full Url
         const url = new urlParser(coupon.linkUrl).origin;
@@ -159,27 +159,59 @@ router.put("/addCoupon", isAuthenticated, (req, res) => {
           newStore.save().then(r => {
             couponData.storeId = r._id;
             const newCoupon = new Coupon(couponData);
-            newCoupon.save().then((r) => res.json({ sucess: true, coupon : r }));
+            newCoupon.save().then(r => res.json({ sucess: true, coupon: r }));
           });
         });
       }
     })
-    .catch((err) => res.status(404).json({ success: false, err: err }));
+    .catch(err => res.status(404).json({ success: false, err: err }));
 
   // const newCoupon = new Coupon(couponData);
   // newCoupon.save().then((r)=>res.json(r));
-
 });
 
 router.get("/unapprovedCoupons", (req, res) => {
-  Coupon.find({approvedBy : {$exists:false}})
+  Coupon.find({ approvedBy: { $exists: false } })
     .select("-usedBy -likedBy -unlikedBy -comments -createdAt, -__v")
     .populate({
-      path:"storeId",
-      select:"name _id"
+      path: "storeId",
+      select: "name _id"
     })
-    .then((r)=>res.json(r))
-    .catch((err)=>res.json(err));
+    .then(r => res.json(r))
+    .catch(err => res.json(err));
+});
+
+router.put("/deleteCoupon", (req, res) => {
+  const coupon = req.body;
+  Coupon.findByIdAndRemove(coupon._id)
+    .then((r) => {
+      console.log(r, coupon);
+      Coupon.find({ approvedBy: { $exists: false } })
+        .select("-usedBy -likedBy -unlikedBy -comments -createdAt, -__v")
+        .populate({
+          path: "storeId",
+          select: "name _id"
+        })
+        .then(r => res.json(r))
+        .catch(err => res.json(err));
+    })
+    .catch(err => res.json(err));
+});
+
+router.put("/approveCoupon", (req, res) => {
+  const coupon = req.body;
+  Coupon.findByIdAndUpdate(coupon._id, { approvedBy: { userId: req.user._id } })
+    .then(() => {
+      Coupon.find({ approvedBy: { $exists: false } })
+        .select("-usedBy -likedBy -unlikedBy -comments -createdAt, -__v")
+        .populate({
+          path: "storeId",
+          select: "name _id"
+        })
+        .then(r => res.json(r))
+        .catch(err => res.json(err));
+    })
+    .catch(err => res.json(err));
 });
 
 router.put("/updateCoupon", isAuthenticated, (req, res) => {
@@ -204,7 +236,7 @@ router.put("/updateCoupon", isAuthenticated, (req, res) => {
       if (r) {
         couponData.storeId = r._id;
         const newCoupon = new Coupon(couponData);
-        newCoupon.save().then((r) => res.json({ sucess: true, coupon : r }));
+        newCoupon.save().then(r => res.json({ sucess: true, coupon: r }));
       } else {
         // Extracting Main Site Url From Full Url
         const url = new urlParser(coupon.linkUrl).origin;
@@ -221,16 +253,15 @@ router.put("/updateCoupon", isAuthenticated, (req, res) => {
           newStore.save().then(r => {
             couponData.storeId = r._id;
             const newCoupon = new Coupon(couponData);
-            newCoupon.save().then((r) => res.json({ sucess: true, coupon : r }));
+            newCoupon.save().then(r => res.json({ sucess: true, coupon: r }));
           });
         });
       }
     })
-    .catch((err) => res.status(404).json({ success: false, err: err }));
+    .catch(err => res.status(404).json({ success: false, err: err }));
 
   // const newCoupon = new Coupon(couponData);
   // newCoupon.save().then((r)=>res.json(r));
-
 });
 
 module.exports = router;

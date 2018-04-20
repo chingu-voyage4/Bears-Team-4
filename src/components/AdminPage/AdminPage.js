@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { Input, Label, Menu, Dropdown, Icon, Grid } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { Input, Menu, Dropdown, Icon, Button } from "semantic-ui-react";
 import { Link, Route } from "react-router-dom";
 
 import ApproveCouponsPage from "./ApproveCouponsPage/ApproveCouponsPage";
@@ -13,6 +14,34 @@ class AdminPage extends Component {
 
   render() {
     const { activeItem } = this.state;
+    const { userState } = this.props;
+
+    if (!userState.authenticated) {
+      return (
+        <div className="unauthorized">
+          <h1>Sorry, Restricted Area </h1>
+          <h2>
+            Only Regsitered and Admin Users Can Access This Area. <br />
+            Please Log In / Sign Up First
+          </h2>
+          <Button.Group size="massive">
+            <Link to="/auth/login">
+              <Button icon labelPosition="left" color="blue">
+                <Icon name="sign in" />
+                Log In
+              </Button>
+            </Link>
+            <Button.Or />
+            <Link to="/auth/signup">
+              <Button icon labelPosition="left" color="green">
+                <Icon name="users" />
+                Sign Up
+              </Button>
+            </Link>
+          </Button.Group>
+        </div>
+      );
+    }
 
     return (
       <div className="adminPage">
@@ -30,33 +59,25 @@ class AdminPage extends Component {
                   active={activeItem === "search"}
                   onClick={this.handleItemClick}
                 >
-                  Search
+                  Coupons
                 </Menu.Item>
                 <Menu.Item
                   name="add"
                   active={activeItem === "add"}
                   onClick={this.handleItemClick}
                 >
-                  Add
+                  Stores
                 </Menu.Item>
                 <Menu.Item
                   name="about"
                   active={activeItem === "about"}
                   onClick={this.handleItemClick}
                 >
-                  Remove
+                  Categories
                 </Menu.Item>
               </Menu.Menu>
             </Menu.Item>
 
-            <Menu.Item
-              name="browse"
-              active={activeItem === "browse"}
-              onClick={this.handleItemClick}
-            >
-              <Icon name="grid layout" />
-              Browse
-            </Menu.Item>
             <Menu.Item
               as="div"
               name="approveCoupons"
@@ -64,6 +85,14 @@ class AdminPage extends Component {
               onClick={this.handleItemClick}
             >
               <Link to="/admin/approveCoupons">Approve Coupons</Link>
+            </Menu.Item>
+            <Menu.Item
+              name="browse"
+              active={activeItem === "browse"}
+              onClick={this.handleItemClick}
+            >
+              <Icon name="grid layout" />
+              Browse
             </Menu.Item>
 
             <Dropdown item text="More">
@@ -77,6 +106,19 @@ class AdminPage extends Component {
         </div>
         <div className="adminPage__content">
           <Route
+            path="/admin"
+            exact={true}
+            component={() => {
+              return (<div style={{ textAlign: "center" }}>
+                <h1> Welcome To Admin Panel. </h1>
+                <h3>
+                  {" "}
+                  (Yet Only ApproveCoupons Is Implemented. Others Coming Soon){" "}
+                </h3>
+            </div>)
+            }}
+          />
+          <Route
             path="/admin/approveCoupons"
             exact={true}
             component={ApproveCouponsPage}
@@ -87,4 +129,11 @@ class AdminPage extends Component {
   }
 }
 
-export default AdminPage;
+// Specifying which parts of states we want from redux storage
+const mapStateToProps = state => {
+  return {
+    userState: state.user
+  };
+};
+
+export default connect(mapStateToProps)(AdminPage);

@@ -6,9 +6,10 @@
   justify-content: left;
 }
 
-.adminPage__sideBar{
-
+.adminPage__menu{
+  height:100%;
 }
+
 
 .adminPage__content{
   width:100%;

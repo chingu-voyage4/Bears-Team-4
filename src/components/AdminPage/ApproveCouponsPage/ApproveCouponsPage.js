@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Button, Checkbox, Icon, Table } from "semantic-ui-react";
-import { Formik } from "formik";
-import { moment } from "moment";
+import { Button, Icon, Table } from "semantic-ui-react";
+import { Link } from "react-router-dom";
+
 import axios from "../../../actions/axiosInstances"; // Pre configured axios instance
 
 import CouponForm from "./CouponForm/CouponForm";
@@ -42,7 +42,7 @@ class ApproveCouponsPage extends Component {
       <div className="ApproveCouponsPage">
         <div className={editFormClassNames}>
           <h1>
-            {this.state.activeCoupon.storeId.name + " > Coupon/Deal"}
+            {this.state.activeCoupon.storeId.name + " - Coupon/Deal"}
             <Button
               icon="reply"
               color="olive"
@@ -93,7 +93,7 @@ class ApproveCouponsPage extends Component {
                     primary
                     size="small"
                   >
-                    <Icon name="user" /> Add Coupon
+                    <Icon name="user" /> <Link to="/couponSubmit">Add Coupon</Link>
                   </Button>
 
                   <Button icon size="small" color="green">

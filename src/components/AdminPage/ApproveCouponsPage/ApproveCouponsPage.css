@@ -26,3 +26,7 @@
   max-width: 150px;
   overflow-wrap: break-word;
 }
+
+.ApproveCouponsPage__table__tasksCell{
+  width: 135px;
+}
