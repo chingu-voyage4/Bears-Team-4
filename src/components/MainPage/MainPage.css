@@ -1,0 +1,9 @@
+.mainPage {
+  max-width: 1200px;
+  padding: 20px;
+  width: 100%;
+}
+
+.mainPage > * {
+  margin-bottom: 50px;
+}

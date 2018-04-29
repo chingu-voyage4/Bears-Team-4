@@ -1,0 +1,32 @@
+.ApproveCouponsPage{
+  margin:25px;
+}
+
+.ApproveCouponsPage h1{
+  margin-left:0;
+}
+
+.ApproveCouponsPage_hide{
+  display: none;
+}
+
+.ApproveCouponsPage_show{
+  display: initial;
+}
+
+.ApproveCouponsPage thead{
+  text-align: center;
+}
+
+.ApproveCouponsPage tr, .ApproveCouponsPage th, .ApproveCouponsPage td, .ApproveCouponsPage__table__row{
+  vertical-align: middle !important;
+}
+
+.ApproveCouponsPage__table__titleCell{
+  max-width: 150px;
+  overflow-wrap: break-word;
+}
+
+.ApproveCouponsPage__table__tasksCell{
+  width: 135px;
+}

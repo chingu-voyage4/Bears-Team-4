@@ -1,0 +1,42 @@
+.subscribe {
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  border-top: 1.1px solid #d3d3d3;
+}
+
+.subscribe_form {
+  display: flex;
+  justify-content: center;
+}
+
+.subscribe__showButton {
+  display: inline-block;
+  position: relative;
+  left: -10px;
+  width: 30%;
+  height: 51px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 3rem;
+  color: white;
+  border-radius: 0 3px 3px 0;
+  background: #1896bc;
+  border: 1.1px solid #d3d3d3;
+}
+
+.subscribe__email {
+  height: 50px;
+  width: 50%;
+  text-indent: 10px;
+  font-family: "Lato", Calibri, Helvetica, Roboto, sans-serif;
+  border: 1.1px solid #d3d3d3;
+  border-radius: 3px 0 0 3px;
+}
+
+@media screen and (max-width: 500px) {
+  .subscribe__email {
+    width: 80%;
+  }
+}

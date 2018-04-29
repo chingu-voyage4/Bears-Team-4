@@ -1,0 +1,93 @@
+.coupon {
+  background: #ffffff;
+  border: 1.5px #d3d3d3 solid;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 17px;
+}
+
+/* Image, details, buttons, more details */
+.coupon > div {
+  padding: 15px;
+}
+
+.coupon__store-image {
+  align-self: center;
+  min-width: 100px;
+  width: 15%;
+}
+
+.coupon__store-image img {
+  width: 100%;
+}
+
+/* Hold type, store, and description */
+.coupon__details {
+  flex-grow: 1;
+  width: 60%;
+  position:relative;
+}
+
+/* Using this wrapper to make sure CouponModel can open when mobile viewports */
+/* Model wrapper only shown in <800px */
+.coupon__details__wrapper{
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.coupon__details__type {
+  color: #602d99;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding-right: 10px;
+}
+
+.coupon__details__store {
+  color: gray;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.coupon__details__description {
+  color: #555555;
+  font-size: 1.5em;
+  padding-top: 10px;
+}
+
+/* Hold Save and Show code buttons */
+.coupon__buttons {
+  width: 20%;
+}
+
+.coupon__buttons .saveButton {
+  color: gray;
+  font-size: 0.8rem;
+  margin: 10px;
+  text-align: right;
+}
+
+.coupon__buttons .saveButton:hover{
+  font-weight: bold;
+}
+
+.coupon__moreDetails {
+  width: 100%;
+}
+
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
+
+@media screen and (max-width: 700px) {
+  .coupon__buttons,
+  .coupon__moreDetails {
+    display: none;
+  }
+
+  .coupon__details__wrapper{
+    display: initial;
+  }
+}
