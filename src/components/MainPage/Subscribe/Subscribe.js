@@ -8,7 +8,7 @@ class Subscribe extends Component {
         <div>Never miss another deal.</div>
         <br />
         <div>
-          Get the top deals from 100s of retailers in the Best of RetailMeNot
+          Get the top deals from 100s of retailers in the Best of ChinguCoupons
           emails.
         </div>
         <br />

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import React, { Component } from "react";
 
 import "./Footer.css";
-import logo from "../../images/logoFooter.svg";
+import logo from "../../images/logoFooter.png";
 
 /**
  * <div className="footer-overlay"> - Just to give full width white bar.
@@ -23,7 +23,7 @@ class Footer extends Component {
         <div className="footer">
           <div className="footer__logo1">
             <Link to="/" className="router-link-reset">
-              <img src={logo} alt="RetailMeNot" />
+              <img src={logo} alt="RetailMeNot" className="footer__img" style={{maxWidth:"280px"}}/>
             </Link>
           </div>
           <div className="footer__links">
@@ -60,13 +60,13 @@ class Footer extends Component {
                 <li>My Account</li>
                 <li>Community</li>
                 <li>Submit a Coupon</li>
-                <li>RetailMeNot.ca</li>
+                <li>ChinguCoupons.Com</li>
               </ul>
             </div>
           </div>
           <div className="footer__logo2">
             <Link to="/" className="router-link-reset">
-              <img src={logo} alt="RetailMeNot" />
+              <img src={logo} alt="RetailMeNot" className="footer__img" style={{maxWidth:"280px"}}/>
             </Link>
           </div>
         </div>

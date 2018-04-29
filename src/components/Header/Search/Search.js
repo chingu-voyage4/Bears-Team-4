@@ -35,7 +35,7 @@ class Search extends Component {
         <input
           className="search__input"
           type="text"
-          placeholder="Search on RetailMeNot"
+          placeholder="Search on ChinguCoupons"
           ref="search"
           // As user type searchTerm, filteredStores, filteredCategories in search state change.
           onChange={e => {

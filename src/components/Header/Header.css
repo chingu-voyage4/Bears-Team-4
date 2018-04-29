@@ -22,8 +22,9 @@
   flex: 0 0 180px;
 }
 
-.header__logo__svg {
+.header__logo__img {
   padding-top: 10px;
+  max-width: 100%;
 }
 
 .header__logo__mobile {
