@@ -1,0 +1,20 @@
+.adminPage{
+  /* Overrriding parent flex properties */
+  width:100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+}
+
+.adminPage__menu{
+  height:100%;
+}
+
+
+.adminPage__content{
+  width:100%;
+}
+/* Fixing padding problem in menu UI */
+.adminPage__menu .item{
+  padding-left: 2em !important;
+}

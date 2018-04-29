@@ -1,0 +1,30 @@
+.trending__title {
+  font-size: 1.5rem;
+  margin: 10px 0 20px 0;
+  text-align: center;
+}
+
+.trending__big-grid,
+.trending__small-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Fix div added by CouponModel */
+.trending__big-grid div{
+  flex: 220px;
+}
+
+.trending__small-grid {
+  flex-wrap: nowrap;
+}
+
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
+
+@media screen and (max-width: 800px) {
+  .trending__small-grid {
+    display: none;
+  }
+}

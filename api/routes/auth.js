@@ -1,0 +1,139 @@
+var express = require("express");
+var router = express.Router();
+
+const isAuthenticated = function(req, res, next) {
+  // if user is authenticated in the session, call the next() to call the next request handler
+  // Passport adds this method to request object. A middleware is allowed to add properties to
+  // request and response objects
+  if (req.isAuthenticated()) {
+    console.log("You are authrized to go to home page");
+    return next();
+  }
+
+  // if the user is not authenticated then redirect him to the login page
+  console.log("You are not authourized");
+  res.status(403).json({ success: false, message: "You are not Authenticated for this request" })
+};
+
+module.exports = function(passport) {
+  /* GET login page. */
+  router.get("/", function(req, res) {
+    // Display the Login page with any flash message, if any
+    res.send("Welcome to the index page");
+  });
+
+  /* GET Registration Page */
+  router.get("/signup", function(req, res) {
+    res.send("Welcome to the Register page");
+  });
+
+   /* Check recived cookie is valid or not */
+   router.get("/validCookie", function(req, res) {
+    if (req.isAuthenticated()) {
+      res.json({valid : true, user: req.user});
+    } else {
+      res.status(403).json({valid : false});
+    }
+  });
+
+  /* Handle Registration POST */
+  router.post("/signup", (req, res, next) => {
+    // Excuting passport inside here because we want to handle errors (ex: User Exist) and send apporite data ourselves.
+    // If not Passport Local Strategy just send an error to client with out any info.
+    passport.authenticate("signup", (err, user, info) => {
+      if (err) {
+        res.status(400).json({ success: false, message: err.message });
+      } else {
+        req.login(user, function(err) {
+          // Selecting What to output
+          const {
+            _id,
+            email,
+            firstName,
+            role,
+            savedCoupons,
+            favouriteStores
+          } = req.user;
+
+          return res.json({
+            success: true,
+            message: {
+              _id,
+              email,
+              firstName,
+              role,
+              savedCoupons,
+              favouriteStores
+            }
+          });
+        });
+      }
+    })(req, res, next);
+  });
+
+  /* Handle Login POST */
+  router.post("/login", (req, res, next) => {
+    // Excuting passport inside here because we want to handle errors (ex: User Exist) and send apporite data ourselves.
+    // If not Passport Local Strategy just send an error to client with out any info.
+    passport.authenticate("login", (err, user, info) => {
+      if (err) {
+        res.status(400).json({ success: false, message: err.message });
+      } else {
+        req.login(user, function(err) {
+          // Selecting What to output
+          const {
+            _id,
+            email,
+            firstName,
+            role,
+            savedCoupons,
+            favouriteStores
+          } = req.user;
+
+          return res.json({
+            success: true,
+            message: {
+              _id,
+              email,
+              firstName,
+              role,
+              savedCoupons,
+              favouriteStores
+            }
+          });
+        });
+      }
+    })(req, res, next);
+  });
+
+  /* GET Home Page 
+       * This route is protected and if it is not authenticated,
+       * it will redirects to login page.
+      */
+  router.get("/home", isAuthenticated, function(req, res) {
+    res.send("Welcome to the Home - This is SECRET page");
+  });
+  // router.get('/home', function(req, res){
+  // 	res.send('Welcome to the Home');
+  // });
+
+  /* Handle Logout */
+  router.get("/logout", function(req, res) {
+    req.logout();
+
+    // req.logout only seems to remove req.user reference. So for improved security also run below code.
+    // This remove that session from both server and client.
+    req.session.destroy(function(err) {
+      if (!err) {
+        res
+          .status(200)
+          .clearCookie("connect.sid", { path: "/" })
+          .json({ status: "Successfully Logout" });
+      } else {
+        console.log(err);
+      }
+    });
+  });
+
+  return router;
+};

@@ -1,0 +1,30 @@
+.left-section-title{
+    color: #555;
+    font-family: Avenir Next,Calibri,Helvetica,Roboto,sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-top:2%; 
+}
+h1{
+    color:black;
+    font-size: 28px;
+    font-weight: 500;
+}
+strong{
+    color:black;
+    font-weight: 600;
+    margin-bottom: 0.8em;
+}
+.left-section-card{
+    box-shadow: 0;
+}
+h1{
+	margin-left: 3%;
+}
+strong{
+	margin-left: 3%;
+}
+.services{
+	margin-top: 3%;
+}

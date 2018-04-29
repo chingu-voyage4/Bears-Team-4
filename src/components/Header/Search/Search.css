@@ -1,0 +1,57 @@
+.search {
+  position: relative;
+  width: 100%;
+}
+
+.search__input {
+  /* Search Icon */
+  background: url("../../../images/searchIcon.png") no-repeat white;
+  background-position: 10px center;
+  background-size: 35px 35px;
+
+  border: none;
+  border-radius: 3px;
+  font-family: "Lato", Calibri, Helvetica, Roboto, sans-serif;
+  height: 45px;
+  position: relative;
+  text-indent: 50px;
+  width: 100%;
+}
+
+.search__dropDown {
+  background: rgba(255, 255, 255, 0.99);
+  border: 1px solid gray;
+  color: black;
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* JS Free solution to show/hide drop down box as focused*/
+/* .search__input:focus + .search__dropDown,
+.search__dropDown:active {
+  display: flex;
+  position: absolute;
+} */
+
+/* When this class added drop down get visible. 
+ *
+ * "search__dropDown:active" needed for have users ablilty to click on link in dropdown.
+ * If this is not available user want to be able to click on links.
+*/
+.search__dropDown--show,
+.search__dropDown:active {
+  display: flex;
+  position: absolute;
+}
+
+/* ------------------------------ MEDIA QUARRIES ------------------------------ */
+
+@media screen and (max-width: 400px) {
+  .search__dropDown {
+    display: none;
+  }
+}
