@@ -1,6 +1,4 @@
-<img src="./image.jpg" alt="Chingu Coupons preview image"/>.
-
-## RetailMeNot Mockup 
+<img src="./image.PNG" alt="Chingu Coupons preview image"/>.
 
 ## Description:
 This is the mockup website for "RetailMeNot.com" .
@@ -9,10 +7,13 @@ This is the mockup website for "RetailMeNot.com" .
 * Registered users can submit coupons and it will go to the review team.
 * It will shop in the coupons if the coupon is accepted by the reviewer.
 
+## Online App link:
+* <a href="https://github.com/ilvcs" > RetailMeNot Mockup </a>
+
 ## Contributors:
- * <a href=" " >Thulasiram Peddiboina </a>
- * <a href=" " >Anshul</a>
- * <a href=" " >Sandun</a>
+ * <a href="https://github.com/ilvcs" >Thulasiram Peddiboina </a>
+ * <a href="https://github.com/Anshul2166" >Anshul</a>
+ * <a href="https://github.com/SandunWebDev" >Sandun</a>
  
 ## Technologies used :
 React.js, Node.js, MongoDb, HTML, CSS.
