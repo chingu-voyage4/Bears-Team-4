@@ -255,7 +255,7 @@ function LastElement(props) {
     return (
       <div className="text-center">
         <p>
-          By joining, I agree to RetailMeNot’s <a href="">Privacy Policy</a> and
+          By joining, I agree to ChinguCoupon’s <a href="">Privacy Policy</a> and
           <a href=""> Terms of Use</a>.
         </p>
       </div>

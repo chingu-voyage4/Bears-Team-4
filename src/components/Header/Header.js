@@ -15,7 +15,7 @@ import * as searchActions from "../../actions/searchActions";
 import * as userActions from "../../actions/userActions";
 
 import "./Header.css";
-import logo from "../../images/logoHeader.svg";
+import logo from "../../images/logoHeader.png";
 
 /**
  * <div className="header-overlay"> - Just to give full width purple bar.
@@ -30,7 +30,7 @@ class Header extends Component {
         <div className="header">
           <div className="header__logo">
             <Link to="/" className="router-link-reset">
-              <img src={logo} alt="RetailMeNot" className="header__logo__svg" />
+              <img src={logo} alt="RetailMeNot" className="header__logo__img" />
             </Link>
             <div className="header__logo__mobile">
               <MobileMenu user={userState} actions={this.props.userActions}/>
